@@ -8,11 +8,11 @@ Estrutura de pastas do projeto
 |   |   ├── 0 Escopo e Visão
 |   |   ├── Sprint 0
 |   |   └── ...
-|   ├── Planejamento
 |   ├── Atas
 |   ├── Especificações
-|   ├── Qualidade
-|   └── Interfaces
+|   ├── Interfaces
+|   ├── Planejamento
+|   └── Qualidade
 ├── Código
 |   ├── server
 |   |   └── back-end code, API
