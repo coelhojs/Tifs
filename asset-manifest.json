@@ -1,15 +1,15 @@
 {
-  "main.css": "/tifs/static/css/main.4df43b6a.chunk.css",
-  "main.js": "/tifs/static/js/main.738dd263.chunk.js",
-  "main.js.map": "/tifs/static/js/main.738dd263.chunk.js.map",
-  "runtime~main.js": "/tifs/static/js/runtime~main.5e6806fa.js",
-  "runtime~main.js.map": "/tifs/static/js/runtime~main.5e6806fa.js.map",
-  "static/css/2.3bc81fc5.chunk.css": "/tifs/static/css/2.3bc81fc5.chunk.css",
-  "static/js/2.1c9768d5.chunk.js": "/tifs/static/js/2.1c9768d5.chunk.js",
-  "static/js/2.1c9768d5.chunk.js.map": "/tifs/static/js/2.1c9768d5.chunk.js.map",
-  "index.html": "/tifs/index.html",
-  "precache-manifest.17581b6cd5e3edbf161e3876d436d402.js": "/tifs/precache-manifest.17581b6cd5e3edbf161e3876d436d402.js",
-  "service-worker.js": "/tifs/service-worker.js",
-  "static/css/2.3bc81fc5.chunk.css.map": "/tifs/static/css/2.3bc81fc5.chunk.css.map",
-  "static/css/main.4df43b6a.chunk.css.map": "/tifs/static/css/main.4df43b6a.chunk.css.map"
+  "main.css": "/Tifs/static/css/main.4df43b6a.chunk.css",
+  "main.js": "/Tifs/static/js/main.6f56378c.chunk.js",
+  "main.js.map": "/Tifs/static/js/main.6f56378c.chunk.js.map",
+  "runtime~main.js": "/Tifs/static/js/runtime~main.88f04a63.js",
+  "runtime~main.js.map": "/Tifs/static/js/runtime~main.88f04a63.js.map",
+  "static/css/2.3bc81fc5.chunk.css": "/Tifs/static/css/2.3bc81fc5.chunk.css",
+  "static/js/2.1c9768d5.chunk.js": "/Tifs/static/js/2.1c9768d5.chunk.js",
+  "static/js/2.1c9768d5.chunk.js.map": "/Tifs/static/js/2.1c9768d5.chunk.js.map",
+  "index.html": "/Tifs/index.html",
+  "precache-manifest.d2492779db249519e8aabf521f813695.js": "/Tifs/precache-manifest.d2492779db249519e8aabf521f813695.js",
+  "service-worker.js": "/Tifs/service-worker.js",
+  "static/css/2.3bc81fc5.chunk.css.map": "/Tifs/static/css/2.3bc81fc5.chunk.css.map",
+  "static/css/main.4df43b6a.chunk.css.map": "/Tifs/static/css/main.4df43b6a.chunk.css.map"
 }
