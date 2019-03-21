@@ -1,0 +1,15 @@
+cliente = {
+    nome = "cliente"
+}
+
+cabeleireiro = {
+
+}
+
+procedimento ={
+    produtos = []
+
+}
+
+
+
