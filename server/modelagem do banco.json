@@ -1,15 +1,34 @@
 cliente = {
-    nome = "cliente"
+    nome = "cliente" (string),
+    fotos = [] (string[]),
+    dataNascimento (),
+    telefone,
+    email,
+    alergias,
+    gestante,
+    autorizacaoFoto
 }
 
 cabeleireiro = {
+    nome,
+    procedimentos = [],
 
 }
 
 procedimento ={
-    produtos = []
+    data,
+    tipo,
+    cabeleireirosAutorizados,
+
 
 }
 
+histórico = {
 
+}
 
+produtos = {
+    nome,
+    FK_procedimento_ID,
+
+}
