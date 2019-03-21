@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Avaliacao from "./components/Avaliacao";
-import Anamnese from "./components/Anamnese";
+import "./App.css";
+import Header from "./components/Header";
+import CadastroCliente from "./components/CadastroCliente";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header" />
-                <Avaliacao />
-                <Avaliacao />
-                <Avaliacao />
+                <Header />
+                <main className="container-fluid">
+                    <CadastroCliente />
+                </main>
             </div>
         );
     }
