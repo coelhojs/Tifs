@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Avaliacao from "./components/Avaliacao";
+import Anamnese from "./components/Anamnese";
 
 class App extends Component {
     render() {
