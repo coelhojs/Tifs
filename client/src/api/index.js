@@ -1,7 +1,10 @@
-const api = create({
-    baseURL: "http://tifs.somee.com/swagger/docs/v1"
-    // headers: {
-    //     "X-API-KEY": "123",
-    //     "X-MARKS-THE-SPOT": "yarrrrr"
-    // }
+import { create } from "apisauce";
+
+export const api = create({
+    baseURL: "http://localhost:3004",
+    timeout: 30000,
+    headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+    }
 });

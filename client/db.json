@@ -12,13 +12,57 @@
       "Gestante": true
     },
     {
+      "id": 2,
+      "Nome": "nome1",
+      "CPF": "string",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-03-22T23:45:03.98",
+      "Telefone": "string",
+      "Email": "string",
+      "Alergias": "string",
+      "Gestante": true
+    },
+    {
+      "id": 3,
+      "Nome": "nome1",
+      "CPF": "string",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-03-22T23:45:03.98",
+      "Telefone": "string",
+      "Email": "string",
+      "Alergias": "string",
+      "Gestante": true
+    },
+    {
       "IdCliente": "2",
       "DataNascimento": "2019-03-22T21:06:40.585Z",
       "Telefone": "string",
       "Email": "string",
       "Alergias": "string",
       "Gestante": true,
-      "id": 2
+      "id": 4
+    },
+    {
+      "cliente": {
+        "id": "",
+        "Alergias": false,
+        "Gestante": false
+      },
+      "id": 5
+    },
+    {
+      "cliente": {
+        "id": "",
+        "Nome": "Cliente teste",
+        "CPF": "1233333333333333333333333333",
+        "AutorizaFotos": true,
+        "DataNascimento": "2019-01-01",
+        "Telefone": "1111111111111111111111111111111",
+        "Email": "ccccc@com.com",
+        "Alergias": false,
+        "Gestante": false
+      },
+      "id": 6
     }
   ],
   "Cabeleireiros": [

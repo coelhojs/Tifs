@@ -21,7 +21,9 @@ class Menu extends Component {
                         <Link to="/ListaClientes">Lista de clientes</Link>
                     </button>
                     <button type="button" className="btn btn-dark col-5">
-                        <Link to="/ListaClientes">Lista de cabeleireiros</Link>
+                        <Link to="/ListaCabeleireiros">
+                            Lista de cabeleireiros
+                        </Link>
                     </button>
                 </div>
             </div>

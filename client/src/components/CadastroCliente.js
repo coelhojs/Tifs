@@ -1,32 +1,22 @@
 import React from "react";
 import { create } from "apisauce";
+import { api } from "../api/index";
 
-const api = create({
-    baseURL: "http://localhost:3004",
-    timeout: 30000,
-    headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-    }
-});
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class CadastroCliente extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cliente: [
-                {
-                    IdCliente: "",
-                    Nome: "",
-                    CPF: "",
-                    AutorizaFotos: "",
-                    DataNascimento: "",
-                    Telefone: "",
-                    Email: "",
-                    Alergias: "",
-                    Gestante: ""
-                }
-            ]
+            id: "",
+            Nome: "",
+            CPF: "",
+            AutorizaFotos: "",
+            DataNascimento: "",
+            Telefone: "",
+            Email: "",
+            Alergias: "",
+            Gestante: ""
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,8 +25,7 @@ class CadastroCliente extends React.Component {
 
     handleInputChange(event) {
         const target = event.target;
-        const value =
-            target.type === "checkbox" ? target.checked : target.value;
+        const value = target.type === "checkbox" ? target.checked : target.value;
         const name = target.name;
 
         this.setState({
@@ -47,15 +36,7 @@ class CadastroCliente extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         api.post("/Clientes", {
-            IdCliente: "2",
-            Nome: this.state.Nome,
-            CPF: this.state.CPF,
-            AutorizaFotos: this.state.AutorizaFotos,
-            DataNascimento: "2019-03-22T21:06:40.585Z",
-            Telefone: "string",
-            Email: "string",
-            Alergias: "string",
-            Gestante: true
+            cliente: this.state
         }).then(function(response) {
             console.log(response);
         });
@@ -80,42 +61,66 @@ class CadastroCliente extends React.Component {
                     </div>
                 </div>
                 <div className="form-group row">
+                    <label className="col-3 col-form-label">CPF</label>
+                    <div className="col">
+                        <input
+                            name="CPF"
+                            type="number"
+                            value={this.state.CPF}
+                            onChange={this.handleInputChange}
+                            className="form-control"
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
+                    <label className="col-3 col-form-label">Data de nascimento</label>
+                    <div className="col">
+                        <input
+                            name="DataNascimento"
+                            type="date"
+                            value={this.state.DataNascimento}
+                            onChange={this.handleInputChange}
+                            className="form-control"
+                        />
+                    </div>
+                </div>
+                <div className="form-group row">
                     <label className="col-3 col-form-label">Telefone</label>
                     <div className="col">
-                        <input type="tel" className="form-control" />
+                        <input
+                            name="Telefone"
+                            type="tel"
+                            value={this.state.Telefone}
+                            onChange={this.handleInputChange}
+                            className="form-control"
+                        />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-3 col-form-label">E-mail</label>
                     <div className="col">
-                        <input type="email" className="form-control" />
+                        <input
+                            name="Email"
+                            type="email"
+                            value={this.state.Email}
+                            onChange={this.handleInputChange}
+                            className="form-control"
+                        />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-4 col-form-label">
-                        Data de nascimento
-                    </label>
-                    <div className="col">
-                        <input type="date" className="form-control" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <div className="col-sm-2">
-                        Você já teve episódios de alergia a algum produto
-                        cosmético?
-                    </div>
+                    <div className="col-sm-2">Você já teve episódios de alergia a algum produto cosmético?</div>
                     <div className="col-sm-10">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
                                 type="radio"
                                 id="alergia-sim"
-                                name="alergia-sim"
+                                name="Alergias"
+                                value={(this.state.Alergias = true)}
+                                onChange={this.handleInputChange}
                                 className="custom-control-input"
                             />
-                            <label
-                                className="custom-control-label"
-                                htmlFor="alergia-sim"
-                            >
+                            <label className="custom-control-label" htmlFor="alergia-sim">
                                 Sim
                             </label>
                         </div>
@@ -123,13 +128,13 @@ class CadastroCliente extends React.Component {
                             <input
                                 type="radio"
                                 id="alergia-nao"
-                                name="alergia-nao"
+                                name="Alergias"
+                                value={(this.state.Alergias = false)}
+                                onChange={this.handleInputChange}
+                                checked={true}
                                 className="custom-control-input"
                             />
-                            <label
-                                className="custom-control-label"
-                                htmlFor="alergia-nao"
-                            >
+                            <label className="custom-control-label" htmlFor="alergia-nao">
                                 Não
                             </label>
                         </div>
@@ -142,13 +147,12 @@ class CadastroCliente extends React.Component {
                             <input
                                 type="radio"
                                 id="gravidez-sim"
-                                name="gravidez-sim"
+                                name="Gestante"
+                                value={(this.state.Gestante = true)}
+                                onChange={this.handleInputChange}
                                 className="custom-control-input"
                             />
-                            <label
-                                className="custom-control-label"
-                                htmlFor="gravidez-sim"
-                            >
+                            <label className="custom-control-label" htmlFor="gravidez-sim">
                                 Sim
                             </label>
                         </div>
@@ -156,13 +160,13 @@ class CadastroCliente extends React.Component {
                             <input
                                 type="radio"
                                 id="gravidez-nao"
-                                name="gravidez-nao"
+                                name="Gestante"
+                                checked={true}
+                                value={(this.state.Gestante = false)}
+                                onChange={this.handleInputChange}
                                 className="custom-control-input"
                             />
-                            <label
-                                className="custom-control-label"
-                                htmlFor="gravidez-nao"
-                            >
+                            <label className="custom-control-label" htmlFor="gravidez-nao">
                                 Não
                             </label>
                         </div>
@@ -176,19 +180,21 @@ class CadastroCliente extends React.Component {
                         type="checkbox"
                         className="custom-control-input"
                         id="autorizacao-fotografia"
+                        name="AutorizaFotos"
+                        value={(this.state.AutorizaFotos = true)}
+                        onChange={this.handleInputChange}
                     />
-                    <label
-                        className="custom-control-label"
-                        htmlFor="autorizacao-fotografia"
-                    >
-                        Autorizo o registro fotográfico do resultado do meu
-                        tratamento capilar para o controle do atendimento por
-                        mim recebido
+                    <label className="custom-control-label" htmlFor="autorizacao-fotografia">
+                        Autorizo o registro fotográfico do resultado do meu tratamento capilar para o controle do
+                        atendimento por mim recebido
                     </label>
                 </div>
                 <br />
                 <button type="submit" className="btn btn-success">
-                    Concluir
+                    OK
+                </button>
+                <button className="btn btn-danger">
+                    <Link to="/">Cancelar</Link>
                 </button>
                 <br />
             </form>
