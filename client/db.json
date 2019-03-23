@@ -1,0 +1,31 @@
+{
+  "Clientes": [
+    {
+      "id": 1,
+      "Nome": "nome1",
+      "CPF": "string",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-03-22T23:45:03.98",
+      "Telefone": "string",
+      "Email": "string",
+      "Alergias": "string",
+      "Gestante": true
+    },
+    {
+      "IdCliente": "2",
+      "DataNascimento": "2019-03-22T21:06:40.585Z",
+      "Telefone": "string",
+      "Email": "string",
+      "Alergias": "string",
+      "Gestante": true,
+      "id": 2
+    }
+  ],
+  "Cabeleireiros": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}

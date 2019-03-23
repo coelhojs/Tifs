@@ -1,16 +1,82 @@
-import React, { Component } from "react";
+import React from "react";
+import { create } from "apisauce";
 
-class CadastroCliente extends Component {
+const api = create({
+    baseURL: "http://localhost:3004",
+    timeout: 30000,
+    headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+    }
+});
+
+class CadastroCliente extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cliente: [
+                {
+                    IdCliente: "",
+                    Nome: "",
+                    CPF: "",
+                    AutorizaFotos: "",
+                    DataNascimento: "",
+                    Telefone: "",
+                    Email: "",
+                    Alergias: "",
+                    Gestante: ""
+                }
+            ]
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value =
+            target.type === "checkbox" ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        api.post("/Clientes", {
+            IdCliente: "2",
+            Nome: this.state.Nome,
+            CPF: this.state.CPF,
+            AutorizaFotos: this.state.AutorizaFotos,
+            DataNascimento: "2019-03-22T21:06:40.585Z",
+            Telefone: "string",
+            Email: "string",
+            Alergias: "string",
+            Gestante: true
+        }).then(function(response) {
+            console.log(response);
+        });
+    }
+
     render() {
         return (
-            <form className="container">
+            <form className="container" onSubmit={this.handleSubmit}>
                 <div className="foto-container text-center">
                     <img src="../profile-img.jpg" alt="imagem" />
                 </div>
                 <div className="form-group row">
                     <label className="col-3 col-form-label">Nome</label>
                     <div className="col">
-                        <input type="text" className="form-control" />
+                        <input
+                            name="Nome"
+                            type="text"
+                            value={this.state.Nome}
+                            onChange={this.handleInputChange}
+                            className="form-control"
+                        />
                     </div>
                 </div>
                 <div className="form-group row">

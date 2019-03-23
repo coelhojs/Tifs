@@ -3,9 +3,11 @@ import React, { Component } from "react";
 class Header extends Component {
     render() {
         return (
-            <div className="page__title text-center">
-                <h1>Cadastro Inicial</h1>
-            </div>
+            <header className="text-center">
+                <div className="header-logo">
+                    <img src="/img/logo-tifs.png" alt="" />
+                </div>
+            </header>
         );
     }
 }
