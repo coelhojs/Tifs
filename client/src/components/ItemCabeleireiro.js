@@ -1,8 +1,8 @@
 import React from "react";
 
-const ItemCliente = ({ clientes }) => {
-    const key = clientes.id;
-    const nome = clientes.Nome;
+const ItemCabeleireiro = ({ cabeleireiros }) => {
+    const key = cabeleireiros.id;
+    const nome = cabeleireiros.Nome;
 
     return (
         <div className="col-md-3 card">
@@ -22,4 +22,4 @@ const ItemCliente = ({ clientes }) => {
     );
 };
 
-export default ItemCliente;
+export default ItemCabeleireiro;

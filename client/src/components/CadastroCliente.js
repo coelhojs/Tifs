@@ -36,7 +36,15 @@ class CadastroCliente extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         api.post("/Clientes", {
-            cliente: this.state
+            IdCliente: "2",
+            Nome: this.state.Nome,
+            CPF: this.state.CPF,
+            AutorizaFotos: this.state.AutorizaFotos,
+            DataNascimento: this.state.DataNascimento,
+            Telefone: this.state.Telefone,
+            Email: this.state.Email,
+            Alergias: this.state.Alergias,
+            Gestante: this.state.Gestante
         }).then(function(response) {
             console.log(response);
         });
@@ -130,8 +138,8 @@ class CadastroCliente extends React.Component {
                                 id="alergia-nao"
                                 name="Alergias"
                                 value={(this.state.Alergias = false)}
-                                onChange={this.handleInputChange}
                                 checked={true}
+                                onChange={this.handleInputChange}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="alergia-nao">

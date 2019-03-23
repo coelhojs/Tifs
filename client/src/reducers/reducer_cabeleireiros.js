@@ -1,17 +1,17 @@
 import _ from "lodash";
-import { FETCH_CLIENTES, FETCH_CLIENTE, CREATE_CLIENTE, DELETE_CLIENTE } from "../actions/index";
+import { FETCH_CABELEIREIROS, FETCH_CABELEIREIRO, CREATE_CABELEIREIRO, DELETE_CABELEIREIRO } from "../actions/index";
 
 export default function(state = {}, action) {
     switch (action.type) {
-        case FETCH_CLIENTES:
+        case FETCH_CABELEIREIROS:
             console.log(action);
 
             return action.payload.data;
-        case FETCH_CLIENTE:
+        case FETCH_CABELEIREIRO:
             return { ...state, [action.payload.data.id]: action.payload.data };
-        case CREATE_CLIENTE:
+        case CREATE_CABELEIREIRO:
             return { ...state, [action.payload.data.id]: action.payload.data };
-        case DELETE_CLIENTE:
+        case DELETE_CABELEIREIRO:
             return _.omit(state, action.payload.data.id);
         default:
             return state;

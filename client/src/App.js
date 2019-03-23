@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import CadastroCliente from "./components/CadastroCliente";
 import Home from "./containers/Home";
 import ListaClientes from "./components/ListaClientes";
+import CadastroCabeleireiro from "./components/CadastroCabeleireiro";
+import ListaCabeleireiros from "./components/ListaCabeleireiros";
 
 class App extends Component {
     render() {
@@ -15,11 +17,10 @@ class App extends Component {
                     <br />
 
                     <Route exact path="/" component={Home} />
-                    <Route
-                        path="/cadastroCliente"
-                        component={CadastroCliente}
-                    />
-                    <Route path="/listaClientes" component={ListaClientes} />
+                    <Route path="/CadastroCliente" component={CadastroCliente} />
+                    <Route path="/ListaClientes" component={ListaClientes} />
+                    <Route path="/CadastroCabeleireiro" component={CadastroCabeleireiro} />
+                    <Route path="/ListaCabeleireiros" component={ListaCabeleireiros} />
                 </div>
             </Router>
         );
