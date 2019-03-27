@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { create } from "apisauce";
 import { api } from "../api/index";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class CadastroCliente extends React.Component {
+class CadastroCliente extends Component {
     constructor(props) {
         super(props);
         this.state = {
