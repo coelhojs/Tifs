@@ -1,161 +1,59 @@
 {
-  "Clientes": [
-    {
-      "id": 1,
-      "Nome": "Cliente 1",
-      "CPF": "string",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-03-22T23:45:03.98",
-      "Telefone": "string",
-      "Email": "string",
-      "Alergias": "string",
-      "Gestante": true
-    },
-    {
-      "id": 2,
-      "Nome": "Cliente 2",
-      "CPF": "string",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-03-22T23:45:03.98",
-      "Telefone": "string",
-      "Email": "string",
-      "Alergias": "string",
-      "Gestante": true
-    },
-    {
-      "id": 3,
-      "Nome": "Cliente 3",
-      "CPF": "string",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-03-22T23:45:03.98",
-      "Telefone": "string",
-      "Email": "string",
-      "Alergias": "string",
-      "Gestante": true
-    },
-    {
-      "IdCliente": "2",
-      "DataNascimento": "2019-03-22T21:06:40.585Z",
-      "Telefone": "string",
-      "Email": "string",
-      "Alergias": "string",
-      "Gestante": true,
-      "id": 4
-    },
-    {
-      "cliente": {
-        "id": "",
-        "Alergias": false,
-        "Gestante": false
-      },
-      "id": 5
-    },
-    {
-      "cliente": {
-        "id": "",
-        "Nome": "Cliente teste",
-        "CPF": "1233333333333333333333333333",
-        "AutorizaFotos": true,
-        "DataNascimento": "2019-01-01",
-        "Telefone": "1111111111111111111111111111111",
-        "Email": "ccccc@com.com",
-        "Alergias": false,
-        "Gestante": false
-      },
-      "id": 6
-    },
-    {
-      "cliente": {
-        "id": "",
-        "Nome": "CRISTIANO COELHO DE JESUS SOUZA",
-        "CPF": "1",
-        "AutorizaFotos": true,
-        "DataNascimento": "2019-01-01",
-        "Telefone": "31985877928",
-        "Email": "ccoelho.me@gmail.com",
-        "Alergias": false,
-        "Gestante": false
-      },
-      "id": 7
-    },
-    {
-      "cliente": {
-        "id": "",
-        "Nome": "CRISTIANO COELHO DE JESUS SOUZA",
-        "CPF": "1",
-        "AutorizaFotos": true,
-        "DataNascimento": "2019-01-01",
-        "Telefone": "31985877928",
-        "Email": "ccoelho.me@gmail.com",
-        "Alergias": false,
-        "Gestante": false
-      },
-      "id": 8
-    },
-    {
-      "event": {
-        "dispatchConfig": null,
-        "_targetInst": null,
-        "_dispatchListeners": null,
-        "_dispatchInstances": null,
-        "nativeEvent": null,
-        "type": null,
-        "target": null,
-        "eventPhase": null,
-        "bubbles": null,
-        "cancelable": null,
-        "defaultPrevented": null,
-        "isTrusted": null
-      },
-      "id": 9
-    },
-    {
-      "data": {},
-      "id": 10
-    },
-    {
-      "IdCliente": "2",
-      "Nome": "Cliente 100",
-      "CPF": "",
-      "AutorizaFotos": true,
-      "DataNascimento": "",
-      "Telefone": "",
-      "Email": "",
-      "Alergias": false,
-      "Gestante": false,
-      "id": 11
-    },
-    {
-      "Nome": "ANGELINA APARECIDA ALVES",
-      "Telefone": "",
-      "Email": "pinkflower246@gmail.com",
-      "id": 12
-    }
-  ],
-  "Cabeleireiros": [
-    {
-      "id": 1,
-      "Nome": "José",
-      "telefone": 1122323,
-      "email": "jose@tifs.com.br"
-    },
-    {
-      "id": 2,
-      "Nome": "Pricila",
-      "telefone": 141522323,
-      "email": "pricila@tifs.com.br"
-    },
-    {
-      "id": 3,
-      "Nome": "Erika",
-      "telefone": 717122323,
-      "email": "erika@tifs.com.br"
-    },
-    {
-      "Nome": "ANGELINA APARECIDA ALVES",
-      "Telefone": "",
-      "Email": "pinkflower246@gmail.com",
-      "id": 4
-    }
-  ]
+    "Clientes": [
+        {
+            "id": 1,
+            "Nome": "Maria do Nascimento",
+            "CPF": "14574869581",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-03-25T11:25:03.98",
+            "Telefone": "993847182",
+            "Email": "maria.nasc@gmail.com",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 2,
+            "Nome": "Henrique G. Castro",
+            "CPF": "83740591837",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-08-14T13:12:03.98",
+            "Telefone": "998841113",
+            "Email": "hgcastro@gmail.com",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 3,
+            "Nome": "Ana V. Rodrigues",
+            "CPF": "91837485799",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-02-17T23:33:01.98",
+            "Telefone": "997487619",
+            "Email": "anarodr@yahoo.com.br",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 4,
+            "Nome": "Isabela do Carmo",
+            "CPF": "837163849183",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-02-17T23:33:01.98",
+            "Telefone": "998371849",
+            "Email": "isa.carmo@yahoo.com.br",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 5,
+            "Nome": "Bruna Miorini",
+            "CPF": "847586711244",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-01-17T23:13:09.98",
+            "Telefone": "996779183",
+            "Email": "brunamiorini@uol.com.br",
+            "Alergias": false,
+            "Gestante": false
+        }
+    ]
 }

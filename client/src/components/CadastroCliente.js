@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { create } from "apisauce";
 import { api } from "../api/index";
 
-
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 
 class CadastroCliente extends Component {
     constructor(props) {
@@ -52,7 +50,6 @@ class CadastroCliente extends Component {
         return isError;
     };
 
-
     onSubmit = e => {
         e.preventDefault();
         // this.props.onSubmit(this.state);
@@ -67,8 +64,6 @@ class CadastroCliente extends Component {
             });
         }
     };
-
-
 
     handleInputChange(event) {
         const target = event.target;
@@ -97,31 +92,29 @@ class CadastroCliente extends Component {
         });
     }
 
-
-
     render() {
         return (
             <form className="container">
                 <div className="form-group row">
-                    <label className="col col-3">Nome</label>
-                    <div className="col col-9">
+                    <label className="col-3">Nome</label>
+                    <div className="col-9">
                         <input
                             name="Nome"
                             type="text"
-                            value={this.state.Nome}
-                            onChange={e => this.change(e)}
-                            errorText={this.state.NomeError}
+                            value={this.setState.Nome}
+                            // onChange={e => this.change(e)}
+                            // errorText={this.state.NomeError}
                             className="form-control"
                             placeholder="Digite o nome"
                         />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-3">CPF</label>
-                    <div className="col col-9">
+                    <label className="col-3">CPF</label>
+                    <div className="col-9">
                         <input
                             name="CPF"
-                            type="number"
+                            type="text"
                             value={this.state.CPF}
                             onChange={this.handleInputChange}
                             className="form-control"
@@ -130,8 +123,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-3">Data de nascimento</label>
-                    <div className="col col-9">
+                    <label className="col-4">Data de nascimento</label>
+                    <div className="col-8">
                         <input
                             name="DataNascimento"
                             type="date"
@@ -142,8 +135,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-3">Telefone</label>
-                    <div className="col col-9">
+                    <label className="col-3">Telefone</label>
+                    <div className="col-9">
                         <input
                             name="Telefone"
                             type="tel"
@@ -155,8 +148,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-3">E-mail</label>
-                    <div className="col col-9">
+                    <label className="col-3">E-mail</label>
+                    <div className="col-9">
                         <input
                             name="Email"
                             type="email"
@@ -168,15 +161,14 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-12">Você já teve episódios de alergia a algum produto cosmético?</label>
-                    <div className="col col-0">
+                    <label className="col-12">Você já teve episódios de alergia a algum produto cosmético?</label>
+                    <div className="col">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
                                 type="radio"
                                 id="alergia-sim"
                                 name="Alergias"
-                                value={(this.state.Alergias = true)}
-                                onChange={this.handleInputChange}
+                                onChange={(this.state.Alergias = true)}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="alergia-sim">
@@ -188,9 +180,8 @@ class CadastroCliente extends Component {
                                 type="radio"
                                 id="alergia-nao"
                                 name="Alergias"
-                                value={(this.state.Alergias = false)}
                                 checked={true}
-                                onChange={this.handleInputChange}
+                                onChange={(this.state.Alergias = false)}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="alergia-nao">
@@ -200,15 +191,14 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col col-12">Você está grávida?</label>
-                    <div className="col col-0">
+                    <label className="col-12">Você está em período de gravidez?</label>
+                    <div className="col">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
                                 type="radio"
                                 id="gravidez-sim"
                                 name="Gestante"
-                                value={(this.state.Gestante = true)}
-                                onChange={this.handleInputChange}
+                                onChange={(this.state.Gestante = true)}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="gravidez-sim">
@@ -221,8 +211,7 @@ class CadastroCliente extends Component {
                                 id="gravidez-nao"
                                 name="Gestante"
                                 checked={true}
-                                value={(this.state.Gestante = false)}
-                                onChange={this.handleInputChange}
+                                onChange={(this.state.Gestante = false)}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="gravidez-nao">
@@ -240,8 +229,7 @@ class CadastroCliente extends Component {
                         className="custom-control-input"
                         id="autorizacao-fotografia"
                         name="AutorizaFotos"
-                        value={(this.state.AutorizaFotos = true)}
-                        onChange={this.handleInputChange}
+                        onChange={(this.state.AutorizaFotos = true)}
                     />
                     <label className="custom-control-label" htmlFor="autorizacao-fotografia">
                         Autorizo o registro fotográfico do resultado do meu tratamento capilar para o controle do
@@ -249,12 +237,14 @@ class CadastroCliente extends Component {
                     </label>
                 </div>
                 <br />
-                <button type="submit" className="btn btn-success">
-                    Cadastrar
-                </button>
-                <button className="btn btn-danger">
-                    <Link to="/">Cancelar</Link>
-                </button>
+                <div className="text-center">
+                    <button type="submit" className="btn btn-success">
+                        Cadastrar
+                    </button>
+                    <button type="reset" className="btn btn-danger">
+                        <Link to="/">Cancelar</Link>
+                    </button>
+                </div>
                 <br />
             </form>
         );
@@ -262,4 +252,3 @@ class CadastroCliente extends Component {
 }
 
 export default CadastroCliente;
-
