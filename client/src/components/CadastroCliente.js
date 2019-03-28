@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { create } from "apisauce";
 import { api } from "../api/index";
 
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 class CadastroCliente extends Component {
     constructor(props) {
@@ -10,6 +12,7 @@ class CadastroCliente extends Component {
         this.state = {
             id: "",
             Nome: "",
+            NomeError: "",
             CPF: "",
             AutorizaFotos: "",
             DataNascimento: "",
@@ -22,6 +25,50 @@ class CadastroCliente extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    change = e => {
+        this.props.onChange({ [e.target.name]: e.target.value });
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
+
+    validate = () => {
+        let isError = false;
+        const errors = {
+            Nome: ""
+        };
+
+        if (this.state.Nome.length < 5) {
+            isError = true;
+            errors.NomeError = "O nome não pode ser menor que 5 caracteres";
+        }
+
+        this.setState({
+            ...this.state,
+            ...errors
+        });
+
+        return isError;
+    };
+
+
+    onSubmit = e => {
+        e.preventDefault();
+        // this.props.onSubmit(this.state);
+        const err = this.validate();
+        if (!err) {
+            // clear form
+            this.setState({
+                Nome: ""
+            });
+            this.props.onChange({
+                Nome: ""
+            });
+        }
+    };
+
+
 
     handleInputChange(event) {
         const target = event.target;
@@ -50,25 +97,28 @@ class CadastroCliente extends Component {
         });
     }
 
+
+
     render() {
         return (
-            <form className="container" onSubmit={this.handleSubmit}>
+            <form className="container">
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">Nome</label>
-                    <div className="col">
+                    <label className="col col-3">Nome</label>
+                    <div className="col col-9">
                         <input
                             name="Nome"
                             type="text"
                             value={this.state.Nome}
-                            onChange={this.handleInputChange}
+                            onChange={e => this.change(e)}
+                            errorText={this.state.NomeError}
                             className="form-control"
                             placeholder="Digite o nome"
                         />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">CPF</label>
-                    <div className="col">
+                    <label className="col col-3">CPF</label>
+                    <div className="col col-9">
                         <input
                             name="CPF"
                             type="number"
@@ -80,8 +130,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">Data de nascimento</label>
-                    <div className="col">
+                    <label className="col col-3">Data de nascimento</label>
+                    <div className="col col-9">
                         <input
                             name="DataNascimento"
                             type="date"
@@ -92,8 +142,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">Telefone</label>
-                    <div className="col">
+                    <label className="col col-3">Telefone</label>
+                    <div className="col col-9">
                         <input
                             name="Telefone"
                             type="tel"
@@ -105,8 +155,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">E-mail</label>
-                    <div className="col">
+                    <label className="col col-3">E-mail</label>
+                    <div className="col col-9">
                         <input
                             name="Email"
                             type="email"
@@ -118,8 +168,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <div className="col-sm-2">Você já teve episódios de alergia a algum produto cosmético?</div>
-                    <div className="col-sm-10">
+                    <label className="col col-12">Você já teve episódios de alergia a algum produto cosmético?</label>
+                    <div className="col col-0">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
                                 type="radio"
@@ -150,8 +200,8 @@ class CadastroCliente extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <div className="col-sm-2">Você está grávida?</div>
-                    <div className="col-sm-10">
+                    <label className="col col-12">Você está grávida?</label>
+                    <div className="col col-0">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
                                 type="radio"
@@ -200,7 +250,7 @@ class CadastroCliente extends Component {
                 </div>
                 <br />
                 <button type="submit" className="btn btn-success">
-                    OK
+                    Cadastrar
                 </button>
                 <button className="btn btn-danger">
                     <Link to="/">Cancelar</Link>
@@ -212,3 +262,4 @@ class CadastroCliente extends Component {
 }
 
 export default CadastroCliente;
+

@@ -41,12 +41,9 @@ class CadastroCabeleireiro extends React.Component {
     render() {
         return (
             <form className="container" onSubmit={this.handleSubmit}>
-                <div className="foto-container text-center">
-                    <img src="../profile-img.jpg" alt="imagem" />
-                </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">Nome</label>
-                    <div className="col">
+                    <label className="col col-3">Nome</label>
+                    <div className="col col-9">
                         <input
                             name="Nome"
                             type="text"
@@ -57,8 +54,8 @@ class CadastroCabeleireiro extends React.Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">Telefone</label>
-                    <div className="col">
+                    <label className="col col-3">Telefone</label>
+                    <div className="col col-9">
                         <input
                             name="Telefone"
                             type="tel"
@@ -69,8 +66,8 @@ class CadastroCabeleireiro extends React.Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3 col-form-label">E-mail</label>
-                    <div className="col">
+                    <label className="col col-3">E-mail</label>
+                    <div className="col col-9">
                         <input
                             name="Email"
                             type="email"
