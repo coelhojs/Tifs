@@ -53,9 +53,6 @@ class CadastroCliente extends Component {
     render() {
         return (
             <form className="container" onSubmit={this.handleSubmit}>
-                <div className="foto-container text-center">
-                    <img src="../profile-img.jpg" alt="imagem" />
-                </div>
                 <div className="form-group row">
                     <label className="col-3 col-form-label">Nome</label>
                     <div className="col">
@@ -65,6 +62,7 @@ class CadastroCliente extends Component {
                             value={this.state.Nome}
                             onChange={this.handleInputChange}
                             className="form-control"
+                            placeholder="Digite o nome"
                         />
                     </div>
                 </div>
@@ -77,6 +75,7 @@ class CadastroCliente extends Component {
                             value={this.state.CPF}
                             onChange={this.handleInputChange}
                             className="form-control"
+                            placeholder="Digite o cpf"
                         />
                     </div>
                 </div>
@@ -101,6 +100,7 @@ class CadastroCliente extends Component {
                             value={this.state.Telefone}
                             onChange={this.handleInputChange}
                             className="form-control"
+                            placeholder="Digite o telefone"
                         />
                     </div>
                 </div>
@@ -113,6 +113,7 @@ class CadastroCliente extends Component {
                             value={this.state.Email}
                             onChange={this.handleInputChange}
                             className="form-control"
+                            placeholder="Digite o e-mail"
                         />
                     </div>
                 </div>

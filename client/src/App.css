@@ -1,7 +1,19 @@
 @import url(../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css);
 @import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+body {
+  background: url("style/img/back-img.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 label {
-  font-size: 2rem; }
+  color: white;
+  text-shadow: 10px 10px 10px #000000; }
+
+.col-sm-2 {
+  color: white;
+  text-shadow: 10px 10px 10px #000000; }
 
 body {
   margin: 0;
