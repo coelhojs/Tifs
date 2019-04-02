@@ -1,8 +1,6 @@
 import React from "react";
-import { create } from "apisauce";
-import { api } from "../api/index";
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { api } from "../actions/index";
 
 class CadastroCabeleireiro extends React.Component {
     constructor(props) {

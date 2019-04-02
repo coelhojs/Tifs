@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { create } from "apisauce";
-import { api } from "../api/index";
-
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class CadastroCliente extends Component {
     constructor(props) {
@@ -10,7 +7,6 @@ class CadastroCliente extends Component {
         this.state = {
             id: "",
             Nome: "",
-            NomeError: "",
             CPF: "",
             AutorizaFotos: "",
             DataNascimento: "",
@@ -20,90 +16,32 @@ class CadastroCliente extends Component {
             Gestante: ""
         };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    change = e => {
-        this.props.onChange({ [e.target.name]: e.target.value });
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
-
-    validate = () => {
-        let isError = false;
-        const errors = {
-            Nome: ""
-        };
-
-        if (this.state.Nome.length < 5) {
-            isError = true;
-            errors.NomeError = "O nome não pode ser menor que 5 caracteres";
-        }
-
-        this.setState({
-            ...this.state,
-            ...errors
-        });
-
-        return isError;
-    };
-
-    onSubmit = e => {
-        e.preventDefault();
-        // this.props.onSubmit(this.state);
-        const err = this.validate();
-        if (!err) {
-            // clear form
-            this.setState({
-                Nome: ""
-            });
-            this.props.onChange({
-                Nome: ""
-            });
-        }
-    };
-
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        });
+    handleChange(event) {
+        this.setState({ value: event.target.value });
     }
 
     handleSubmit(event) {
+        alert("A name was submitted: " + this.state.value);
         event.preventDefault();
-        api.post("/Clientes", {
-            IdCliente: "2",
-            Nome: this.state.Nome,
-            CPF: this.state.CPF,
-            AutorizaFotos: this.state.AutorizaFotos,
-            DataNascimento: this.state.DataNascimento,
-            Telefone: this.state.Telefone,
-            Email: this.state.Email,
-            Alergias: this.state.Alergias,
-            Gestante: this.state.Gestante
-        }).then(function(response) {
-            console.log(response);
-        });
     }
 
     render() {
         return (
-            <form className="container">
+            <form className="container" onSubmit={this.handleSubmit}>
                 <div className="form-group row">
                     <label className="col-3">Nome</label>
                     <div className="col-9">
                         <input
                             name="Nome"
                             type="text"
-                            value={this.setState.Nome}
+                            value={this.state.Nome}
                             // onChange={e => this.change(e)}
                             // errorText={this.state.NomeError}
+                            onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o nome"
                         />
@@ -116,7 +54,7 @@ class CadastroCliente extends Component {
                             name="CPF"
                             type="text"
                             value={this.state.CPF}
-                            onChange={this.handleInputChange}
+                            onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o cpf"
                         />
@@ -129,7 +67,7 @@ class CadastroCliente extends Component {
                             name="DataNascimento"
                             type="date"
                             value={this.state.DataNascimento}
-                            onChange={this.handleInputChange}
+                            onChange={this.handleChange}
                             className="form-control"
                         />
                     </div>
@@ -141,7 +79,7 @@ class CadastroCliente extends Component {
                             name="Telefone"
                             type="tel"
                             value={this.state.Telefone}
-                            onChange={this.handleInputChange}
+                            onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o telefone"
                         />
@@ -154,7 +92,7 @@ class CadastroCliente extends Component {
                             name="Email"
                             type="email"
                             value={this.state.Email}
-                            onChange={this.handleInputChange}
+                            onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o e-mail"
                         />
@@ -168,7 +106,8 @@ class CadastroCliente extends Component {
                                 type="radio"
                                 id="alergia-sim"
                                 name="Alergias"
-                                onChange={(this.state.Alergias = true)}
+                                value={this.state.Alergias}
+                                onChange={this.handleChange}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="alergia-sim">
@@ -181,7 +120,8 @@ class CadastroCliente extends Component {
                                 id="alergia-nao"
                                 name="Alergias"
                                 checked={true}
-                                onChange={(this.state.Alergias = false)}
+                                value={this.state.Alergias}
+                                onChange={this.handleChange}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="alergia-nao">
@@ -195,11 +135,12 @@ class CadastroCliente extends Component {
                     <div className="col">
                         <div className="custom-control custom-radio custom-control-inline">
                             <input
-                                type="radio"
+                                className="custom-control-input"
                                 id="gravidez-sim"
                                 name="Gestante"
-                                onChange={(this.state.Gestante = true)}
-                                className="custom-control-input"
+                                onChange={this.handleChange}
+                                type="radio"
+                                value={(this.setState.Gestante = "true")}
                             />
                             <label className="custom-control-label" htmlFor="gravidez-sim">
                                 Sim
@@ -210,8 +151,8 @@ class CadastroCliente extends Component {
                                 type="radio"
                                 id="gravidez-nao"
                                 name="Gestante"
-                                checked={true}
-                                onChange={(this.state.Gestante = false)}
+                                value={(this.setState.Gestante = "false")}
+                                onChange={this.handleChange}
                                 className="custom-control-input"
                             />
                             <label className="custom-control-label" htmlFor="gravidez-nao">
@@ -229,7 +170,8 @@ class CadastroCliente extends Component {
                         className="custom-control-input"
                         id="autorizacao-fotografia"
                         name="AutorizaFotos"
-                        onChange={(this.state.AutorizaFotos = true)}
+                        value={this.state.AutorizaFotos}
+                        onChange={this.handleChange}
                     />
                     <label className="custom-control-label" htmlFor="autorizacao-fotografia">
                         Autorizo o registro fotográfico do resultado do meu tratamento capilar para o controle do

@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemCabeleireiro = ({ cabeleireiros }) => {
-    const key = cabeleireiros.id;
+    //const key = cabeleireiros.id;
     const nome = cabeleireiros.Nome;
 
     return (

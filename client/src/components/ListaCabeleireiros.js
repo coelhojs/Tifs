@@ -1,8 +1,7 @@
-import React, { Component } from "react";
 import _ from "lodash";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCabeleireiros } from "../actions/index";
-
 import ItemCabeleireiro from "./ItemCabeleireiro";
 
 class ListaCabeleireiros extends Component {
