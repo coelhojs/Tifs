@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+//import { BrowserRouter as Link } from "react-router-dom";
+import button from "../components/button";
+import input from "../components/input";
 
 class CadastroCliente extends Component {
     constructor(props) {
@@ -32,6 +34,8 @@ class CadastroCliente extends Component {
     render() {
         return (
             <form className="container" onSubmit={this.handleSubmit}>
+                <Input name={nome} label={Nome} inputType={text} />
+
                 <div className="form-group row">
                     <label className="col-3">Nome</label>
                     <div className="col-9">
@@ -180,12 +184,8 @@ class CadastroCliente extends Component {
                 </div>
                 <br />
                 <div className="text-center">
-                    <button type="submit" className="btn btn-success">
-                        Cadastrar
-                    </button>
-                    <button type="reset" className="btn btn-danger">
-                        <Link to="/">Cancelar</Link>
-                    </button>
+                    <Button type={"submit"} classes={"btn btn-success"} label={"Cadastrar"} linkTo={""} />
+                    <Button type={"reset"} classes={"btn btn-danger"} label={"Cancelar"} linkTo={"/"} />
                 </div>
                 <br />
             </form>

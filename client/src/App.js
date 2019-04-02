@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import CadastroCabeleireiro from "./components/CadastroCabeleireiro";
-import CadastroCliente from "./components/CadastroCliente";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import ListaCabeleireiro from "./components/ListaCabeleireiros";
-import ListaClientes from "./components/ListaClientes";
+import CadastroCabeleireiro from "./containers/CadastroCabeleireiro";
+import CadastroCliente from "./containers/CadastroCliente";
+import Header from "./containers/Header";
+import Home from "./containers/Home";
+import ListaCabeleireiro from "./containers/ListaCabeleireiros";
+import ListaClientes from "./containers/ListaClientes";
 
 class App extends Component {
     render() {
