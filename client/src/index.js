@@ -1,12 +1,11 @@
+import "bootstrap";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import ReduxPromise from "redux-promise";
-import reducers from "./reducers";
-
 import App from "./App";
-import "bootstrap";
+import reducers from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);

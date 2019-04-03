@@ -14,6 +14,7 @@ class App extends Component {
             <Router>
                 <div>
                     <Header />
+                    //TODO criar um routes.js com as rotas - pesquisar no google
                     <Route exact path="/" component={Home} />
                     <Route path="/CadastroCliente" component={CadastroCliente} />
                     <Route path="/ListaClientes" component={ListaClientes} />
