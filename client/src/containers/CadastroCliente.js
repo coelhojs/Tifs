@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-//import { BrowserRouter as Link } from "react-router-dom";
-import button from "../components/button";
-import input from "../components/input";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 class CadastroCliente extends Component {
     constructor(props) {
@@ -34,30 +33,23 @@ class CadastroCliente extends Component {
     render() {
         return (
             <form className="container" onSubmit={this.handleSubmit}>
-                <Input name={nome} label={Nome} inputType={text} />
-
-                <div className="form-group row">
-                    <label className="col-3">Nome</label>
-                    <div className="col-9">
-                        <input
-                            name="Nome"
-                            type="text"
-                            value={this.state.Nome}
-                            // onChange={e => this.change(e)}
-                            // errorText={this.state.NomeError}
-                            onChange={this.handleChange}
-                            className="form-control"
-                            placeholder="Digite o nome"
-                        />
-                    </div>
-                </div>
+                <Input
+                    name={"nome"}
+                    label={"Nome"}
+                    labelClasses={"col-3"}
+                    inputClasses={"col-9"}
+                    inputType={"text"}
+                    onChange={this.handleChange}
+                    placeholder="Digite o nome"
+                    value={this.setState.Nome}
+                />
                 <div className="form-group row">
                     <label className="col-3">CPF</label>
                     <div className="col-9">
                         <input
                             name="CPF"
                             type="text"
-                            value={this.state.CPF}
+                            value={this.setState.CPF}
                             onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o cpf"
@@ -70,7 +62,7 @@ class CadastroCliente extends Component {
                         <input
                             name="DataNascimento"
                             type="date"
-                            value={this.state.DataNascimento}
+                            value={this.setState.DataNascimento}
                             onChange={this.handleChange}
                             className="form-control"
                         />
@@ -82,7 +74,7 @@ class CadastroCliente extends Component {
                         <input
                             name="Telefone"
                             type="tel"
-                            value={this.state.Telefone}
+                            value={this.setState.Telefone}
                             onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o telefone"
@@ -95,7 +87,7 @@ class CadastroCliente extends Component {
                         <input
                             name="Email"
                             type="email"
-                            value={this.state.Email}
+                            value={this.setState.Email}
                             onChange={this.handleChange}
                             className="form-control"
                             placeholder="Digite o e-mail"
@@ -110,7 +102,7 @@ class CadastroCliente extends Component {
                                 type="radio"
                                 id="alergia-sim"
                                 name="Alergias"
-                                value={this.state.Alergias}
+                                value={(this.setState.Alergias = "true")}
                                 onChange={this.handleChange}
                                 className="custom-control-input"
                             />
@@ -123,8 +115,7 @@ class CadastroCliente extends Component {
                                 type="radio"
                                 id="alergia-nao"
                                 name="Alergias"
-                                checked={true}
-                                value={this.state.Alergias}
+                                value={(this.setState.Alergias = "false")}
                                 onChange={this.handleChange}
                                 className="custom-control-input"
                             />
