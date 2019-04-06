@@ -1,79 +1,24 @@
 body {
-  background: url('style/img/back-img.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background-color: #172046;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+.table-hover,
+form {
+    padding-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+button {
+    color: white;
 }
 
 label {
-  color: white;
-  font-size: 20px;
-  text-shadow: 10px 10px 10px #000000;
-}
-
-.col-sm-2 {
-  color: white;
-  font-size: 20px;
-  text-shadow: 10px 10px 10px #000000;
-}
-
-container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.col {
-  position:relative;
-  min-height: 1px;
-  float: left;
-  padding: 0 20px;
-}
-
-.col-1 {
-  width: 8.333%;
-}
-
-.col-2 {
-  width: 16.666%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-4 {
-  width: 33.333%;
-}
-
-.col-5 {
-  width: 41.666%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-7 {
-  width: 58.333%;
-}
-
-.col-8 {
-  width: 66.666%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-10 {
-  width: 83.333%;
-}
-
-.col-11 {
-  width: 91.666%;
-}
-
-.col-12 {
-  width: 100%;
+    font-size: 1rem;
+    color: white;
+    font-size: 20px;
+    text-shadow: 10px 10px 10px #000000;
 }

@@ -1,36 +1,63 @@
 import { create } from "apisauce";
+import history from '../history';
+import {
+    FETCH_CLIENTES,
+    FETCH_CLIENTE,
+    CREATE_CLIENTE,
+    DELETE_CLIENTE,
+    FETCH_CABELEIREIROS,
+    FETCH_CABELEIREIRO,
+    CREATE_CABELEIREIRO,
+    DELETE_CABELEIREIRO
+} from './types';
 
 export const api = create({
-    baseURL: "http://localhost:3004",
-    headers: { Accept: "application/vnd.github.v3+json" }
+    baseURL: "http://localhost:3004"
 });
 
-export const FETCH_CLIENTES = "FETCH_CLIENTES";
-export const FETCH_CLIENTE = "FETCH_CLIENTE";
-export const CREATE_CLIENTE = "CREATE_CLIENTE";
-export const DELETE_CLIENTE = "DELETE_CLIENTE";
+export const createCliente = formValues => async (dispatch, getState) => {
+    //const { userId } = getState().auth;
+    //const response = await api.post('/Clientes', { ...formValues, userId });
+    const response = await api.post('/Clientes', { ...formValues });
 
-export const FETCH_CABELEIREIROS = "FETCH_CABELEIREIROS";
-export const FETCH_CABELEIREIRO = "FETCH_CABELEIREIRO";
-export const CREATE_CABELEIREIRO = "CREATE_CABELEIREIRO";
-export const DELETE_CABELEIREIRO = "DELETE_CABELEIREIRO";
+    dispatch({ type: CREATE_CLIENTE, payload: response });
+    history.push('/');
+};
 
-export function fetchClientes() {
-    const url = `/Clientes`;
-    const request = api.get(url);
+export const fetchClientes = () => async dispatch => {
+    const response = await api.get('/Clientes');
 
-    return {
-        type: FETCH_CLIENTES,
-        payload: request
-    };
-}
+    dispatch({ type: FETCH_CLIENTES, payload: response });
+};
 
-export function fetchCabeleireiros() {
-    const url = `/Cabeleireiros`;
-    const request = api.get(url);
 
-    return {
-        type: FETCH_CABELEIREIROS,
-        payload: request
-    };
-}
+
+// export function createCliente(props) {
+//     const url = "/Clientes";
+//     const request = api.post(url, props);
+
+//     return {
+//         type: CREATE_CLIENTE,
+//         payload: request
+//     };
+// }
+
+// export function fetchClientes() {
+//     const url = `/Clientes`;
+//     const request = api.get(url);
+
+//     return {
+//         type: FETCH_CLIENTES,
+//         payload: request
+//     };
+// }
+
+// export function fetchCabeleireiros() {
+//     const url = `/Cabeleireiros`;
+//     const request = api.get(url);
+
+//     return {
+//         type: FETCH_CABELEIREIROS,
+//         payload: request
+//     };
+// }

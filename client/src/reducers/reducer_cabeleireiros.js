@@ -1,7 +1,7 @@
 import _ from "lodash";
-import { FETCH_CABELEIREIROS, FETCH_CABELEIREIRO, CREATE_CABELEIREIRO, DELETE_CABELEIREIRO } from "../actions/index";
+import { FETCH_CABELEIREIROS, FETCH_CABELEIREIRO, CREATE_CABELEIREIRO, DELETE_CABELEIREIRO } from "../actions/types";
 
-export default function(state = {}, action) {
+export default function (state = {}, action) {
     switch (action.type) {
         case FETCH_CABELEIREIROS:
             console.log(action);

@@ -2,17 +2,36 @@ import "bootstrap";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
-import ReduxPromise from "redux-promise";
+import { Router, Route, Switch } from "react-router-dom";
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
 import App from "./App";
+import Clientes from "./containers/Clientes";
+import Anamnese from "./containers/Anamnese";
+import Header from "./containers/Header";
+import Home from "./containers/Home";
 import reducers from "./reducers";
+import history from './history'
 import * as serviceWorker from "./serviceWorker";
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+    reducers,
+    composeEnhancers(applyMiddleware(reduxThunk))
+);
 
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-        <App />
+    <Provider store={store}>
+        <Router history={history}>
+            <App>
+                <Header />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/Clientes" component={Clientes} />
+                    <Route path="/Anamnese" component={Anamnese} />
+                </Switch>
+            </App>
+        </Router>
     </Provider>,
     document.querySelector("#root")
 );

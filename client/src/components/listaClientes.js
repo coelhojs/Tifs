@@ -11,13 +11,13 @@ class ListaClientes extends Component {
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <ItemCliente key={clientes.IdCiente} clientes={clientes} />;
+            return <ItemCliente key={clientes.id} clientes={clientes} />;
         });
     }
 
     render() {
         return (
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
