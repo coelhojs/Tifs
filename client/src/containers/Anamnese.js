@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import ServicoForm from "../components/servicoForm";
 
 class Anamnese extends Component {
     render() {
-        return <div />;
+        return (
+            <div>
+                <ServicoForm onSubmit={this.onSubmit} />
+            </div>)
     }
 }
 

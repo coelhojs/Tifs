@@ -5,6 +5,7 @@ import {
     FETCH_CLIENTE,
     CREATE_CLIENTE,
     DELETE_CLIENTE,
+    CREATE_SERVICO,
     FETCH_CABELEIREIROS,
     FETCH_CABELEIREIRO,
     CREATE_CABELEIREIRO,
@@ -30,7 +31,14 @@ export const fetchClientes = () => async dispatch => {
     dispatch({ type: FETCH_CLIENTES, payload: response });
 };
 
+export const createServico = formValues => async (dispatch, getState) => {
+    //const { userId } = getState().auth;
+    //const response = await api.post('/Clientes', { ...formValues, userId });
+    const response = await api.post('/Anamnese', { ...formValues });
 
+    dispatch({ type: CREATE_SERVICO, payload: response });
+    history.push('/');
+};
 
 // export function createCliente(props) {
 //     const url = "/Clientes";
