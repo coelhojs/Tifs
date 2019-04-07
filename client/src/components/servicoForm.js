@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, formValueSelector, reduxForm } from 'redux-form';
 import { createServico, fetchClientes } from '../actions/index';
+import ServicoFormPage1 from "./servicoFormPage1";
+import ServicoFormPage2 from "./servicoFormPage2";
 let history = require("history").createBrowserHistory;
-let clientesArray = [];
 
 function getDate() {
     var currentTime = new Date(),
@@ -18,12 +19,27 @@ function getDate() {
     return [year, month, day].join('-');
 }
 
-
 const defaultValues = {
     data: getDate()
 }
 
 class ServicoForm extends Component {
+    constructor(props) {
+        super(props)
+        this.nextPage = this.nextPage.bind(this)
+        this.previousPage = this.previousPage.bind(this)
+        this.state = {
+            page: 1
+        }
+    }
+    nextPage() {
+        this.setState({ page: this.state.page + 1 })
+    }
+
+    previousPage() {
+        this.setState({ page: this.state.page - 1 })
+    }
+
     componentWillMount() {
         this.props.fetchClientes();
     }
@@ -34,102 +50,28 @@ class ServicoForm extends Component {
         });
     }
 
-
-
     onSubmit(props) {
         this.props.createServico(props, () => {
             history.push('/');
         });
-
     }
 
     render() {
-        const { handleSubmit, pristine, reset, submitting } = this.props;
+        //        const { renderClientes } = this.props;
+        const { page } = this.state
         return (
-            <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <div className="text-center"><h1>Cadastro de Serviço</h1></div>
-                <div className="form-group">
-                    <label className="col-3">Data</label>
-                    <div className="col-9">
-                        <Field name="data" component="input" type="date" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-3">Cliente</label>
-                    <div className="col-9">
-                        <Field name="cliente" component="select">
-                            {this.renderClientes()}
-                        </Field>
-                    </div>
-                </div>
-                <div>
-                    <label>Sexo</label>
-                    <div>
-                        <label>
-                            <Field name="sexo" component="input" type="radio" value="male" /> Masculino
-                    </label>
-                        <label>
-                            <Field name="sexo" component="input" type="radio" value="female" /> Feminino
-                    </label>
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-3">CPF</label>
-                    <div className="col-9">
-                        <Field name="cpf" component="input" type="text" placeholder="" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-3">Data de Nascimento</label>
-                    <div className="col-9">
-                        <Field name="dataNascimento" component="input" type="text" placeholder="" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-3">Telefone</label>
-                    <div className="col-9">
-                        <Field name="telefone" component="input" type="text" placeholder="" />
-                    </div>
-                </div>
-                <div className="form-group row">
-                    <label className="col-3">E-mail</label>
-                    <div className="col-9">
-                        <Field name="email" component="input" type="email" placeholder="" />
-                    </div>
-                </div>
-                <div className="form-group">
-                    <label>Você já teve episódios de alergia a algum produto cosmético?</label>
-                    <div>
-                        <label>
-                            <Field name="alergias" component="input" type="radio" value="true" /> Sim
-                    </label>
-                        <label>
-                            <Field name="alergias" component="input" type="radio" value="false" /> Não
-                    </label>
-                    </div>
-                </div>
-                <div className="form-group">
-                    <label>Você está em período de gravidez?</label>
-                    <div>
-                        <label>
-                            <Field name="gestante" component="input" type="radio" value="true" /> Sim
-                    </label>
-                        <label>
-                            <Field name="gestante" component="input" type="radio" value="false" /> Não
-                    </label>
-                    </div>
-                </div>
-                <button type="submit" className="btn btn-success" disabled={pristine || submitting} >
-                    Cadastrar
-                </button>
-                <button type="button" className="btn btn-danger" disabled={pristine || submitting} onClick={reset}>
-                    Cancelar
-                </button>
-            </form >
+            <div>
+                {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
+                {page === 2 && (
+                    <ServicoFormPage2
+                        previousPage={this.previousPage}
+                        onSubmit={this.nextPage}
+                    />
+                )}
+            </div>
         );
     }
 }
-
 
 function mapStateToProps(state) {
     return { initialValues: defaultValues, clientes: state.clientes };
