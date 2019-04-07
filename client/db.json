@@ -1,265 +1,59 @@
 {
-  "Clientes": [
-    {
-      "id": 1,
-      "Nome": "Maria do Nascimento",
-      "CPF": "14574869581",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-03-25T11:25:03.98",
-      "Telefone": "993847182",
-      "Email": "maria.nasc@gmail.com",
-      "Alergias": false,
-      "Gestante": false
-    },
-    {
-      "id": 2,
-      "Nome": "Henrique G. Castro",
-      "CPF": "83740591837",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-08-14T13:12:03.98",
-      "Telefone": "998841113",
-      "Email": "hgcastro@gmail.com",
-      "Alergias": false,
-      "Gestante": false
-    },
-    {
-      "id": 3,
-      "Nome": "Ana V. Rodrigues",
-      "CPF": "91837485799",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-02-17T23:33:01.98",
-      "Telefone": "997487619",
-      "Email": "anarodr@yahoo.com.br",
-      "Alergias": false,
-      "Gestante": false
-    },
-    {
-      "id": 4,
-      "Nome": "Isabela do Carmo",
-      "CPF": "837163849183",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-02-17T23:33:01.98",
-      "Telefone": "998371849",
-      "Email": "isa.carmo@yahoo.com.br",
-      "Alergias": false,
-      "Gestante": false
-    },
-    {
-      "id": 5,
-      "Nome": "Bruna Miorini",
-      "CPF": "847586711244",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-01-17T23:13:09.98",
-      "Telefone": "996779183",
-      "Email": "brunamiorini@uol.com.br",
-      "Alergias": false,
-      "Gestante": false
-    },
-    {
-      "nome": "a",
-      "id": 6
-    },
-    {
-      "nome": "a",
-      "id": 7
-    },
-    {
-      "nome": "Nome teste",
-      "sexo": "male",
-      "cpf": "1234092349023490234980",
-      "dataNascimento": "130912309812309312098",
-      "telefone": "132132890132908132098",
-      "email": "123089123098123@c.c",
-      "alergias": "true",
-      "gestante": "true",
-      "id": 8
-    },
-    {
-      "nome": "Nome teste",
-      "sexo": "male",
-      "cpf": "1234092349023490234980",
-      "dataNascimento": "130912309812309312098",
-      "telefone": "132132890132908132098",
-      "email": "123089123098123@c.c",
-      "alergias": "true",
-      "gestante": "true",
-      "id": 9
-    },
-    {
-      "nome": "Nome teste",
-      "sexo": "male",
-      "cpf": "1234092349023490234980",
-      "dataNascimento": "130912309812309312098",
-      "telefone": "132132890132908132098",
-      "email": "123089123098123@c.c",
-      "alergias": "true",
-      "gestante": "true",
-      "id": 10
-    },
-    {
-      "telefone": "k",
-      "id": 11
-    },
-    {
-      "cpf": "k",
-      "id": 12
-    },
-    {
-      "telefone": "k",
-      "id": 13
-    },
-    {
-      "telefone": "k",
-      "id": 14
-    },
-    {
-      "telefone": "k",
-      "id": 15
-    },
-    {
-      "telefone": "k",
-      "id": 16
-    },
-    {
-      "telefone": "k",
-      "id": 17
-    },
-    {
-      "telefone": "k",
-      "id": 18
-    },
-    {
-      "telefone": "k",
-      "id": 19
-    },
-    {
-      "telefone": "k",
-      "id": 20
-    },
-    {
-      "telefone": "k",
-      "id": 21
-    },
-    {
-      "nome": "oooo",
-      "id": 22
-    },
-    {
-      "nome": "oooo",
-      "id": 23
-    },
-    {
-      "nome": "m",
-      "id": 24
-    },
-    {
-      "cpf": "l",
-      "id": 25
-    },
-    {
-      "nome": "i",
-      "id": 26
-    },
-    {
-      "nome": "i",
-      "id": 27
-    },
-    {
-      "telefone": "i",
-      "id": 28
-    },
-    {
-      "telefone": "i",
-      "id": 29
-    },
-    {
-      "nome": "a",
-      "id": 30
-    },
-    {
-      "nome": "a",
-      "id": 31
-    },
-    {
-      "nome": "a",
-      "id": 32
-    },
-    {
-      "telefone": "l",
-      "id": 33
-    },
-    {
-      "telefone": "l",
-      "id": 34
-    },
-    {
-      "nome": "j",
-      "id": 35
-    },
-    {
-      "cpf": "j",
-      "id": 36
-    },
-    {
-      "cpf": "j",
-      "id": 37
-    },
-    {
-      "clientes": {},
-      "cabeleireiros": {},
-      "form": {},
-      "id": 38
-    },
-    {
-      "clientes": {},
-      "cabeleireiros": {},
-      "form": {},
-      "id": 39
-    },
-    {
-      "clientes": {},
-      "cabeleireiros": {},
-      "form": {},
-      "id": 40
-    },
-    {
-      "cpf": "k",
-      "id": 41
-    },
-    {
-      "cpf": "k",
-      "id": 42
-    },
-    {
-      "nome": "a",
-      "id": 43
-    },
-    {
-      "nome": "aa",
-      "id": 44
-    },
-    {
-      "gestante": "true",
-      "id": 45
-    },
-    {
-      "nome": "asdf",
-      "id": 46
-    },
-    {
-      "nome": "a",
-      "id": 47
-    },
-    {
-      "nome": "fffffffffffffffffffff",
-      "sexo": "female",
-      "id": 48
-    },
-    {
-      "nome": "teste",
-      "sexo": "female",
-      "cpf": "asdf",
-      "id": 49
-    }
-  ]
+    "Clientes": [
+        {
+            "id": 1,
+            "nome": "Maria do Nascimento",
+            "CPF": "14574869581",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-03-25T11:25:03.98",
+            "Telefone": "993847182",
+            "Email": "maria.nasc@gmail.com",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 2,
+            "nome": "Henrique G. Castro",
+            "CPF": "83740591837",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-08-14T13:12:03.98",
+            "Telefone": "998841113",
+            "Email": "hgcastro@gmail.com",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 3,
+            "nome": "Ana V. Rodrigues",
+            "CPF": "91837485799",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-02-17T23:33:01.98",
+            "Telefone": "997487619",
+            "Email": "anarodr@yahoo.com.br",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 4,
+            "nome": "Isabela do Carmo",
+            "CPF": "837163849183",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-02-17T23:33:01.98",
+            "Telefone": "998371849",
+            "Email": "isa.carmo@yahoo.com.br",
+            "Alergias": false,
+            "Gestante": false
+        },
+        {
+            "id": 5,
+            "nome": "Bruna Miorini",
+            "CPF": "847586711244",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-01-17T23:13:09.98",
+            "Telefone": "996779183",
+            "Email": "brunamiorini@uol.com.br",
+            "Alergias": false,
+            "Gestante": false
+        }
+    ]
 }

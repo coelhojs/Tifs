@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Field, formValueSelector, reduxForm } from 'redux-form';
 import { createServico, fetchClientes } from '../actions/index';
 let history = require("history").createBrowserHistory;
+let clientesArray = [];
 
 function getDate() {
     var currentTime = new Date(),
@@ -19,14 +20,21 @@ function getDate() {
 
 
 const defaultValues = {
-    data: getDate(),
-    clientesArray: fetchClientes()
+    data: getDate()
 }
 
 class ServicoForm extends Component {
     componentWillMount() {
         this.props.fetchClientes();
     }
+
+    renderClientes() {
+        return _.map(this.props.clientes, clientes => {
+            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+        });
+    }
+
+
 
     onSubmit(props) {
         this.props.createServico(props, () => {
@@ -37,7 +45,6 @@ class ServicoForm extends Component {
 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
-        console.log(defaultValues.clientesArray);
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Cadastro de Serviço</h1></div>
@@ -51,8 +58,7 @@ class ServicoForm extends Component {
                     <label className="col-3">Cliente</label>
                     <div className="col-9">
                         <Field name="cliente" component="select">
-                            {defaultValues.clientesArray.map(clientesArray =>
-                                <option value={clientesArray.nome} key={clientesArray.nome}>{clientesArray.nome}</option>)}
+                            {this.renderClientes()}
                         </Field>
                     </div>
                 </div>
@@ -126,7 +132,7 @@ class ServicoForm extends Component {
 
 
 function mapStateToProps(state) {
-    return { clientes: state.clientes };
+    return { initialValues: defaultValues, clientes: state.clientes };
 }
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()
@@ -136,9 +142,11 @@ ServicoForm = reduxForm({
 
 // You have to connect() to any reducers that you wish to connect to yourself
 ServicoForm = connect(
-    state => ({
-        initialValues: defaultValues // pull initial values from account reducer
-    }), { fetchClientes }
+    mapStateToProps,
+    // state => ({
+    //     initialValues: defaultValues // pull initial values from account reducer
+    // }),
+    { fetchClientes }
 )(ServicoForm)
 
 export default ServicoForm
