@@ -1,7 +1,8 @@
+import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { createServico } from '../actions/index';
+import { Field, formValueSelector, reduxForm } from 'redux-form';
+import { createServico, fetchClientes } from '../actions/index';
 let history = require("history").createBrowserHistory;
 
 function getDate() {
@@ -16,11 +17,16 @@ function getDate() {
     return [year, month, day].join('-');
 }
 
+
 const defaultValues = {
-    data: getDate()
+    data: getDate(),
+    clientesArray: fetchClientes()
 }
 
 class ServicoForm extends Component {
+    componentWillMount() {
+        this.props.fetchClientes();
+    }
 
     onSubmit(props) {
         this.props.createServico(props, () => {
@@ -31,6 +37,7 @@ class ServicoForm extends Component {
 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
+        console.log(defaultValues.clientesArray);
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Cadastro de Serviço</h1></div>
@@ -41,9 +48,12 @@ class ServicoForm extends Component {
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">Nome</label>
+                    <label className="col-3">Cliente</label>
                     <div className="col-9">
-                        <Field name="nome" component="input" type="text" placeholder="Nome completo" />
+                        <Field name="cliente" component="select">
+                            {defaultValues.clientesArray.map(clientesArray =>
+                                <option value={clientesArray.nome} key={clientesArray.nome}>{clientesArray.nome}</option>)}
+                        </Field>
                     </div>
                 </div>
                 <div>
@@ -114,13 +124,10 @@ class ServicoForm extends Component {
     }
 }
 
-// reduxForm: 1st is form config
-// connect: first argument is mapStateToProps, 2nd is mapDispatchToProps
-// export default reduxForm({
-//     form: 'servicoForm'
-// })(
-//     connect(null, { createServico })(ServicoForm)
-// );
+
+function mapStateToProps(state) {
+    return { clientes: state.clientes };
+}
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()
 ServicoForm = reduxForm({
@@ -131,8 +138,7 @@ ServicoForm = reduxForm({
 ServicoForm = connect(
     state => ({
         initialValues: defaultValues // pull initial values from account reducer
-    })
-    //{ load: loadAccount }               // bind account loading action creator
+    }), { fetchClientes }
 )(ServicoForm)
 
 export default ServicoForm

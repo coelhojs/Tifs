@@ -27,7 +27,6 @@ export const createCliente = formValues => async (dispatch, getState) => {
 
 export const fetchClientes = () => async dispatch => {
     const response = await api.get('/Clientes');
-
     dispatch({ type: FETCH_CLIENTES, payload: response });
 };
 
