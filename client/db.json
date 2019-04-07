@@ -55,5 +55,19 @@
             "Alergias": false,
             "Gestante": false
         }
+    ],
+    "Procedimentos": [
+        {
+            "id": 1,
+            "nome": "Coloração"
+        },
+        {
+            "id": 2,
+            "nome": "Mechas"
+        },
+        {
+            "id": 3,
+            "nome": "Corte"
+        }
     ]
 }

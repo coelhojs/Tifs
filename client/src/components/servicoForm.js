@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, formValueSelector, reduxForm } from 'redux-form';
-import { createServico, fetchClientes } from '../actions/index';
+import { createServico, fetchClientes, fetchProcedimentos } from '../actions/index';
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
 let history = require("history").createBrowserHistory;
@@ -42,11 +42,18 @@ class ServicoForm extends Component {
 
     componentWillMount() {
         this.props.fetchClientes();
+        this.props.fetchProcedimentos();
     }
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
             return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+        });
+    }
+
+    renderProcedimentos() {
+        return _.map(this.props.procedimentos, procedimentos => {
+            return <option key={procedimentos.id} value={procedimentos.nome}>{procedimentos.nome}</option>;
         });
     }
 
@@ -63,7 +70,7 @@ class ServicoForm extends Component {
             <div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
                 {page === 2 && (
-                    <ServicoFormPage2
+                    <ServicoFormPage2 procedimentos={this.renderProcedimentos()}
                         previousPage={this.previousPage}
                         onSubmit={this.nextPage}
                     />
@@ -74,7 +81,7 @@ class ServicoForm extends Component {
 }
 
 function mapStateToProps(state) {
-    return { initialValues: defaultValues, clientes: state.clientes };
+    return { initialValues: defaultValues, clientes: state.clientes, procedimentos: state.procedimentos };
 }
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()
@@ -88,7 +95,7 @@ ServicoForm = connect(
     // state => ({
     //     initialValues: defaultValues // pull initial values from account reducer
     // }),
-    { fetchClientes }
+    { fetchClientes, fetchProcedimentos }
 )(ServicoForm)
 
 export default ServicoForm

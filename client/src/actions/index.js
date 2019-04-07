@@ -5,7 +5,11 @@ import {
     FETCH_CLIENTE,
     CREATE_CLIENTE,
     DELETE_CLIENTE,
+    FETCH_SERVICOS,
+    FETCH_SERVICO,
     CREATE_SERVICO,
+    DELETE_SERVICO,
+    FETCH_PROCEDIMENTOS,
     FETCH_CABELEIREIROS,
     FETCH_CABELEIREIRO,
     CREATE_CABELEIREIRO,
@@ -28,6 +32,11 @@ export const createCliente = formValues => async (dispatch, getState) => {
 export const fetchClientes = () => async dispatch => {
     const response = await api.get('/Clientes');
     dispatch({ type: FETCH_CLIENTES, payload: response });
+};
+
+export const fetchProcedimentos = () => async dispatch => {
+    const response = await api.get('/Procedimentos');
+    dispatch({ type: FETCH_PROCEDIMENTOS, payload: response });
 };
 
 export const createServico = formValues => async (dispatch, getState) => {
