@@ -52,8 +52,18 @@ class ServicoForm extends Component {
     }
 
     renderProcedimentos() {
+        console.log(this.props.procedimentos);
         return _.map(this.props.procedimentos, procedimentos => {
             return <option key={procedimentos.id} value={procedimentos.nome}>{procedimentos.nome}</option>;
+        });
+    }
+
+    renderProdutos(procedimento) {
+        return _.map(this.props.procedimentos[procedimento].produtos, procedimentos => {
+            return <label>{this.props.procedimentos[procedimento].produtos}
+                <Field name="{this.props.procedimentos[procedimento].produtos}" component="input" type="text" placeholder="" />
+            </label>
+                ;
         });
     }
 
@@ -70,7 +80,7 @@ class ServicoForm extends Component {
             <div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
                 {page === 2 && (
-                    <ServicoFormPage2 procedimentos={this.renderProcedimentos()}
+                    <ServicoFormPage2 produtos={this.renderProdutos(1)} procedimentos={this.renderProcedimentos()}
                         previousPage={this.previousPage}
                         onSubmit={this.nextPage}
                     />
@@ -81,7 +91,7 @@ class ServicoForm extends Component {
 }
 
 function mapStateToProps(state) {
-    return { initialValues: defaultValues, clientes: state.clientes, procedimentos: state.procedimentos };
+    return { initialValues: defaultValues, clientes: state.clientes, procedimentos: state.procedimentos, produtos: state.produtos };
 }
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()

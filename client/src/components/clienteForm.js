@@ -12,7 +12,9 @@ class ClienteForm extends Component {
 
     }
 
+
     render() {
+        const sexo = ["Feminino", "Masculino", "Outros", "Prefiro não dizer"];
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -24,14 +26,19 @@ class ClienteForm extends Component {
                 </div>
                 <div>
                     <label>Sexo</label>
-                    <div>
+                    {/* <div>
                         <label>
                             <Field name="sexo" component="input" type="radio" value="male" /> Masculino
                     </label>
                         <label>
                             <Field name="sexo" component="input" type="radio" value="female" /> Feminino
                     </label>
-                    </div>
+                    </div> */}
+                    <div className="col-9">
+                        <Field name="sexo" component="select">
+                            {sexo.map(sexoOption =>
+                                <option value={sexoOption} key={sexoOption}>{sexoOption}</option>)}
+                        </Field></div>
                 </div>
                 <div className="form-group row">
                     <label className="col-3">CPF</label>

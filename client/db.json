@@ -59,15 +59,18 @@
     "Procedimentos": [
         {
             "id": 1,
-            "nome": "Coloração"
+            "nome": "Coloração",
+            "produtos": ["Tinta", "Oxidante"]
         },
         {
             "id": 2,
-            "nome": "Mechas"
+            "nome": "Mechas",
+            "produtos": ["Tinta", "Oxidante"]
         },
         {
             "id": 3,
-            "nome": "Corte"
+            "nome": "Corte",
+            "produtos": ["Shampoo", "Tesoura"]
         }
     ]
 }

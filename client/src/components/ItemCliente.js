@@ -1,10 +1,10 @@
 import React from "react";
 
 const ItemCliente = ({ clientes }) => {
-    const key = clientes.id;
-    const nome = clientes.Nome;
-    const cpf = clientes.CPF;
-    const dataNasc = clientes.DataNascimento;
+    const key = (clientes._id).slice(-4);
+    const nome = clientes.nome;
+    const cpf = clientes.cpf;
+    const dataNasc = clientes.nascimento;
 
     return (
         <tr>
