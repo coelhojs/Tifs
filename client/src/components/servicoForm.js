@@ -52,18 +52,21 @@ class ServicoForm extends Component {
     }
 
     renderProcedimentos() {
-        console.log(this.props.procedimentos);
+        let id = 0;
         return _.map(this.props.procedimentos, procedimentos => {
-            return <option key={procedimentos.id} value={procedimentos.nome}>{procedimentos.nome}</option>;
+            console.log(id);
+            return <option key={id++} value={procedimentos.nome}>{procedimentos.nome}</option>;
         });
     }
 
-    renderProdutos(procedimento) {
-        return _.map(this.props.procedimentos[procedimento].produtos, procedimentos => {
-            return <label>{this.props.procedimentos[procedimento].produtos}
-                <Field name="{this.props.procedimentos[procedimento].produtos}" component="input" type="text" placeholder="" />
+    renderProdutos() {
+        console.log(this.props.procedimentos);
+
+        return _.map(this.props.procedimentos.produtos, procedimento => {
+            return <label>{procedimento.id}
+
+                <Field name="{this.props.procedimentos.produtos}" component="input" type="text" placeholder="" />
             </label>
-                ;
         });
     }
 
@@ -80,7 +83,7 @@ class ServicoForm extends Component {
             <div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
                 {page === 2 && (
-                    <ServicoFormPage2 produtos={this.renderProdutos(1)} procedimentos={this.renderProcedimentos()}
+                    <ServicoFormPage2 produtos={this.renderProdutos()} procedimentos={this.renderProcedimentos()}
                         previousPage={this.previousPage}
                         onSubmit={this.nextPage}
                     />
