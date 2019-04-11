@@ -17,8 +17,8 @@ import {
 } from './types';
 
 export const api = create({
-    //baseURL: "https://quris.serveo.net"
-    baseURL: "http://localhost:3004"
+    baseURL: "https://quris.serveo.net"
+    // baseURL: "http://localhost:3004"
 });
 
 export const createCliente = formValues => async (dispatch, getState) => {
