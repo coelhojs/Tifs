@@ -5,11 +5,18 @@ class Header extends Component {
     render() {
         return (
             <header className="text-center">
-                <h5>Olá, Pricila</h5>
-                <div className="header-logo">
-                    <Link to="/">
-                        <img src="/img/logo-tifs.png" alt="" />
+                <ul className="nav justify-content-between">
+                    <li className="nav-item">
+                        <h5>Olá, Pricila</h5>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/">
+                            Início
                     </Link>
+                    </li>
+                </ul>
+                <div className="header-logo">
+                    <img src="/img/logo-tifs.png" alt="" />
                 </div>
             </header>
         );

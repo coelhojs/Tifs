@@ -20,3 +20,9 @@ label {
   color: white;
   font-size: 20px;
   text-shadow: 10px 10px 10px #000000; }
+
+header {
+  margin-bottom: 1rem; }
+
+body {
+  padding: 0.5rem; }

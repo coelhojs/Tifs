@@ -11,23 +11,16 @@ class ListaClientes extends Component {
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <ItemCliente key={clientes._id} clientes={clientes} />;
+            return <ItemCliente key={clientes.id} clientes={clientes} />;
         });
     }
 
     render() {
         return (
-            <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Cliente</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col-2">Data de nascimento</th>
-                    </tr>
-                </thead>
-                <tbody>{this.renderClientes()}</tbody>
-            </table>
+
+            <div className="list-group">
+                {this.renderClientes()}
+            </div>
         );
     }
 }

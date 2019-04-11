@@ -1,18 +1,25 @@
 import React from "react";
+import moment from "moment";
 
 const ItemCliente = ({ clientes }) => {
-    const key = (clientes._id).slice(-4);
+    //const key = (clientes.id).slice(-4);
+    const key = clientes.id;
     const nome = clientes.nome;
-    const cpf = clientes.cpf;
-    const dataNasc = clientes.nascimento;
+    const telefone = clientes.Telefone;
+    const cpf = clientes.CPF;
+    const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
+    const email = clientes.Email;
 
     return (
-        <tr>
-            <th scope="row">{key}</th>
-            <td>{nome}</td>
-            <td>{cpf}</td>
-            <td>{dataNasc}</td>
-        </tr>
+        <div className="list-group-item list-group-item-action flex-column align-items-start">
+            <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1">{nome}</h5>
+                {/* <small>{dataNasc}</small> */}
+            </div>
+            <p className="mb-1">{email}</p>
+            <p className="mb-1">{telefone}</p>
+        </div>
+
     );
 };
 

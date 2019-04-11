@@ -19,23 +19,15 @@ class ClienteForm extends Component {
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="form-group row">
-                    <label className="col-3">Nome</label>
-                    <div className="col-9">
-                        <Field name="nome" component="input" type="text" placeholder="Nome completo" />
+                    <label className="col-4">Nome</label>
+                    <div className="col-12">
+                        <Field name="nome" className="form-control" component="input" type="text" placeholder="Nome completo" />
                     </div>
                 </div>
-                <div>
-                    <label>Sexo</label>
-                    {/* <div>
-                        <label>
-                            <Field name="sexo" component="input" type="radio" value="male" /> Masculino
-                    </label>
-                        <label>
-                            <Field name="sexo" component="input" type="radio" value="female" /> Feminino
-                    </label>
-                    </div> */}
+                <div className="form-group row">
+                    <label className="col-3">Sexo</label>
                     <div className="col-9">
-                        <Field name="sexo" component="select">
+                        <Field name="sexo" className="form-control" component="select">
                             {sexo.map(sexoOption =>
                                 <option value={sexoOption} key={sexoOption}>{sexoOption}</option>)}
                         </Field></div>
@@ -43,55 +35,60 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-3">CPF</label>
                     <div className="col-9">
-                        <Field name="cpf" component="input" type="text" placeholder="" />
+                        <Field name="cpf" className="form-control" component="input" type="text" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">Data de Nascimento</label>
-                    <div className="col-9">
-                        <Field name="dataNascimento" component="input" type="text" placeholder="" />
+                    <label className="col">Data de nascimento</label>
+                    <div className="col-12">
+                        <Field name="dataNascimento" className="form-control" component="input" type="date" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">Telefone</label>
-                    <div className="col-9">
-                        <Field name="telefone" component="input" type="text" placeholder="" />
+                    <label className="col-4">Telefone</label>
+                    <div className="col-8">
+                        <Field name="telefone" className="form-control" component="input" type="text" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">E-mail</label>
-                    <div className="col-9">
-                        <Field name="email" component="input" type="email" placeholder="" />
+                    <label className="col-4">E-mail</label>
+                    <div className="col-12">
+                        <Field name="email" className="form-control" component="input" type="email" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group">
                     <label>Você já teve episódios de alergia a algum produto cosmético?</label>
-                    <div>
-                        <label>
-                            <Field name="alergias" component="input" type="radio" value="true" /> Sim
-                    </label>
-                        <label>
-                            <Field name="alergias" component="input" type="radio" value="false" /> Não
-                    </label>
+                    <div className="form-check form-check-inline">
+                        <label className="form-check-label">
+                            <Field name="alergias" className="form-check-input" component="input" type="radio" value="true" />
+                            Sim</label>
+                        <label className="form-check-label">
+                            <Field name="alergias" className="form-check-input" component="input" type="radio" value="false" />
+                            Não</label>
                     </div>
                 </div>
                 <div className="form-group">
                     <label>Você está em período de gravidez?</label>
-                    <div>
-                        <label>
-                            <Field name="gestante" component="input" type="radio" value="true" /> Sim
-                    </label>
-                        <label>
-                            <Field name="gestante" component="input" type="radio" value="false" /> Não
-                    </label>
+                    <div className="form-check form-check-inline">
+                        <label className="form-check-label">
+                            <Field name="gestante" className="form-check-input" component="input" type="radio" value="true" />
+                            Sim</label>
+                        <label className="form-check-label">
+                            <Field name="gestante" className="form-check-input" component="input" type="radio" value="false" />
+                            Não
+                            </label>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-success" disabled={pristine || submitting} >
-                    Cadastrar
+                <br />
+                <div className="button-group d-flex justify-content-around">
+                    <button type="submit" className="btn btn-success" disabled={pristine || submitting} >
+                        Cadastrar
                 </button>
-                <button type="button" className="btn btn-danger" disabled={pristine || submitting} onClick={reset}>
-                    Cancelar
+                    <button type="button" className="btn btn-danger" disabled={pristine || submitting} onClick={reset}>
+                        Cancelar
                 </button>
+                </div>
+                <br />
             </form >
         );
     }
