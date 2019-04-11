@@ -11,7 +11,7 @@ class ListaClientes extends Component {
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <ItemCliente key={clientes.id} clientes={clientes} />;
+            return <ItemCliente key={clientes._id} clientes={clientes} />;
         });
     }
 

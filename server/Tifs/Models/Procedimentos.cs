@@ -6,10 +6,10 @@ using System.Web;
 
 namespace Tifs.Models
 {
-    public class Procedimentos
+    public class Servicos
     {
        [Key]
-        public int IdProcedimento { get; set; }
+        public int IdServico { get; set; }
 
         public DateTime Data { get; set; }
 

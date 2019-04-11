@@ -339,7 +339,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Procedimentos.cs" />
+    <Compile Include="Models\Servicos.cs" />
     <Compile Include="Models\TifsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

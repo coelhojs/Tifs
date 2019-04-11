@@ -8,6 +8,8 @@ export default function (state = {}, action) {
         case FETCH_SERVICO:
             return { ...state, [action.payload.data.id]: action.payload.data };
         case CREATE_SERVICO:
+            console.log(state);
+
             return { ...state, [action.payload.data.id]: action.payload.data };
         case DELETE_SERVICO:
             return _.omit(state, action.payload.data.id);

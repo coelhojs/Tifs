@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const ServicoFormPage1 = (props) => {
-    const { handleSubmit, clientes } = props
+    const { handleSubmit, previousPage, clientes } = props
 
     return (
         <form className="container" onSubmit={handleSubmit}>
@@ -22,11 +22,15 @@ const ServicoFormPage1 = (props) => {
                 </div>
             </div>
             <div className="form-group">
-                <label className="col-3">Observações</label>
-                <div className="col-9">
-                    <Field name="observacoes" component="textarea" />
+                <label className="col-12">Observações sobre o cliente</label>
+                <div className="col-12">
+                    <Field name="anotacoes" component="textarea" />
+                    {/* <Field name="observacoes" component="textarea" /> */}
                 </div>
             </div>
+            {/* <button type="button" className="btn btn-secondary" onClick={previousPage}>
+                Anterior
+                </button> */}
             <button type="submit" className="btn btn-success" >
                 Próximo
                 </button>

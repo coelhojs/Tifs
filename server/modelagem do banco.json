@@ -11,11 +11,11 @@ cliente = {
 
 cabeleireiro = {
     nome,
-    procedimentos = [],
+    servicos = [],
 
 }
 
-procedimento ={
+servico ={
     data,
     tipo,
     cabeleireirosAutorizados,
@@ -29,6 +29,6 @@ histórico = {
 
 produtos = {
     nome,
-    FK_procedimento_ID,
+    FK_servico_ID,
 
 }

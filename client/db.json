@@ -56,7 +56,7 @@
             "Gestante": false
         }
     ],
-    "Procedimentos": [
+    "Servicos": [
         {
             "id": 1,
             "nome": "Coloração",

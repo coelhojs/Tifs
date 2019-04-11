@@ -2,7 +2,8 @@ import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, formValueSelector, reduxForm } from 'redux-form';
-import { createServico, fetchClientes, fetchProcedimentos } from '../actions/index';
+import { fetchClientes, createServico, fetchServicos } from '../actions/index';
+//import ServicoOptions from "./servicoOptions";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
 let history = require("history").createBrowserHistory;
@@ -42,33 +43,31 @@ class ServicoForm extends Component {
 
     componentWillMount() {
         this.props.fetchClientes();
-        this.props.fetchProcedimentos();
+        this.props.fetchServicos();
     }
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 
-    renderProcedimentos() {
+    renderServicos() {
         let id = 0;
-        return _.map(this.props.procedimentos, procedimentos => {
-            console.log(id);
-            return <option key={id++} value={procedimentos.nome}>{procedimentos.nome}</option>;
-        });
+        return _.map(this.props.servicos, servicos => {
+            return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
+        })
+        //this.renderProdutos(servicos.nome));
     }
 
-    renderProdutos() {
-        console.log(this.props.procedimentos);
+    // renderProdutos(nome) {
+    //     console.log(this.props.servicos);
+    //     console.log(nome);
 
-        return _.map(this.props.procedimentos.produtos, procedimento => {
-            return <label>{procedimento.id}
-
-                <Field name="{this.props.procedimentos.produtos}" component="input" type="text" placeholder="" />
-            </label>
-        });
-    }
+    //     return _.map(this.props.servicos.produtos, produtos => {
+    //         return <ServicoOptions key={produtos.id} produtos={produtos}></ServicoOptions>
+    //     });
+    // }
 
     onSubmit(props) {
         this.props.createServico(props, () => {
@@ -77,15 +76,18 @@ class ServicoForm extends Component {
     }
 
     render() {
-        //        const { renderClientes } = this.props;
+        const { handleSubmit } = this.props;
+        //const { renderClientes } = this.props;
         const { page } = this.state
         return (
             <div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
                 {page === 2 && (
-                    <ServicoFormPage2 produtos={this.renderProdutos()} procedimentos={this.renderProcedimentos()}
+                    <ServicoFormPage2
+                        //produtos={this.renderProdutos()}
+                        servicos={this.renderServicos()}
                         previousPage={this.previousPage}
-                        onSubmit={this.nextPage}
+                        onSubmit={handleSubmit}
                     />
                 )}
             </div>
@@ -94,7 +96,14 @@ class ServicoForm extends Component {
 }
 
 function mapStateToProps(state) {
-    return { initialValues: defaultValues, clientes: state.clientes, procedimentos: state.procedimentos, produtos: state.produtos };
+    //const selector = formValueSelector('servicoForm')
+    return {
+        initialValues: defaultValues,
+        clientes: state.clientes,
+        servicos: state.servicos,
+        produtos: state.produtos,
+        //selectedServico: selector(state, 'servico') 
+    };
 }
 
 // Decorate with reduxForm(). It will read the initialValues prop provided by connect()
@@ -108,7 +117,7 @@ ServicoForm = connect(
     // state => ({
     //     initialValues: defaultValues // pull initial values from account reducer
     // }),
-    { fetchClientes, fetchProcedimentos }
+    { fetchClientes, fetchServicos }
 )(ServicoForm)
 
 export default ServicoForm

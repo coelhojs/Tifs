@@ -2,27 +2,36 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const ServicoFormPage2 = (props) => {
-    const { handleSubmit, procedimentos, produtos } = props
+    const { handleSubmit, previousPage, servicos, produtos } = props
 
     return (
         <form className="container" onSubmit={handleSubmit}>
             <div className="text-center"><h1>Cadastro de Serviço</h1></div>
             <div className="form-group row">
-                <label className="col-3">Procedimento</label>
+                <label className="col-3">Serviço</label>
                 <div className="col-9">
-                    <Field name="procedimento" component="select">
-                        {procedimentos}
+                    {/* <Field name="servico" component="select"> */}
+                    <Field name="nome" component="select">
+                        {servicos}
                     </Field>
                 </div>
             </div>
             <div className="form-group">
-                <label className="col-3">Produtos</label>
-                <div className="col-9">
-                    {produtos}
+                <label className="col-12">Materiais utilizados</label>
+                <div className="col-12">
+                    <Field name="materiais" component="textarea" />
+                    {/* <FormProdutos */}
+                    {/* <Field name="produto" component="select">
+                        <option>Selecione o servico</option>
+                        {produtos}
+                    </Field> */}
                 </div>
             </div>
+            {/* <button type="button" className="btn btn-secondary" onClick={previousPage}>
+                Anterior
+                </button> */}
             <button type="submit" className="btn btn-success" >
-                Próximo
+                Concluído
                 </button>
         </form >
 
