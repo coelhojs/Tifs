@@ -1,13 +1,13 @@
 import React from "react";
-import moment from "moment";
+//import moment from "moment";
 
 const ItemCliente = ({ clientes }) => {
     //const key = (clientes.id).slice(-4);
-    const key = clientes.id;
+    //const key = clientes.id;
     const nome = clientes.nome;
     const telefone = clientes.Telefone;
-    const cpf = clientes.CPF;
-    const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
+    //const cpf = clientes.CPF;
+    //const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
     const email = clientes.Email;
 
     return (
