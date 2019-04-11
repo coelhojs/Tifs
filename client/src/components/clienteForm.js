@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/index';
-import { FieldLevelValidationForm } from '../FieldLevelValidationForm';
+
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Required';
+const required = value => value ? undefined : 'Obrigatório';
 const number = value => value && isNaN(Number(value)) ? 'Este campo aceita somente números' : undefined;
 const minValue = min => value => value && value < min ? `O campo deve ser maior que ${min} caracteres` : undefined;
 const minValueName = minValue(2);
@@ -46,7 +46,7 @@ class ClienteForm extends Component {
                     <div className="form-group row">
                         <label className="col-4">Nome</label>
                         <div className="col-12">
-                            <Field name="nome" className="form-control" component="input" type="text"
+                            <Field name="nome" className="form-control" component={renderField} type="text"
                                    placeholder="Nome completo" validate={[required]}
                             />
                         </div>
@@ -62,7 +62,7 @@ class ClienteForm extends Component {
                     <div className="form-group row">
                         <label className="col-3">CPF</label>
                         <div className="col-9">
-                            <Field name="cpf" className="form-control" component="input" type="number" placeholder=""
+                            <Field name="cpf" className="form-control" component={renderField} type="number" placeholder=""
                                    validate={[required, number]}/>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ class ClienteForm extends Component {
                         <label className="col-4">Telefone</label>
                         <div className="col-8">
                             <Field name="telefone" className="form-control" component="input" type="text"
-                                   placeholder="" validate={[required]}/>
+                                   placeholder="" validate={[required, number]}/>
                         </div>
                     </div>
                     <div className="form-group row">
