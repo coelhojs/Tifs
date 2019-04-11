@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/index';
-
+import InputMask from 'react-input-mask';
 
 let history = require("history").createBrowserHistory;
 
 const required = value => value ? undefined : 'Obrigatório';
 const number = value => value && isNaN(Number(value)) ? 'Este campo aceita somente números' : undefined;
+const string = value => value && isNaN(Number(value)) ? 'Este campo aceita somente letras' : undefined;
 const minValue = min => value => value && value < min ? `O campo deve ser maior que ${min} caracteres` : undefined;
 const minValueName = minValue(2);
 const maxValueCpf = max => value => value && value > max ? `O campo deve ter ${max} caracteres` : undefined;
@@ -24,6 +25,18 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
         </div>
     </div>
 );
+
+
+export const maxLenght = max => value => {
+
+    let v;
+    let result = value.length > max;
+
+    if(result === false) {
+        v = value;
+    }
+    return v;
+};
 
 class ClienteForm extends Component {
 
@@ -47,7 +60,7 @@ class ClienteForm extends Component {
                         <label className="col-4">Nome</label>
                         <div className="col-12">
                             <Field name="nome" className="form-control" component={renderField} type="text"
-                                   placeholder="Nome completo" validate={[required]}
+                                   placeholder="Nome completo" validate={[required]} 
                             />
                         </div>
                     </div>
@@ -63,7 +76,7 @@ class ClienteForm extends Component {
                         <label className="col-3">CPF</label>
                         <div className="col-9">
                             <Field name="cpf" className="form-control" component={renderField} type="number" placeholder=""
-                                   validate={[required, number]}/>
+                                   validate={[required, number]} normalize={maxLenght(11)}/>
                         </div>
                     </div>
                     <div className="form-group row">
@@ -77,7 +90,7 @@ class ClienteForm extends Component {
                         <label className="col-4">Telefone</label>
                         <div className="col-8">
                             <Field name="telefone" className="form-control" component="input" type="text"
-                                   placeholder="" validate={[required, number]}/>
+                                   placeholder="" validate={[required, number]} normalize={maxLenght(11)}/>
                         </div>
                     </div>
                     <div className="form-group row">
