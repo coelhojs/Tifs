@@ -2,7 +2,7 @@
     "name": "tifs",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://coelhojs.github.io/Tifs",
+    "homepage": ".",
     "dependencies": {
         "apisauce": "^1.0.2",
         "bootstrap": "^4.3.1",
