@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-//import { createCliente } from '../actions/index';
+import { createCliente } from '../actions/index';
 
 let history = require("history").createBrowserHistory;
 
@@ -45,5 +45,5 @@ render() {
 export default reduxForm({
     form: 'produtoForm'
 })(
-    //connect(null, { createCliente })(ClienteForm)
+    connect(null, { createCliente })(ClienteForm)
 );
