@@ -6,8 +6,12 @@ class Menu extends Component {
         return (
             <div className="menu">
                 <div className="row d-flex justify-content-around">
-                    <Link to="/Clientes" className="btn btn-dark col-offset-2 col-4 col-md-2">Clientes</Link>
-                    <Link to="/Anamnese" className="btn btn-dark col-offset-2 col-4 col-md-2">Anamnese</Link>
+                    <Link to="/Clientes" className="btn btn-dark col-3 offset-1">Clientes</Link>
+                    <Link to="/Servico" className="btn btn-dark col-3 offset-1">Servico</Link>
+                    <Link to="/Produtos" className="btn btn-dark col-3 offset-1">Produtos</Link>
+                    <button className="btn btn-dark col-3 offset-1" disabled>Cabeleireiro</button>
+                    <button className="btn btn-dark col-3 offset-1" disabled>Agenda</button>
+                    <button className="btn btn-dark col-3 offset-1" disabled>Relatórios</button>
                 </div>
             </div>
         );

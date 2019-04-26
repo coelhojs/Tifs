@@ -3,8 +3,8 @@ import history from '../history';
 import { CREATE_CLIENTE, CREATE_SERVICO, FETCH_CLIENTES, FETCH_SERVICOS } from './types';
 
 export const api = create({
-    baseURL: "https://quris.serveo.net"
-    //baseURL: "http://localhost:3004"
+    //baseURL: "https://quris.serveo.net"
+    baseURL: "http://localhost:3004"
 });
 
 export const createCliente = formValues => async (dispatch, getState) => {
@@ -37,7 +37,7 @@ export const createServico = () => async dispatch => {
 // export const createServico = formValues => async (dispatch, getState) => {
 //     //const { userId } = getState().auth;
 //     //const response = await api.post('/Clientes', { ...formValues, userId });
-//     const response = await api.post('/Anamnese', { ...formValues });
+//     const response = await api.post('/Servico', { ...formValues });
 
 //     dispatch({ type: CREATE_SERVICO, payload: response });
 //     history.push('/');
