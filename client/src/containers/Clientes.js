@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createCliente } from '../actions';
+import { createCliente } from '../actions/cliente.js';
 import ClienteForm from "../forms/clienteForm";
 import ListaClientes from "../components/listaClientes";
 

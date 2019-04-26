@@ -1,8 +1,8 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchClientes } from "../actions/index";
-import ItemCliente from "./ItemCliente";
+import { fetchClientes } from "../actions/cliente";
+import ItemCliente from "./itemCliente";
 
 class ListaClientes extends Component {
     componentWillMount() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { createCliente } from '../actions/index';
+import { createCliente } from '../actions/cliente';
 
 let history = require("history").createBrowserHistory;
 
@@ -38,7 +38,7 @@ class ClienteForm extends Component {
                     <label className="col-3">CPF</label>
                     <div className="col-9">
                         <Field name="cpf" className="form-control" component="input" type="number" placeholder=""
-                            />
+                        />
                     </div>
                 </div>
                 <div className="form-group row">
@@ -59,7 +59,7 @@ class ClienteForm extends Component {
                     <label className="col-4">E-mail</label>
                     <div className="col-12">
                         <Field name="email" className="form-control" component="input" type="email" placeholder=""
-                            />
+                        />
                     </div>
                 </div>
                 <div className="form-group">
