@@ -7,7 +7,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 import App from "./App";
 import Clientes from "./containers/Clientes";
-import Anamnese from "./containers/Anamnese";
+import Produtos from "./containers/Produtos"
+import Servico from "./containers/Servico";
 import Header from "./containers/Header";
 import Home from "./containers/Home";
 import reducers from "./reducers";
@@ -28,7 +29,7 @@ ReactDOM.render(
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/Clientes" component={Clientes} />
-                    <Route path="/Anamnese" component={Anamnese} />
+                    <Route path="/Servico" component={Servico} />
                 </Switch>
             </App>
         </Router>
