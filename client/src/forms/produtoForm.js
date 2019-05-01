@@ -5,14 +5,30 @@ import { createProduto } from '../actions/produto';
 
 let history = require("history").createBrowserHistory;
 
+const required = value => value ? undefined : 'Required'
+const maxLength = max => value =>
+  value && value.length > max ? `Must be ${max} characters or less` : undefined
+const maxLength15 = maxLength(15)
+
 class ProdutoForm extends Component {
     onSubmit(props) {
         this.props.createProduto(props, () => {
             history.push('/');
         });
-    }
 
+        
+    }
     render() {
+            const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+                <div>
+                  <label>{label}</label>
+                  <div>
+                    <input {...input} placeholder={label} type={type}/>
+                    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+                  </div>
+                </div>
+              )
+              
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -30,15 +46,15 @@ class ProdutoForm extends Component {
                 <div className="form-group">
                     <label className="col-4">Marca</label>
                     <div className="col-12">
-                        <Field name="nome" className="form-control" component="input" type="text"
-                            placeholder="Ex.: Loreal"
+                        <Field name="Marca" className="form-control" component="input" type="text"
+                            placeholder="Ex.: Loreal" validate={[ required, maxLength15 ]}
                         />
                     </div>
                 </div>
                 <div className="form-group">
                     <label className="col-4">Linha</label>
                     <div className="col-12">
-                        <Field name="nome" className="form-control" component="input" type="text"
+                        <Field name="Linha" className="form-control" component="input" type="text"
                             placeholder="Ex.: Kids"
                         />
                     </div>
@@ -54,7 +70,7 @@ class ProdutoForm extends Component {
                 <div className="form-group">
                     <label className="col-4">Conteúdo da embalagem</label>
                     <div className="col-12">
-                        <Field name="nome" className="form-control" component="input" type="text"
+                        <Field name="Conteudo" className="form-control" component="input" type="text"
                             placeholder="500"
                         />
                     </div>
