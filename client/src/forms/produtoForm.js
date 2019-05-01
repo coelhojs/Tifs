@@ -5,10 +5,16 @@ import { createProduto } from '../actions/produto';
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Required'
+const required = value => value ? undefined : 'Campo obrigatório'
 const maxLength = max => value =>
-  value && value.length > max ? `Must be ${max} characters or less` : undefined
-const maxLength15 = maxLength(15)
+  value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
+const maxLength15 = maxLength(30)
+const minValue = min => value =>
+  value && value < min ? `Must be at least ${min}` : undefined
+const minValue18 = minValue(1)
+const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
+const tooOld = value =>
+  value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
 
 class ProdutoForm extends Component {
     onSubmit(props) {
@@ -54,8 +60,8 @@ class ProdutoForm extends Component {
                 <div className="form-group">
                     <label className="col-4">Linha</label>
                     <div className="col-12">
-                        <Field name="Linha" className="form-control" component="input" type="text"
-                            placeholder="Ex.: Kids"
+                        <Field name="Linha" className="form-control" component={renderField} type="text"
+                            placeholder="Ex.: Kids" validate={[ required, maxLength15 ]}
                         />
                     </div>
                 </div>
@@ -70,8 +76,8 @@ class ProdutoForm extends Component {
                 <div className="form-group">
                     <label className="col-4">Conteúdo da embalagem</label>
                     <div className="col-12">
-                        <Field name="Conteudo" className="form-control" component="input" type="text"
-                            placeholder="500"
+                        <Field name="Conteudo" className="form-control" component={renderField}  type="number"
+                            placeholder="500" validate={[ required, number, minValue18 ]} warn={tooOld}
                         />
                     </div>
                 </div>
