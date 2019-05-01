@@ -43,14 +43,14 @@ class ProdutoForm extends Component {
                         />
                     </div>
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label className="col-4">Marca</label>
                     <div className="col-12">
                         <Field name="nome" className="form-control" component="input" type="text"
                             placeholder="Ex.: Loreal"
                         />
                     </div>
-                </div>
+                </div> */}
                 <div className="form-group">
                     <label className="col-4">Conteúdo da embalagem</label>
                     <div className="col-12">
