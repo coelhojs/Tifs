@@ -46,7 +46,7 @@ class ProdutoForm extends Component {
                 <div className="form-group">
                     <label className="col-4">Marca</label>
                     <div className="col-12">
-                        <Field name="Marca" className="form-control" component="input" type="text"
+                        <Field name="Marca" className="form-control" component={renderField} type="text"
                             placeholder="Ex.: Loreal" validate={[ required, maxLength15 ]}
                         />
                     </div>
