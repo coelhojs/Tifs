@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createProduto } from '../actions/produto';
+import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
@@ -37,7 +38,7 @@ class ProdutoForm extends Component {
               
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
-            <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))} id="formMobileProd">
+            <form className="container formMobileProd" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Cadastro de Produto</h1></div>
                 <hr/>
                 <div className="form-group row">

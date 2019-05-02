@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
-import '../style/general.css';
+import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
@@ -65,27 +65,27 @@ class ClienteForm extends Component {
                         />
                     </div>
                 </div>
-                <div className="form-group" class="formCheck">
+                <div className="form-group formCheck">
                     <label className="col-12">Você já teve episódios de alergia a algum produto cosmético?</label>
                     <div className="form-check form-check-inline" >
-                        <label className="form-check-label" class="formButton1">
+                        <label className="form-check-label formButton1">
                             <Field name="alergias" className="form-check-input" component="input" type="radio"
                                 value="true" />
                             Sim</label>
-                        <label className="form-check-label" class="formButton2">
+                        <label className="form-check-label formButton2">
                             <Field name="alergias" className="form-check-input" component="input" type="radio"
                                 value="false" />
                             Não</label>
                     </div>
                 </div>
-                <div className="form-group" class="formCheck">
+                <div className="form-group formCheck">
                     <label className="col-12">Você está em período de gravidez?</label>
                     <div className="form-check form-check-inline">
-                        <label className="form-check-label" class="formButton1">
+                        <label className="form-check-label formButton1">
                             <Field name="gestante" className="form-check-input" component="input" type="radio"
                                 value="true" />
                             Sim</label>
-                        <label className="form-check-label" class="formButton2">
+                        <label className="form-check-label formButton2">
                             <Field name="gestante" className="form-check-input" component="input" type="radio"
                                 value="false" />
                             Não

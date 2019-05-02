@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import '../style/general.css';
+import '../style/general.scss';
 
 const ServicoFormPage1 = (props) => {
     const { handleSubmit, previousPage, clientes } = props
@@ -24,7 +24,7 @@ const ServicoFormPage1 = (props) => {
                         {clientes}
                         </Field></div>
                 </div>
-            <div className="form-group" id="textAreaService">
+            <div className="form-group textAreaService">
                 <label className="col-12 text-center">Observações sobre o cliente</label>
                 <div className="col-12" >
                     <Field name="anotacoes" component="textarea" />
@@ -34,7 +34,7 @@ const ServicoFormPage1 = (props) => {
             {/* <button type="button" className="btn btn-secondary" onClick={previousPage}>
                 Anterior
                 </button> */}
-            <button type="submit" className="btn btn-success" id="buttonService">
+            <button type="submit" className="btn btn-success buttonService">
                 Próximo
                 </button>
         </form >
