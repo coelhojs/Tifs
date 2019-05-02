@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createProduto } from '../actions/produto';
-import '../style/general.css';
 
 let history = require("history").createBrowserHistory;
 
@@ -43,7 +42,7 @@ class ProdutoForm extends Component {
                 <hr/>
                 <div className="form-group row">
                     <label className="col-2">Categoria</label>
-                    <div className="col-10" class="resizeProdField">
+                    <div className="col-10 resizeProdField">
                         <Field name="categoria" className="form-control" component="select">
                             {/* {sexo.map(sexoOption =>
                                 <option value={sexoOption} key={sexoOption}>{sexoOption}</option>)} */}
@@ -53,7 +52,7 @@ class ProdutoForm extends Component {
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Marca</label>
-                    <div className="col-10" class="resizeProdField">
+                    <div className="col-10 resizeProdField">
                         <Field name="Marca" className="form-control" component="input" type="text"
                             placeholder="Ex.: Loreal" validate={[ required, maxLength15 ]}
                         />
@@ -61,7 +60,7 @@ class ProdutoForm extends Component {
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Linha</label>
-                    <div className="col-10" class="resizeProdField">
+                    <div className="col-10 resizeProdField">
                         <Field name="Linha" className="form-control" component="input"/*{renderField}*/ type="text"
                             placeholder="Ex.: Kids" validate={[ required, maxLength15 ]}
                         />
@@ -77,7 +76,7 @@ class ProdutoForm extends Component {
                 </div> */}
                 <div className="form-group row">
                     <label className="col-2">Conteúdo da embalagem</label>
-                    <div className="col-10" class="resizeProdField">
+                    <div className="col-10 resizeProdField">
                         <Field name="Conteudo" className="form-control" component="input"/*{renderField}*/  type="number"
                             placeholder="500" validate={[ required, number, minValue18 ]} warn={tooOld}
                         />
@@ -85,7 +84,7 @@ class ProdutoForm extends Component {
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Medida</label>
-                    <div className="col-10" class="resizeProdField">
+                    <div className="col-10 resizeProdField">
                         <Field name="medida" className="form-control" component="select">
                             <option value="ml">ml</option>
                             <option value="ml">l</option>

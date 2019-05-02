@@ -56,6 +56,26 @@
             "Gestante": false
         }
     ],
+    "Produtos": [
+        {
+            "id": 1,
+            "categoria": "shampoo",
+            "marca": "Loreal",
+            "linha": "Kids",
+            "descricao": "Shampoo sem sal, ph, etc",
+            "conteudo": "1000",
+            "medida": "ml"
+        },
+        {
+            "id": 2,
+            "categoria": "coloração",
+            "marca": "Koleston",
+            "linha": "Creme",
+            "descricao": "Cor Preto 20",
+            "conteudo": "-",
+            "medida": "Kit"
+        }
+    ],
     "Servicos": [
         {
             "id": 1,

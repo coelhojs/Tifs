@@ -1,7 +1,7 @@
 import { create } from "apisauce";
 
 export const api = create({
-    //baseURL: "https://quris.serveo.net"
+    // baseURL: "https://quris.serveo.net"
     baseURL: "http://localhost:3004"
 });
 
