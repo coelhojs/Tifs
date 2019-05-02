@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createProduto } from '../actions/produto';
+import '../style/general.css';
 
 let history = require("history").createBrowserHistory;
 
@@ -37,11 +38,12 @@ class ProdutoForm extends Component {
               
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
-            <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <h4>Cadastro de produto</h4>
-                <div className="form-group">
-                    <label className="col-3">Categoria</label>
-                    <div className="col-9">
+            <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))} id="formMobileProd">
+                <div className="text-center"><h1>Cadastro de Produto</h1></div>
+                <hr/>
+                <div className="form-group row">
+                    <label className="col-2">Categoria</label>
+                    <div className="col-10" class="resizeProdField">
                         <Field name="categoria" className="form-control" component="select">
                             {/* {sexo.map(sexoOption =>
                                 <option value={sexoOption} key={sexoOption}>{sexoOption}</option>)} */}
@@ -49,18 +51,18 @@ class ProdutoForm extends Component {
                             <option value="coloração">coloração</option>
                         </Field></div>
                 </div>
-                <div className="form-group">
-                    <label className="col-4">Marca</label>
-                    <div className="col-12">
-                        <Field name="Marca" className="form-control" component={renderField} type="text"
+                <div className="form-group row">
+                    <label className="col-2">Marca</label>
+                    <div className="col-10" class="resizeProdField">
+                        <Field name="Marca" className="form-control" component="input" type="text"
                             placeholder="Ex.: Loreal" validate={[ required, maxLength15 ]}
                         />
                     </div>
                 </div>
-                <div className="form-group">
-                    <label className="col-4">Linha</label>
-                    <div className="col-12">
-                        <Field name="Linha" className="form-control" component={renderField} type="text"
+                <div className="form-group row">
+                    <label className="col-2">Linha</label>
+                    <div className="col-10" class="resizeProdField">
+                        <Field name="Linha" className="form-control" component="input"/*{renderField}*/ type="text"
                             placeholder="Ex.: Kids" validate={[ required, maxLength15 ]}
                         />
                     </div>
@@ -73,17 +75,17 @@ class ProdutoForm extends Component {
                         />
                     </div>
                 </div> */}
-                <div className="form-group">
-                    <label className="col-4">Conteúdo da embalagem</label>
-                    <div className="col-12">
-                        <Field name="Conteudo" className="form-control" component={renderField}  type="number"
+                <div className="form-group row">
+                    <label className="col-2">Conteúdo da embalagem</label>
+                    <div className="col-10" class="resizeProdField">
+                        <Field name="Conteudo" className="form-control" component="input"/*{renderField}*/  type="number"
                             placeholder="500" validate={[ required, number, minValue18 ]} warn={tooOld}
                         />
                     </div>
                 </div>
-                <div className="form-group">
-                    <label className="col-4">Medida</label>
-                    <div className="col-12">
+                <div className="form-group row">
+                    <label className="col-2">Medida</label>
+                    <div className="col-10" class="resizeProdField">
                         <Field name="medida" className="form-control" component="select">
                             <option value="ml">ml</option>
                             <option value="ml">l</option>
@@ -104,7 +106,7 @@ class ProdutoForm extends Component {
                         </button>
                 </div>
                 <br />
-                <p>Dúvidas ao cadastrar o produto? <a href="">Clique aqui</a></p>
+                <p className="text-center">Dúvidas ao cadastrar o produto? <a href="">Clique aqui</a></p>
             </form>
         );
     }

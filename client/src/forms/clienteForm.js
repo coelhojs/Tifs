@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
+import '../style/general.css';
 
 let history = require("history").createBrowserHistory;
 
@@ -18,71 +19,73 @@ class ClienteForm extends Component {
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <div className="text-center"><h1>Cadastro de Cliente</h1></div>
+            <hr/>
                 <div className="form-group row">
-                    <label className="col-4">Nome</label>
-                    <div className="col-12">
+                    <label className="col-2">Nome</label>
+                    <div className="col-10">
                         <Field name="nome" className="form-control" component="input" type="text"
                             placeholder="Nome completo"
                         />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">Sexo</label>
-                    <div className="col-9">
+                    <label className="col-2">Sexo</label>
+                    <div className="col-10">
                         <Field name="sexo" className="form-control" component="select">
                             {sexo.map(sexoOption =>
                                 <option value={sexoOption} key={sexoOption}>{sexoOption}</option>)}
                         </Field></div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-3">CPF</label>
-                    <div className="col-9">
+                    <label className="col-2">CPF</label>
+                    <div className="col-10">
                         <Field name="cpf" className="form-control" component="input" type="number" placeholder=""
                         />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col">Data de nascimento</label>
-                    <div className="col-12">
+                    <label className="col-4">Data de nascimento</label>
+                    <div className="col-8">
                         <Field name="dataNascimento" className="form-control" component="input" type="date"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-4">Telefone</label>
-                    <div className="col-8">
+                    <label className="col-2">Telefone</label>
+                    <div className="col-10">
                         <Field name="telefone" className="form-control" component="input" type="text"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-4">E-mail</label>
-                    <div className="col-12">
+                    <label className="col-2">E-mail</label>
+                    <div className="col-10">
                         <Field name="email" className="form-control" component="input" type="email" placeholder=""
                         />
                     </div>
                 </div>
-                <div className="form-group">
-                    <label>Você já teve episódios de alergia a algum produto cosmético?</label>
-                    <div className="form-check form-check-inline">
-                        <label className="form-check-label">
+                <div className="form-group" class="formCheck">
+                    <label className="col-12">Você já teve episódios de alergia a algum produto cosmético?</label>
+                    <div className="form-check form-check-inline" >
+                        <label className="form-check-label" class="formButton1">
                             <Field name="alergias" className="form-check-input" component="input" type="radio"
                                 value="true" />
                             Sim</label>
-                        <label className="form-check-label">
+                        <label className="form-check-label" class="formButton2">
                             <Field name="alergias" className="form-check-input" component="input" type="radio"
                                 value="false" />
                             Não</label>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label>Você está em período de gravidez?</label>
+                <div className="form-group" class="formCheck">
+                    <label className="col-12">Você está em período de gravidez?</label>
                     <div className="form-check form-check-inline">
-                        <label className="form-check-label">
+                        <label className="form-check-label" class="formButton1">
                             <Field name="gestante" className="form-check-input" component="input" type="radio"
                                 value="true" />
                             Sim</label>
-                        <label className="form-check-label">
+                        <label className="form-check-label" class="formButton2">
                             <Field name="gestante" className="form-check-input" component="input" type="radio"
                                 value="false" />
                             Não
