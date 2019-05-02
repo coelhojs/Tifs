@@ -10,16 +10,30 @@ class ListaProdutos extends Component {
     }
 
     renderProdutos() {
-        return _.map(this.props.produtos, produto => {
-            return <ItemProduto key={produto.id} produto={produto} />;
+        return _.map(this.props.produtos, produtos => {
+            return <ItemProduto key={produtos._id} produtos={produtos} />;
         });
     }
 
     render() {
         return (
-            <div className="list-group">
-                {this.renderProdutos()}
-            </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col-2">ID</th>
+                        <th scope="col-1">Categoria</th>
+                        <th scope="col-2">Marca</th>
+                        <th scope="col-2">Linha</th>
+                        <th scope="col-3">Descricao</th>
+                        <th scope="col">Conteúdo</th>
+                        <th scope="col">Medida</th>
+                        <th scope="col"><strong>Opções</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.renderProdutos()}
+                </tbody>
+            </table>
         );
     }
 }

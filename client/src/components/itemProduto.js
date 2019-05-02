@@ -1,14 +1,9 @@
 import React from "react";
-//import moment from "moment";
+// import ActionButton from "../components/actionButton";
+import { deleteProdutos } from "../actions/produto";
 
 const ItemProduto = ({ produtos }) => {
-    //const key = (produtos.id).slice(-4);
-    // const nome = produtos.nome;
-    // const telefone = produtos.Telefone;
-    //const cpf = produtos.CPF;
-    //const dataNasc = moment(produtos.DataNascimento).format('DD/MM/YYYY');
-    // const email = produtos.Email;
-    const key = produtos.id;
+    const key = produtos._id;
     const categoria = produtos.categoria;
     const marca = produtos.marca;
     const linha = produtos.linha;
@@ -17,13 +12,20 @@ const ItemProduto = ({ produtos }) => {
     const medida = produtos.medida;
 
     return (
-        <div className="list-group-item list-group-item-action flex-column align-items-start">
-            <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">{categoria}</h5>
-            </div>
-        </div>
-
+        <tr>
+            <td>{key}</td>
+            <td>{categoria}</td>
+            <td>{marca}</td>
+            <td>{linha}</td>
+            <td>{descricao}</td>
+            <td>{conteudo}</td>
+            <td>{medida}</td>
+            {/* <td><span><a href=""><img src="/img/logo/edit.png" alt="Editar produto" />Editar produto</a></span></td> */}
+            <td> <img src="/img/icon/delete.png" alt="Remover produto" /></td>
+        </tr>
     );
 };
 
 export default ItemProduto;
+
+

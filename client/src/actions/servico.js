@@ -9,7 +9,6 @@ export const fetchServicos = () => async dispatch => {
 
 export const createServico = () => async dispatch => {
     const response = await api.post('/cabeleireiro/5caf9cabb066082354c1cb0a/servicos/');
-    console.log(response);
     dispatch({ type: CREATE_SERVICO, payload: response });
     history.push('/');
 };

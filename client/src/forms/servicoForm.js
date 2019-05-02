@@ -1,9 +1,9 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, formValueSelector, reduxForm } from 'redux-form';
-import { createCliente, fetchClientes } from '../actions/cliente';
-import { createServico, fetchServicos } from '../actions/servico';
+import { reduxForm } from 'redux-form';
+import { fetchClientes } from '../actions/cliente';
+import { fetchServicos } from '../actions/servico';
 //import ServicoOptions from "./servicoOptions";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";

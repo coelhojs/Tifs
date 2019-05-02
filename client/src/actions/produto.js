@@ -1,15 +1,27 @@
 import { api } from "./index";
 import history from '../history';
-import { CREATE_PRODUTO, FETCH_PRODUTOS } from './types';
+import { CREATE_PRODUTO, FETCH_PRODUTO, FETCH_PRODUTOS, DELETE_PRODUTO } from './types';
+
+export const createProduto = formValues => async (dispatch, getState) => {
+    const response = await api.post('/Produtos', { ...formValues });
+    dispatch({ type: CREATE_PRODUTO, payload: response });
+    history.push('/Produtos');
+};
 
 export const fetchProdutos = () => async dispatch => {
-    const response = await api.get('/produtos/');
+    const response = await api.get('/Produtos');
     dispatch({ type: FETCH_PRODUTOS, payload: response });
 };
 
-export const createProduto = () => async dispatch => {
-    const response = await api.post('/produtos/');
+export const fetchProduto = () => async dispatch => {
+    const response = await api.get('/Produtos/:id');
+    dispatch({ type: FETCH_PRODUTO, payload: response });
+};
+
+export const deleteProdutos = id => async dispatch => {
+    const response = await api.delete(`/Produtos/${id}`);
+    dispatch({ type: DELETE_PRODUTO, payload: id });
     console.log(response);
-    dispatch({ type: CREATE_PRODUTO, payload: response });
-    history.push('/produtos');
+    
+    history.push('/Produtos');
 };

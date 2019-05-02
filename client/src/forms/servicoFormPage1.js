@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import '../style/general.scss';
 
 const ServicoFormPage1 = (props) => {
-    const { handleSubmit, previousPage, clientes } = props
+    const { handleSubmit, clientes } = props
 
     return (
         <form className="container" onSubmit={handleSubmit}>

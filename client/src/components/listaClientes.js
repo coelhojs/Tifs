@@ -17,7 +17,6 @@ class ListaClientes extends Component {
 
     render() {
         return (
-
             <div className="list-group">
                 {this.renderClientes()}
             </div>
