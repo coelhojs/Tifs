@@ -28,7 +28,7 @@ class ProdutoForm extends Component {
             <div>
                 <label>{label}</label>
                 <div>
-                    <input {...input} placeholder={label} type={type} />
+                    <input className="form-control" {...input} placeholder={label} type={type} />
                     {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
                 </div>
             </div>
@@ -42,7 +42,7 @@ class ProdutoForm extends Component {
                 {/* <div className="form-group row">
                     <label className="col-2">Categoria</label>
                     <div className="col-10">
-                        <Field name="categoria" className="form-control" component="select">
+                        <Field name="categoria" component="select">
                             <option value="shampoo" defaultValue>shampoo</option>
                             <option value="coloração">coloração</option>
                         </Field>
@@ -51,13 +51,13 @@ class ProdutoForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Categoria</label>
                     <div className="col-10">
-                        <Field name="categoria" className="form-control" component={renderField} validate={[required, maxLength15]} />
+                        <Field name="categoria" component={renderField} validate={[required, maxLength15]} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Marca</label>
                     <div className="col-10">
-                        <Field name="marca" className="form-control" component={renderField} type="text"
+                        <Field name="marca" component={renderField} type="text"
                             placeholder="Ex.: Loreal" validate={[required, maxLength15]}
                         />
                     </div>
@@ -65,7 +65,7 @@ class ProdutoForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Linha</label>
                     <div className="col-10">
-                        <Field name="linha" className="form-control" component={renderField} type="text"
+                        <Field name="linha" component={renderField} type="text"
                             placeholder="Ex.: Kids" validate={[required, maxLength15]}
                         />
                     </div>
@@ -73,13 +73,13 @@ class ProdutoForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Descrição</label>
                     <div className="col-10">
-                        <Field name="descricao" className="form-control" component={renderField} type="text" validate={[required, maxLength15]} />
+                        <Field name="descricao" component={renderField} type="text" validate={[required, maxLength15]} />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Conteúdo</label>
                     <div className="col-10">
-                        <Field name="conteudo" className="form-control" component={renderField} type="number"
+                        <Field name="conteudo" component={renderField} type="number"
                             placeholder="500" validate={[required, number, minValue18]} warn={tooOld}
                         />
                     </div>
@@ -87,14 +87,14 @@ class ProdutoForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Medida</label>
                     <div className="col-10">
-                        {/* <Field name="medida" className="form-control" component="select">
+                        {/* <Field name="medida" component="select">
                             <option value="ml">ml</option>
                             <option value="l">l</option>
                             <option value="mg">mg</option>
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                         </Field> */}
-                        <Field name="medida" className="form-control" component={renderField} validate={[required, maxLength15]} />
+                        <Field name="medida" component={renderField} validate={[required, maxLength15]} />
                     </div>
                 </div>
                 <br />
