@@ -27,5 +27,3 @@ const ItemProduto = ({ produtos }) => {
 };
 
 export default ItemProduto;
-
-

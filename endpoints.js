@@ -7,16 +7,27 @@ Retorna todos os objetos de produtos cadastrados
 
 POST - /produtos
 Envia o objeto produto:
+
 produto = {
     "id": 1,
     "categoria": "shampoo",
-    "marca": "Loreal",
-    "linha": "Kids",
-    "descricao": "Shampoo sem sal, ph, etc"
-    "conteudo": "1000",
-    "medida": "ml"
+    "marca": "Euroda",
+    "linha": "Siage Affinité 3D",
+    "descricao": "Cor: Preto 50"
+}
+
+produto = {
+    "id": 1,
+    "categoria": "coloração",
+    "marca": "Embelleza",
+    "linha": "natucor naturalmente sofisticada",
+    "descricao": "Cor: 1.110 Azeite de oliva negra - Preto intenso profundo - Tintura permanente Perfeita cobertura",
+    "conteudo": "12",
+    "medida": "g"
 }        
-        
+     
+
+
 //SERVIÇOS
 GET - /servicos/nomes
 Retorna uma lista de servicos 

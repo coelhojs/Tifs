@@ -92,5 +92,18 @@
             "nome": "Corte",
             "produtos": ["Shampoo", "Tesoura"]
         }
+    ],
+    "Cabeleireiros": [
+        {
+            "id": 1,
+            "nome": "Maria do Nascimento",
+            "CPF": "14574869581",
+            "AutorizaFotos": true,
+            "DataNascimento": "2019-03-25T11:25:03.98",
+            "Telefone": "993847182",
+            "Email": "maria.nasc@gmail.com",
+            "Alergias": false,
+            "Gestante": false
+        }
     ]
 }

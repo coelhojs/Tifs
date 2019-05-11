@@ -11,7 +11,6 @@ class ClienteForm extends Component {
         this.props.createCliente(props, () => {
             history.push('/');
         });
-
     }
 
     render() {
