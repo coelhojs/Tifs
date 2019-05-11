@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { Field, reduxForm } from 'redux-form';
 
 class Login extends Component {
@@ -26,9 +27,10 @@ class Login extends Component {
                     </div>
                     <br />
                     <div className="button-group d-flex justify-content-around">
-                        <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+                        {/* <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
                             Entrar
-                        </button>
+                        </button> */}
+                        <Link to="/Home" className="btn btn-success">Entrar</Link>
                         <button type="button" className="btn btn-danger" disabled={pristine || submitting}
                             onClick={reset}>
                             Cancelar
