@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 class Landing extends Component {
     render() {
         return (
-            <div>
-                <Link to="/Cadastro" className="btn btn-dark col-6 offset-3">Cadastrar</Link>
-                <br />
-                <Link to="/Login" className="btn btn-dark col-6 offset-3">Login</Link>
+            <div className="row d-flex justify-content-around">
+                <Link to="/Cadastro" className="btn m-2 btn-dark col-2">Cadastrar</Link>
+                <Link to="/Login" className="btn m-2 btn-dark col-2">Login</Link>
             </div>
 
         );
