@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-
 import Cadastro from "./containers/Cadastro";
 import Clientes from "./containers/Clientes";
 import Header from "./containers/Header";
@@ -15,7 +14,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div id="page-wrap">
                 <Header />
                 <Switch>
                     <Route exact path="/" component={Landing} />
@@ -26,7 +25,7 @@ class App extends Component {
                     <Route path="/Cadastro" component={Cadastro} />
                     <Route path="/Login" component={Login} />
                 </Switch>
-            </div>
+            </div >
         );
     }
 }
