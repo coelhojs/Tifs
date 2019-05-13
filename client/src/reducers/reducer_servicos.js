@@ -1,9 +1,9 @@
 import _ from "lodash";
-import { FETCH_SERVICOS, FETCH_SERVICO, CREATE_SERVICO, DELETE_SERVICO } from "../actions/types";
+import { FETCH_ALL_SERVICOS, FETCH_SERVICO, CREATE_SERVICO, DELETE_SERVICO } from "../actions/types";
 
 export default function (state = {}, action) {
     switch (action.type) {
-        case FETCH_SERVICOS:
+        case FETCH_ALL_SERVICOS:
             return action.payload.data;
         case FETCH_SERVICO:
             return { ...state, [action.payload.data.id]: action.payload.data };

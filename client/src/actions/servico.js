@@ -1,10 +1,10 @@
 import { api } from "./index";
 import history from '../history';
-import { CREATE_SERVICO, FETCH_SERVICOS } from './types';
+import { CREATE_SERVICO, FETCH_ALL_SERVICOS } from './types';
 
 export const fetchServicos = () => async dispatch => {
     const response = await api.get('/servicos/nomes');
-    dispatch({ type: FETCH_SERVICOS, payload: response });
+    dispatch({ type: FETCH_ALL_SERVICOS, payload: response });
 };
 
 export const createServico = () => async dispatch => {

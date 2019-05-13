@@ -7,16 +7,18 @@ class Header extends Component {
             <header className="text-center">
                 <ul className="nav justify-content-between">
                     <li className="nav-item">
-                        <h5>Olá, Pricila</h5>
+                        {/* <h5>Olá, Pricila</h5> */}
                     </li>
                     <li className="nav-item">
-                        <Link to="/">
+                        {/* <Link to="/">
                             Início
-                    </Link>
+                    </Link> */}
                     </li>
                 </ul>
                 <div className="header-logo">
-                    <img src="/img/logo-tifs.png" alt="" />
+                    <Link to="/Home">
+                        <img src="/img/logo-tifs.png" alt="" />
+                    </Link>
                 </div>
             </header>
         );

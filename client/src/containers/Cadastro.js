@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 
-import CadastroForm from "../forms/cadastroForm";
+import CabeleireiroCadastro from "../forms/cabeleireiroCadastro";
 
 class Cadastro extends Component {
     render() {
         return (
-            <CadastroForm onSubmit={this.onSubmit} />
+            <CabeleireiroCadastro onSubmit={this.onSubmit} />
         );
     }
 }

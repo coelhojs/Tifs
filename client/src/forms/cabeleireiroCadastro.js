@@ -7,7 +7,7 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-class CadastroForm extends Component {
+class CabeleireiroCadastro extends Component {
     onSubmit(props) {
         this.props.createCabeleireiro(props, () => {
             history.push('/');
@@ -55,7 +55,7 @@ class CadastroForm extends Component {
 // reduxForm: 1st is form config
 // connect: first argument is mapStateToProps, 2nd is mapDispatchToProps
 export default reduxForm({
-    form: 'cadastroForm'
+    form: 'cabeleireiroCadastro'
 })(
-    connect(null, { createCabeleireiro })(CadastroForm)
+    connect(null, { createCabeleireiro })(CabeleireiroCadastro)
 );

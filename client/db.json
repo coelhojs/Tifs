@@ -1,108 +1,127 @@
 {
-    "Clientes": [
-        {
-            "id": 1,
-            "nome": "Maria do Nascimento",
-            "CPF": "14574869581",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-03-25T11:25:03.98",
-            "Telefone": "993847182",
-            "Email": "maria.nasc@gmail.com",
-            "Alergias": false,
-            "Gestante": false
-        },
-        {
-            "id": 2,
-            "nome": "Henrique G. Castro",
-            "CPF": "83740591837",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-08-14T13:12:03.98",
-            "Telefone": "998841113",
-            "Email": "hgcastro@gmail.com",
-            "Alergias": false,
-            "Gestante": false
-        },
-        {
-            "id": 3,
-            "nome": "Ana V. Rodrigues",
-            "CPF": "91837485799",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-02-17T23:33:01.98",
-            "Telefone": "997487619",
-            "Email": "anarodr@yahoo.com.br",
-            "Alergias": false,
-            "Gestante": false
-        },
-        {
-            "id": 4,
-            "nome": "Isabela do Carmo",
-            "CPF": "837163849183",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-02-17T23:33:01.98",
-            "Telefone": "998371849",
-            "Email": "isa.carmo@yahoo.com.br",
-            "Alergias": false,
-            "Gestante": false
-        },
-        {
-            "id": 5,
-            "nome": "Bruna Miorini",
-            "CPF": "847586711244",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-01-17T23:13:09.98",
-            "Telefone": "996779183",
-            "Email": "brunamiorini@uol.com.br",
-            "Alergias": false,
-            "Gestante": false
-        }
-    ],
-    "Produtos": [
-        {
-            "id": 1,
-            "categoria": "shampoo",
-            "marca": "Loreal",
-            "linha": "Kids",
-            "descricao": "Shampoo sem sal, ph, etc",
-            "conteudo": "1000",
-            "medida": "ml"
-        },
-        {
-            "id": 2,
-            "categoria": "coloração",
-            "marca": "Koleston",
-            "linha": "Creme",
-            "descricao": "Cor Preto 20",
-            "conteudo": "-",
-            "medida": "Kit"
-        }
-    ],
-    "Servicos": [
-        {
-            "id": 1,
-            "nome": "Coloração",
-            "produtos": ["Tinta", "Oxidante"]
-        },
-        {
-            "id": 2,
-            "nome": "Mechas",
-            "produtos": ["Tinta", "Oxidante"]
-        },
-        {
-            "id": 3,
-            "nome": "Corte",
-            "produtos": ["Shampoo", "Tesoura"]
-        }
-    ],
-    "Cabeleireiros": [
-        {
-            "id": 1,
-            "nome": "Maria",
-            "sobrenome": "Nascimento",
-            "CPF": "14574869581",
-            "AutorizaFotos": true,
-            "DataNascimento": "2019-03-25T11:25:03.98",
-            "Telefone": "993847182",
-            "Email": "maria.nasc@gmail.com"
-        }
-    ]
+  "Clientes": [
+    {
+      "id": 1,
+      "nome": "Maria do Nascimento",
+      "CPF": "14574869581",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-03-25T11:25:03.98",
+      "Telefone": "993847182",
+      "Email": "maria.nasc@gmail.com",
+      "Alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 2,
+      "nome": "Henrique G. Castro",
+      "CPF": "83740591837",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-08-14T13:12:03.98",
+      "Telefone": "998841113",
+      "Email": "hgcastro@gmail.com",
+      "Alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 3,
+      "nome": "Ana V. Rodrigues",
+      "CPF": "91837485799",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-02-17T23:33:01.98",
+      "Telefone": "997487619",
+      "Email": "anarodr@yahoo.com.br",
+      "Alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 4,
+      "nome": "Isabela do Carmo",
+      "CPF": "837163849183",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-02-17T23:33:01.98",
+      "Telefone": "998371849",
+      "Email": "isa.carmo@yahoo.com.br",
+      "Alergias": false,
+      "Gestante": false
+    },
+    {
+      "id": 5,
+      "nome": "Bruna Miorini",
+      "CPF": "847586711244",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-01-17T23:13:09.98",
+      "Telefone": "996779183",
+      "Email": "brunamiorini@uol.com.br",
+      "Alergias": false,
+      "Gestante": false
+    }
+  ],
+  "Produtos": [
+    {
+      "id": 1,
+      "categoria": "shampoo",
+      "marca": "Loreal",
+      "linha": "Kids",
+      "descricao": "Shampoo sem sal, ph, etc",
+      "conteudo": "1000",
+      "medida": "ml"
+    },
+    {
+      "id": 2,
+      "categoria": "coloração",
+      "marca": "Koleston",
+      "linha": "Creme",
+      "descricao": "Cor Preto 20",
+      "conteudo": "-",
+      "medida": "Kit"
+    }
+  ],
+  "Servicos": [
+    {
+      "id": 1,
+      "nome": "Coloração",
+      "produtos": [
+        "Tinta",
+        "Oxidante"
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Mechas",
+      "produtos": [
+        "Tinta",
+        "Oxidante"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Corte",
+      "produtos": [
+        "Shampoo",
+        "Tesoura"
+      ]
+    }
+  ],
+  "Cabeleireiros": [
+    {
+      "id": 1,
+      "nome": "Maria",
+      "sobrenome": "Nascimento",
+      "CPF": "14574869581",
+      "AutorizaFotos": true,
+      "DataNascimento": "2019-03-25T11:25:03.98",
+      "Telefone": "993847182",
+      "Email": "maria.nasc@gmail.com"
+    },
+    {
+      "nome": "Cristiano Coelho",
+      "sobrenome": "Souza",
+      "telefone": "5531985877928",
+      "email": "ccoelho.me@gmail.com",
+      "senha": "1",
+      "repetirSenha": "1",
+      "dataNascimento": "2010-10-10",
+      "id": 2
+    }
+  ]
 }

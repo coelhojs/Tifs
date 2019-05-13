@@ -1,9 +1,9 @@
 import _ from "lodash";
-import { FETCH_CLIENTES, FETCH_CLIENTE, CREATE_CLIENTE, DELETE_CLIENTE } from "../actions/types";
+import { FETCH_ALL_CLIENTES, FETCH_CLIENTE, CREATE_CLIENTE, DELETE_CLIENTE } from "../actions/types";
 
 export default function (state = {}, action) {
     switch (action.type) {
-        case FETCH_CLIENTES:
+        case FETCH_ALL_CLIENTES:
             return action.payload.data;
         case FETCH_CLIENTE:
             return { ...state, [action.payload.data.id]: action.payload.data };

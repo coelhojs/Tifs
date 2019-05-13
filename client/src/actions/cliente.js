@@ -1,6 +1,6 @@
 import { api } from "./index";
 import history from '../history';
-import { CREATE_CLIENTE, FETCH_CLIENTES } from './types';
+import { CREATE_CLIENTE, FETCH_ALL_CLIENTES } from './types';
 
 export const createCliente = formValues => async (dispatch, getState) => {
     const response = await api.post('/Clientes', { ...formValues });
@@ -10,5 +10,5 @@ export const createCliente = formValues => async (dispatch, getState) => {
 
 export const fetchClientes = () => async dispatch => {
     const response = await api.get('/Clientes');
-    dispatch({ type: FETCH_CLIENTES, payload: response });
+    dispatch({ type: FETCH_ALL_CLIENTES, payload: response });
 };

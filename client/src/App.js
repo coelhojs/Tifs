@@ -9,6 +9,7 @@ import Landing from "./containers/Landing";
 import Login from "./containers/Login";
 import Produtos from "./containers/Produtos";
 import Servico from "./containers/Servico";
+import Editar from "./containers/EditarCadastro";
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
+                    <Route path="/Editar" component={Editar} />
                     <Route path="/Cadastro" component={Cadastro} />
                     <Route path="/Login" component={Login} />
                 </Switch>
