@@ -1,6 +1,4 @@
 import React from "react";
-// import ActionButton from "../components/actionButton";
-import { deleteProdutos } from "../actions/produto";
 
 const ItemProduto = ({ produtos }) => {
     const key = produtos._id;

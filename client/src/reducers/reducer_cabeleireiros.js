@@ -15,3 +15,5 @@ export default function (state = {}, action) {
             return state;
     }
 }
+
+export const cabeleireiro = data => ({ type: FETCH_CABELEIREIRO, data })
