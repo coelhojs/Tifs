@@ -8,22 +8,13 @@ import '../style/general.scss';
 let history = require("history").createBrowserHistory;
 
 class CabeleireiroEditar extends Component {
-    componentDidMount() {
-        //this.props.cabeleireiro = this.props.fetchCabeleireiro(this.props.match.params.id);
-        this.props = this.props.fetchCabeleireiro(1);
-    }
-
-    onSubmit(props) {
-        this.props.createCabeleireiro(props, () => {
+    onSubmit(formValues) {
+        this.props.onSubmit((formValues), () => {
             history.push('/');
         });
     }
 
     render() {
-        // if (!this.props.cabeleireiro) {
-        //     return <div>Loading...</div>;
-        // }
-
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>

@@ -105,23 +105,25 @@
   "Cabeleireiros": [
     {
       "id": 1,
-      "nome": "Maria",
+      "nome": "Joana",
       "sobrenome": "Nascimento",
-      "CPF": "14574869581",
-      "AutorizaFotos": true,
-      "DataNascimento": "2019-03-25T11:25:03.98",
-      "Telefone": "993847182",
-      "Email": "maria.nasc@gmail.com"
+      "cnpj": "14574869581",
+      "telefone": "993847182",
+      "email": "joa.nasc@gmail.com",
+      "dataNascimento": "2019-03-25T11:25:03.98",
+      "senha": "1",
+      "repetirSenha": "1"
     },
     {
+      "id": 2,
       "nome": "Cristiano Coelho",
       "sobrenome": "Souza",
+      "cnpj": "14574869581",
       "telefone": "5531985877928",
       "email": "ccoelho.me@gmail.com",
-      "senha": "1",
-      "repetirSenha": "1",
       "dataNascimento": "2010-10-10",
-      "id": 2
+      "senha": "1",
+      "repetirSenha": "1"
     }
   ]
 }

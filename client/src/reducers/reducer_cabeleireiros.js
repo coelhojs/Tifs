@@ -1,10 +1,12 @@
 import _ from "lodash";
-import { FETCH_ALL_CABELEIREIROS, FETCH_CABELEIREIRO, CREATE_CABELEIREIRO, DELETE_CABELEIREIRO } from "../actions/types";
+import { FETCH_ALL_CABELEIREIROS, FETCH_CABELEIREIRO, CREATE_CABELEIREIRO, DELETE_CABELEIREIRO, EDIT_CABELEIREIRO } from "../actions/types";
 
 export default function (state = {}, action) {
     switch (action.type) {
         case CREATE_CABELEIREIRO:
             return { ...state, [action.payload.data]: action.payload.data };
+        case EDIT_CABELEIREIRO:
+            return { ...state, [action.payload.id]: action.payload.data };
         case FETCH_ALL_CABELEIREIROS:
             return action.payload.data;
         case FETCH_CABELEIREIRO:
