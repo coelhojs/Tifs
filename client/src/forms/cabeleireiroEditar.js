@@ -9,7 +9,8 @@ let history = require("history").createBrowserHistory;
 
 class CabeleireiroEditar extends Component {
     componentDidMount() {
-        this.props.fetchCabeleireiro(this.props.match.params.id);
+        //this.props.cabeleireiro = this.props.fetchCabeleireiro(this.props.match.params.id);
+        this.props = this.props.fetchCabeleireiro(1);
     }
 
     onSubmit(props) {
