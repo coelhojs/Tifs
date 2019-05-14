@@ -16,7 +16,6 @@ export const fetchCabeleireiros = () => async dispatch => {
 export const fetchCabeleireiro = id => async dispatch => {
     const response = await api.get(`/Cabeleireiros/${id}`);
     console.log(response);
-    
     dispatch({ type: FETCH_CABELEIREIRO, payload: response });
 };
 
