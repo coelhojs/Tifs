@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createProduto } from '../actions/produto';
+import inputField from "../components/inputField";
 import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
@@ -25,15 +26,6 @@ class ProdutoForm extends Component {
     }
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
-        const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-            <div className="form-group row">
-                <label className="col-2">{label}</label>
-                <div className="col-10">
-                    <input className="form-control" {...input} placeholder={label} type={type} />
-                    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-                </div>
-            </div>
-        )
 
         return (
             <form className="container formMobileProd" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -48,15 +40,15 @@ class ProdutoForm extends Component {
                         </Field>
                     </div>
                 </div> */}
-                <Field name="categoria" label="Categoria" component={renderField} validate={[required, maxLength15]} />
-                <Field name="marca" label="Marca" component={renderField} type="text"
+                <Field name="categoria" label="Categoria" component={inputField} validate={[required, maxLength15]} />
+                <Field name="marca" label="Marca" component={inputField} type="text"
                     placeholder="Ex.: Loreal" validate={[required, maxLength15]}
                 />
-                <Field name="linha" label="Linha" component={renderField} type="text"
+                <Field name="linha" label="Linha" component={inputField} type="text"
                     placeholder="Ex.: Kids" validate={[required, maxLength15]}
                 />
-                <Field name="descricao" label="Descrição" component={renderField} type="text" validate={[required, maxLength15]} />
-                <Field name="conteudo" label="Conteúdo" component={renderField} type="number"
+                <Field name="descricao" label="Descrição" component={inputField} type="text" validate={[required, maxLength15]} />
+                <Field name="conteudo" label="Conteúdo" component={inputField} type="number"
                     placeholder="500" validate={[required, number, minValue18]} warn={tooOld}
                 />
                 {/* <Field name="medida" component="select">
@@ -66,7 +58,7 @@ class ProdutoForm extends Component {
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                         </Field> */}
-                <Field name="medida" label="Medida" component={renderField} validate={[required, maxLength15]} />
+                <Field name="medida" label="Medida" component={inputField} validate={[required, maxLength15]} />
                 <br />
                 <div className="button-group d-flex justify-content-around">
                     <button type="submit" className="btn btn-success" disabled={pristine || submitting}
