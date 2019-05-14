@@ -23,7 +23,7 @@ class App extends Component {
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
-                    <Route path="/Editar" component={Editar} />
+                    <Route path="/Editar/:id" component={Editar} />
                     <Route path="/Cadastro" component={Cadastro} />
                     <Route path="/Login" component={Login} />
                 </Switch>
