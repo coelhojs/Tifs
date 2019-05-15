@@ -31,9 +31,6 @@ const ServicoFormPage1 = (props) => {
                     {/* <Field name="observacoes" component="textarea" /> */}
                 </div>
             </div>
-            {/* <button type="button" className="btn btn-secondary" onClick={previousPage}>
-                Anterior
-                </button> */}
             <button type="submit" className="btn btn-success buttonService">
                 Próximo
                 </button>

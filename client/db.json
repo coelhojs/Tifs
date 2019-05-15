@@ -124,6 +124,28 @@
       "dataNascimento": "2010-10-10",
       "senha": "1",
       "repetirSenha": "1"
+    },
+    {
+      "nome": "CRISTIANO COELHO DE",
+      "sobrenome": "SOUZA",
+      "cnpj": "1",
+      "telefone": "31985877928",
+      "email": "ccoelho.me@gmail.com",
+      "dataNascimento": "0011-11-11",
+      "senha": "1",
+      "repetirSenha": "1",
+      "id": 3
+    },
+    {
+      "nome": "CRISTIANO COELHO DE",
+      "sobrenome": "SOUZA",
+      "cnpj": "1",
+      "telefone": "31985877928",
+      "email": "ccoelho.me@gmail.com",
+      "dataNascimento": "0011-11-11",
+      "senha": "1",
+      "repetirSenha": "1",
+      "id": 4
     }
   ]
 }

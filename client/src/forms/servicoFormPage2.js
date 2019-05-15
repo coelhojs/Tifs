@@ -1,8 +1,9 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, FieldArray, reduxForm } from 'redux-form';
+import MaterialUtilizado from "../components/materialUtilizado";
 
 const ServicoFormPage2 = (props) => {
-    const { handleSubmit, servicos } = props
+    const { handleSubmit, previousPage, servicos } = props
 
     return (
         <form className="container" onSubmit={handleSubmit}>
@@ -19,7 +20,8 @@ const ServicoFormPage2 = (props) => {
             <div className="form-group">
                 <label className="col-12">Materiais utilizados</label>
                 <div className="col-12">
-                    <Field name="materiais" component="textarea" />
+                    <FieldArray name="materiais" component={MaterialUtilizado} />
+                    {/* <Field name="materiais" component="textarea" /> */}
                     {/* <FormProdutos */}
                     {/* <Field name="produto" component="select">
                         <option>Selecione o servico</option>
@@ -27,9 +29,9 @@ const ServicoFormPage2 = (props) => {
                     </Field> */}
                 </div>
             </div>
-            {/* <button type="button" className="btn btn-secondary" onClick={previousPage}>
-                Anterior
-                </button> */}
+            <button type="button" className="btn btn-secondary" onClick={previousPage}>
+                Voltar
+                </button>
             <button type="submit" className="btn btn-success" >
                 Concluído
                 </button>

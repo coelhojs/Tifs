@@ -49,7 +49,7 @@ class ServicoForm extends Component {
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 

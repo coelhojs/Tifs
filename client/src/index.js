@@ -21,9 +21,10 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Menu pageWrapId={"page-wrap"} >
-                <Link to="/Editar" className="menu-item">Editar</Link>
+                <Link to="/Editar/1" className="menu-item">Editar</Link>
                 <Link to="/Ajuda" className="menu-item">Ajuda</Link>
                 <Link to="/Termos" className="menu-item">Termos</Link>
+                <Link to="/" className="menu-item">Sair</Link>
             </Menu>
             <App />
         </Router>
