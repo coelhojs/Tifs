@@ -18,15 +18,8 @@ const ServicoFormPage2 = (props) => {
                 </div>
             </div>
             <div className="form-group">
-                <label className="col-12">Materiais utilizados</label>
                 <div className="col-12">
-                    <FieldArray name="materiais" component={MaterialUtilizado} />
-                    {/* <Field name="materiais" component="textarea" /> */}
-                    {/* <FormProdutos */}
-                    {/* <Field name="produto" component="select">
-                        <option>Selecione o servico</option>
-                        {produtos}
-                    </Field> */}
+                    <FieldArray name="materiais" items={servicos} component={MaterialUtilizado} />
                 </div>
             </div>
             <button type="button" className="btn btn-secondary" onClick={previousPage}>

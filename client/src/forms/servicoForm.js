@@ -61,6 +61,16 @@ class ServicoForm extends Component {
         //this.renderProdutos(servicos.nome));
     }
 
+    renderMateriais() {
+        let id = 0;
+        let materiais = [];
+        return _.map(this.props.servicos, servicos => {
+            materiais.push(servicos.produtos)
+            return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
+        })
+        //this.renderProdutos(servicos.nome));
+    }
+
     // renderProdutos(nome) {
     //     console.log(this.props.servicos);
     //     console.log(nome);
@@ -82,8 +92,8 @@ class ServicoForm extends Component {
         const { page } = this.state
         return (
             <div>
-                {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
-                {page === 2 && (
+                {page === 2 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
+                {page === 1 && (
                     <ServicoFormPage2
                         //produtos={this.renderProdutos()}
                         servicos={this.renderServicos()}
