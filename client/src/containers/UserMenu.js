@@ -17,7 +17,7 @@ class UserMenu extends Component {
                     <img src="/img/icon/female.png" alt="" />
                     <span>Olá, {this.props.cabeleireiro}</span>
                 </div> */}
-                <Link to="/Editar/5cdca4592285902f5c36802a" className="menu-item">Editar</Link>
+                <Link to="/Editar/5cdca3cf4846a141f0c72d19" className="menu-item">Editar</Link>
                 <Link to="/Ajuda" className="menu-item">Ajuda</Link>
                 <Link to="/Termos" className="menu-item">Termos</Link>
                 <Link to="/" className="menu-item">Sair</Link>

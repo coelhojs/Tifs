@@ -6,9 +6,7 @@ import CabeleireiroEditar from "../forms/cabeleireiroEditar";
 
 class EditarCadastro extends Component {
     componentDidMount() {
-        //this.props.fetchCabeleireiro(this.props.match.params.id);        
-        let id = '5cdca3cf4846a141f0c72d19';
-        this.props.fetchCabeleireiro(id);        
+        this.props.fetchCabeleireiro(this.props.match.params.id);
     }
     onSubmit = formValues => {
         this.props.editCabeleireiro(this.props.match.params.id, formValues);
@@ -18,16 +16,17 @@ class EditarCadastro extends Component {
         if (!this.props.cabeleireiro) {
             return <div>Carregando...</div>;
         }
+
         return (
             <CabeleireiroEditar
-                initialValues={_.pick(this.props.cabeleireiro, 'nome', 'sobrenome', 'cnpj', 'telefone', 'email', 'dataNascimento', 'senha', 'repetirSenha')}
+                initialValues={_.pick(this.props.cabeleireiros, 'nome', 'sobrenome', 'cnpj', 'telefone', 'email', 'dataNascimento', 'senha', 'repetirSenha')}
                 onSubmit={this.onSubmit} />
         );
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return { cabeleireiro: state.cabeleireiros[ownProps.match.params.id] };
+    return { cabeleireiros: state.cabeleireiros[ownProps.match.params.id] };
 };
 
 export default connect(
