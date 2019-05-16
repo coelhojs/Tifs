@@ -28,6 +28,10 @@
 header {
   margin-bottom: 1rem; }
 
+#page-wrap {
+  background: repeat center url("/img/background.jpeg");
+  height: 97vh; }
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;

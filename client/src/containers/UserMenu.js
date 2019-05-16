@@ -1,23 +1,32 @@
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { pushRotate as Menu } from "react-burger-menu";
+import { Link } from "react-router-dom";
+import { getCabeleireiroName } from '../actions/cabeleireiro';
 
-// class UserMenu extends React.Component {
-//   showSettings (event) {
-//     event.preventDefault();
+class UserMenu extends Component {
+    componentDidMount() {
+        let id = "5cdca5712285902f5c368031";
+        this.props.getCabeleireiroName(id);
+    }
 
-//   }
+    render() {
+        return (
+            <Menu pageWrapId={"page-wrap"} >
+                {/* <div>
+                    <img src="/img/icon/female.png" alt="" />
+                    <span>Olá, {this.props.cabeleireiro}</span>
+                </div> */}
+                <Link to="/Editar/5cdc90e89bc6d00cc421fff0" className="menu-item">Editar</Link>
+                <Link to="/Ajuda" className="menu-item">Ajuda</Link>
+                <Link to="/Termos" className="menu-item">Termos</Link>
+                <Link to="/" className="menu-item">Sair</Link>
+            </Menu>
+        )
+    }
+}
 
-//   render () {
-//     return (
-//       <Menu>
-//         <a id="home" className="menu-item" href="/">Home</a>
-//         <a id="about" className="menu-item" href="/about">About</a>
-//         <a id="contact" className="menu-item" href="/contact">Contact</a>
-//         <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-//       </Menu>
-//     );
-//   }
-// }
-
-// //export default UserMenu(Menu);
-//  export default UserMenu;
+export default connect(
+    null,
+    { getCabeleireiroName }
+)(UserMenu);

@@ -11,11 +11,12 @@ class EditarCadastro extends Component {
     onSubmit = formValues => {
         this.props.editCabeleireiro(this.props.match.params.id, formValues);
     };
-
+    
     render() {
         if (!this.props.cabeleireiro) {
-            return <div>Loading...</div>;
+            return <div>Carregando...</div>;
         }
+        
         return (
             <CabeleireiroEditar
                 initialValues={_.pick(this.props.cabeleireiro, 'nome', 'sobrenome', 'cnpj', 'telefone', 'email', 'dataNascimento', 'senha', 'repetirSenha')}
