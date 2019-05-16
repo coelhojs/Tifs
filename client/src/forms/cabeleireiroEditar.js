@@ -13,9 +13,9 @@ class CabeleireiroEditar extends Component {
             history.push('/');
         });
     }
-    userDelete() {
-        this.props.deleteCabeleireiro(this.props.match.params.id);
-    }
+    // userDelete() {
+    //     this.props.deleteCabeleireiro(this.props.match.params.id);
+    // }
 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -41,7 +41,7 @@ class CabeleireiroEditar extends Component {
                     type="password" />
                 <br />
                 <div className="button-group d-flex justify-content-around">
-                    <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
+                    <button type="button" className="btn btn-success" data-toggle="modal" data-target="#meuModal" disabled={pristine || submitting}>
                         Cadastrar
                         </button>
                     <button type="button" className="btn btn-danger" disabled={pristine || submitting}
@@ -50,7 +50,7 @@ class CabeleireiroEditar extends Component {
                         </button>
                 </div>
                 <br />
-                <button type="button" class="btn btn-danger" onclick={this.userDelete()}>Danger</button>
+                {/* <button type="button" class="btn btn-danger" onclick={this.userDelete()}>Danger</button> */}
             </form >
         );
     }
