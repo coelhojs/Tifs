@@ -29,8 +29,13 @@ header {
   margin-bottom: 1rem; }
 
 #page-wrap {
-  background: repeat center url("/img/background.jpeg");
-  height: 97vh; }
+  /*
+    background: repeat center url("/img/background.jpeg");
+    height: 80vh;
+    */ }
+
+body {
+  background: repeat center url("/img/background.jpeg"); }
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -67,7 +72,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #626b6b;
+  background: linear-gradient(0deg, #626b6b 0%, black 100%);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em; }
 
