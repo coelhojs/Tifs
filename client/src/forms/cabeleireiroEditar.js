@@ -13,6 +13,9 @@ class CabeleireiroEditar extends Component {
             history.push('/');
         });
     }
+    userDelete() {
+        this.props.deleteCabeleireiro(this.props.match.params.id);
+    }
 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -47,6 +50,7 @@ class CabeleireiroEditar extends Component {
                         </button>
                 </div>
                 <br />
+                <button type="button" class="btn btn-danger" onclick={this.userDelete()}>Danger</button>
             </form >
         );
     }

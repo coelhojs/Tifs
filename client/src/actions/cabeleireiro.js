@@ -1,5 +1,5 @@
 import { api } from "./index";
-import { CREATE_CABELEIREIRO, EDIT_CABELEIREIRO, FETCH_ALL_CABELEIREIROS, FETCH_CABELEIREIRO, FETCH_CABELEIREIRO_NAME } from './types';
+import { CREATE_CABELEIREIRO, EDIT_CABELEIREIRO, FETCH_ALL_CABELEIREIROS, FETCH_CABELEIREIRO, DELETE_CABELEIREIRO, FETCH_CABELEIREIRO_NAME } from './types';
 
 export const createCabeleireiro = formValues => async (dispatch, getState) => {
     const response = await api.post('/cabeleireiros', { ...formValues });
@@ -18,6 +18,7 @@ export const fetchCabeleireiros = () => async dispatch => {
 export const fetchCabeleireiro = id => async dispatch => {
     let _id = id;
     const response = await api.get(`/cabeleireiros/${_id}`);
+    console.log(response);
     dispatch({ type: FETCH_CABELEIREIRO, payload: response.data });
 };
 
@@ -32,4 +33,10 @@ export const getCabeleireiroName = id => async dispatch => {
     const response = await api.get(`/cabeleireiros/${_id}`);
     dispatch({ type: FETCH_CABELEIREIRO_NAME, payload: response.data });
     // history.push('/Home');
+};
+
+export const deleteCabeleireiro = id => async dispatch => {
+    let _id = id;
+    const response = await api.delete(`/cabeleireiros/${_id}`);
+    dispatch({ type: DELETE_CABELEIREIRO, payload: response.data });
 };
