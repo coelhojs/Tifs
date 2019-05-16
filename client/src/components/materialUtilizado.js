@@ -20,7 +20,7 @@ const MaterialUtilizado = ({ fields }) => {
                         />
                     </div>
                     <div className="col">
-                        <Field name={`medida${index}`} component="select">
+                        <Field name={`medida${index}`} component="select" className="form-control">
                             <option value="" defaultValue></option>
                             <option value="ml">ml</option>
                             <option value="L">L</option>
