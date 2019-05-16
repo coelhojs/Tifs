@@ -11,9 +11,12 @@ const ServicoFormPage2 = (props) => {
             <div className="form-group row">
                 <label className="col-3">Serviço</label>
                 <div className="col-9">
-                    {/* <Field name="servico" component="select"> */}
                     <Field name="nome" component="select">
-                        {servicos}
+                        <option value="Escova" defaultValue>Escova</option>
+                        <option value="Corte">Corte</option>
+                        <option value="Coloração">Coloração</option>
+                        <option value="Selagem">Selagem</option>
+                        <option value="Mechas">Mechas</option>
                     </Field>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { fetchClientes } from '../actions/cliente';
-import { fetchServicos } from '../actions/servico';
+//import { fetchServicos } from '../actions/servico';
 //import ServicoOptions from "./servicoOptions";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
@@ -44,12 +44,12 @@ class ServicoForm extends Component {
 
     componentWillMount() {
         this.props.fetchClientes();
-        this.props.fetchServicos();
+        //this.props.fetchServicos();
     }
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 
@@ -92,8 +92,8 @@ class ServicoForm extends Component {
         const { page } = this.state
         return (
             <div>
-                {page === 2 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
-                {page === 1 && (
+                {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
+                {page === 2 && (
                     <ServicoFormPage2
                         //produtos={this.renderProdutos()}
                         servicos={this.renderServicos()}
@@ -128,7 +128,8 @@ ServicoForm = connect(
     // state => ({
     //     initialValues: defaultValues // pull initial values from account reducer
     // }),
-    { fetchClientes, fetchServicos }
+    //{ fetchClientes, fetchServicos }
+    { fetchClientes }
 )(ServicoForm)
 
 export default ServicoForm
