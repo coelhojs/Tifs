@@ -30,6 +30,7 @@ const mapStateToProps = (state, ownProps) => {
     return { cabeleireiro: state.cabeleireiros[ownProps.match.params.id] };
 };
 
+
 export default connect(
     mapStateToProps,
     { fetchCabeleireiro, editCabeleireiro }
