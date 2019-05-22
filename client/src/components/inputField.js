@@ -1,6 +1,6 @@
 import React from 'react';
 
-const inputField = ({ input, label, type, meta: { touched, error, warning } }) => (
+const inputField = ({ input, textarea, select, label, type, meta: { touched, error, warning } }) => (
     <div className="form-group row">
         <label className="col-2">{label}</label>
         <div className="col-10">
