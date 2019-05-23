@@ -7,6 +7,8 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
+const required = value => value ? undefined : 'Campo obrigatório'
+
 class CadastroForm extends Component {
     onSubmit(props) {
         this.props.fetchCabeleireiro(props, () => {
@@ -21,9 +23,9 @@ class CadastroForm extends Component {
                 <div className="text-center"><h1>Login</h1></div>
                 <hr />
                 <Field name="email" label="E-mail" component={inputField}
-                    type="email" />
+                    type="email" validate={required}/>
                 <Field name="senha" label="Senha" component={inputField}
-                    type="password" />
+                    type="password" validate={required}/>
                 <br />
                 <div className="button-group d-flex justify-content-around">
                     <button type="submit" className="btn btn-success" disabled={pristine || submitting}>
