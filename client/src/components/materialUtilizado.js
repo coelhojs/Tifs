@@ -2,6 +2,12 @@ import React from "react";
 import { Field } from 'redux-form';
 import inputField from '../components/inputField';
 
+const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
+const required = value => value ? undefined : 'Campo obrigatório'
+const maxDescricao = max => value =>
+    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
+const maxDescricaoTotal = maxDescricao(150)
+
 const MaterialUtilizado = ({ fields }) => {
     return (
         <div>
@@ -17,6 +23,7 @@ const MaterialUtilizado = ({ fields }) => {
                             type="text"
                             component={inputField}
                             value={produto}
+                            validate={[required, number]}
                         />
                     </div>
                     <div className="col">

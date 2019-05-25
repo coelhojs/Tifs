@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
-import MaskedInput from "./inputMask";
 import inputField from "../components/inputField";
 import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-
 const required = value => value ? undefined : 'Campo obrigatório'
 const maxEmail = max => value =>
     value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
 const maxEmailTotal = maxEmail(60)
+const maxCPF= max => value =>
+    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
+const maxCPFTotal = maxCPF(11)
 const maxLength = max => value =>
     value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
 const maxLengthTotal = maxLength(30)
@@ -56,8 +58,8 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">CPF</label>
                     <div className="col-10">
-                        <Field name="cpf" className="form-control" component={inputField} type="number" placeholder=""
-                        validate={[required, number]} />
+                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={inputField} type="text" placeholder=""
+                        validate={[required, number, maxCPFTotal]} />
                     </div>
                 </div>
                 <div className="form-group row">
@@ -70,8 +72,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
-                        {/* <MaskedInput isReverse={false} mask={"00/0000"} /> */}
-                        <Field name="telefone" className="form-control" component={inputField} type="text"
+                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component={inputField} type="tel"
                             placeholder="" validate={[required, number]}/>
                     </div>
                 </div>
