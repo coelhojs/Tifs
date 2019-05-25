@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
+import MaskedInput from "./inputMask";
 import inputField from "../components/inputField";
 import '../style/general.scss';
 
@@ -69,6 +70,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
+                        {/* <MaskedInput isReverse={false} mask={"00/0000"} /> */}
                         <Field name="telefone" className="form-control" component={inputField} type="text"
                             placeholder="" validate={[required, number]}/>
                     </div>
