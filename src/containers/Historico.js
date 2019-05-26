@@ -5,7 +5,15 @@ class Historico extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <SearchInput />
+                <div className="text-center">
+                    <div className="offset-md-5">
+                        <SearchInput />
+                    </div>
+                    <div className="btn-group btn-group-sm">
+                        <button type="button" className="btn btn-secondary">Recentes</button>
+                        <button type="button" className="btn btn-secondary">Todos</button>
+                    </div>
+                </div>
             </div>
         );
     }
