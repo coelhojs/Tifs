@@ -8,12 +8,8 @@ import inputField from "../components/inputField";
 //import ServicoOptions from "./servicoOptions";
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
-let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Campo obrigatório'
-const maxDescricao = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxDescricaoTotal = maxDescricao(150)
+let history = require("history").createBrowserHistory;
 
 function getDate() {
     var currentTime = new Date(),
@@ -50,12 +46,12 @@ class ServicoForm extends Component {
 
     componentWillMount() {
         this.props.fetchClientes();
-        //this.props.fetchServicos();
+        this.props.fetchServicos();
     }
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 

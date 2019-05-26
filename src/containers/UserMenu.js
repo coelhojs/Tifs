@@ -2,40 +2,38 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { pushRotate as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import { getCabeleireiroName } from '../actions/cabeleireiro';
-
-
+import { fetchCabeleireiro } from '../actions/cabeleireiro';
 
 class UserMenu extends Component {
     componentDidMount() {
-        let id = "5cdca3cf4846a141f0c72d19";
-        this.props.getCabeleireiroName(id);
+        // let id = "5cdca3cf4846a141f0c72d19";
+        // this.props.fetchCabeleireiro(id);
     }
 
     render() {
         return (
-            <Menu pageWrapId={"page-wrap"} >
-                <div style={{ marginBottom: 60 }}>
+            <Menu right pageWrapId={"page-wrap"} >
+                <div>
                     <img src="/img/icones/essential/svg/user-3.svg" alt="" width="70px" />
                 </div>
                 <span>Menu Principal</span>
                 <hr />
-                <Link to="/Editar/5cdca3cf4846a141f0c72d19" className="menu-item" style={{ marginBottom: 20 }}>
+                <Link to="/Editar/5cdca3cf4846a141f0c72d19" className="menu-item">
                     <img src="/img/icones/essential/svg/edit.svg" alt="" width="20px" />
-                    <span style={{ marginLeft: 30 }}>Editar</span>
+                    <span>Editar perfil</span>
                 </Link>
-                <Link to="/Ajuda" className="menu-item" style={{ marginBottom: 20 }}>
+                <Link to="/Ajuda" className="menu-item">
                     <img src="/img/icones/essential/svg/help.svg" alt="" width="20px" />
-                    <span style={{ marginLeft: 30 }}>Ajuda</span>
+                    <span>Ajuda</span>
                 </Link>
-                <Link to="/Termos" className="menu-item" style={{ marginBottom: 20 }}>
+                <Link to="/Termos" className="menu-item">
                     <img src="/img/icones/essential/svg/notepad-2.svg" alt="" width="20px" />
-                    <span style={{ marginLeft: 30 }}>Termos</span>
+                    <span>Termos</span>
                 </Link>
                 <hr />
-                <Link to="/" className="menu-item" style={{ marginBottom: 20 }}>
+                <Link to="/" className="menu-item">
                     <img src="/img/icones/essential/svg/exit-2.svg" alt="" width="20px" />
-                    <span style={{ marginLeft: 30 }}>Sair</span>
+                    <span>Sair</span>
                 </Link>
             </Menu>
         )
@@ -44,5 +42,5 @@ class UserMenu extends Component {
 
 export default connect(
     null,
-    { getCabeleireiroName }
+    { fetchCabeleireiro }
 )(UserMenu);
