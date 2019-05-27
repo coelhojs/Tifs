@@ -16,6 +16,7 @@ export const createCabeleireiro = formValues => async (dispatch, getState) => {
 
 export const fetchAllCabeleireiros = () => async dispatch => {
     const response = await api.get('/Cabeleireiros');
+    console.log(response);
     dispatch({ type: FETCH_ALL_CABELEIREIROS, payload: response.data });
 };
 
@@ -35,3 +36,8 @@ export const deleteCabeleireiro = id => async dispatch => {
     const response = await api.delete(`/Cabeleireiros/${id}`);
     dispatch({ type: DELETE_CABELEIREIRO, payload: response.data });
 };
+
+// console.log("Testes endpoint /Cabeleireiros:");
+// console.log("getAll:");
+// let getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);
+// //let getTest = api.get("/Cabeleireiros/5cdca3cf4846a141f0c72d19").then(response => response.data.then(console.log));

@@ -6,11 +6,11 @@ export default function (state = {}, action) {
         case CREATE_CABELEIREIRO:
             return { ...state, [action.payload.data]: action.payload.data };
         case EDIT_CABELEIREIRO:
-            return { ...state, [action.payload._id]: action.payload };
+            return { ...state, [action.payload.id]: action.payload };
         case FETCH_ALL_CABELEIREIROS:
             return action.payload.data;
         case FETCH_CABELEIREIRO:
-            return { ...state, [action.payload._id]: action.payload };
+            return { ...state, [action.payload.id]: action.payload };
         case DELETE_CABELEIREIRO:
             return _.omit(state, action.payload.data.id);
         default:

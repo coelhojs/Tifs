@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemProduto = ({ produtos }) => {
-    const key = produtos._id;
+    const key = produtos.id;
     const categoria = produtos.categoria;
     const marca = produtos.marca;
     const linha = produtos.linha;

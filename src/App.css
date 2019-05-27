@@ -1,49 +1,13 @@
+@import url(../node_modules/@fortawesome/fontawesome-free/css/all.min.css);
 @import url(../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css);
 @import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
-.formButton1 {
-  margin-right: 10px; }
-
-@media (max-width: 1024px) {
-  .textAreaService textarea {
-    width: 100%;
-    height: 150px; } }
-
-.textAreaService textarea {
-  width: 101%;
-  height: 150px; }
-
-.buttonService {
-  position: relative;
-  left: 40%; }
-
-@media (max-width: 1024px) {
-  .formMobileProd label {
-    margin-right: 90px; }
-  .resizeProdField {
-    flex: 50% !important; } }
-
-.resizeProdField {
-  width: 83.33%; }
-
-header {
-  margin-bottom: 1rem; }
-
-#page-wrap {
-  /*
-    background: repeat center url("/img/background.jpeg");
-    height: 80vh;
-    */ }
-
-body {
-  background: repeat center url("/img/background.jpeg"); }
-
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 36px;
-  top: 36px; }
+  right: 20px;
+  top: 20px; }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
@@ -72,8 +36,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #626b6b;
-  background: linear-gradient(0deg, #626b6b 0%, black 100%);
+  background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em; }
 
@@ -93,3 +56,70 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3); }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px; }
+
+label {
+  padding-top: .5rem; }
+
+html,
+body,
+#root,
+#app > div {
+  height: 100%; }
+
+#root {
+  min-height: 100%;
+  background-color: rgba(100, 100, 100, 0.1);
+  background-repeat: repeat;
+  background-image: url("/img/background.jpeg"); }
+
+header {
+  padding-top: 3rem; }
+
+.logo {
+  text-align: center; }
+  .logo img {
+    height: 5rem; }
+
+.home__btn {
+  width: 40px;
+  margin-right: 30px; }
+
+footer {
+  background-color: purple;
+  width: 100%;
+  position: fixed;
+  bottom: 0; }
+
+.social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1); }
+
+.social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  color: whitesmoke; }
+
+/*
+    Multicoloured Hover Variations
+*/
+#social-fb:hover {
+  color: #3b5998; }
+
+#social-ig:hover {
+  color: #4099ff; }
