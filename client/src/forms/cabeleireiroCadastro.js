@@ -5,21 +5,11 @@ import { createCabeleireiro } from '../actions/cabeleireiro';
 import inputField from "../components/inputField";
 import '../style/general.scss';
 
-let history = require("history").createBrowserHistory;
-
 const required = value => value ? undefined : 'Campo obrigatório'
 const maxEmail = max => value =>
     value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
 const maxEmailTotal = maxEmail(60)
-const maxLength = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxLength15 = maxLength(30)
-const minValue = min => value =>
-    value && value < min ? `Must be at least ${min}` : undefined
-const minValue18 = minValue(1)
 const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
-const tooOld = value =>
-    value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
 
 class CabeleireiroCadastro extends Component {
     onSubmit(props) {

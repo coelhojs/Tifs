@@ -7,9 +7,6 @@ const ServicoFormPage2 = (props) => {
 
     const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
     const required = value => value ? undefined : 'Campo obrigatório'
-const maxDescricao = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxDescricaoTotal = maxDescricao(150)
 
     return (
         <form className="container" onSubmit={handleSubmit}>

@@ -16,15 +16,7 @@ const maxEmailTotal = maxEmail(60)
 const maxCPF= max => value =>
     value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
 const maxCPFTotal = maxCPF(11)
-const maxLength = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxLengthTotal = maxLength(30)
-const minValue = min => value =>
-    value && value < min ? `O valor minímo é ${min}` : undefined
-const minValueTotal = minValue(1)
 const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
-const valorMaximo = value =>
-    value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
 
 class ClienteForm extends Component {
     onSubmit(props) {

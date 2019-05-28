@@ -43,3 +43,38 @@ export const deleteCabeleireiro = id => async dispatch => {
     const response = await api.delete(`/Cabeleireiros/${_id}`);
     dispatch({ type: DELETE_CABELEIREIRO, payload: response.data });
 };
+
+/*console.log("Testes endpoint /Cabeleireiros");
+console.log("getAll:"); 
+let getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);
+console.log("postTeste:"); 
+let postTeste = api.post("/Cabeleireiros", {"nome": "Adicionado via VSCode",
+                                            "sobrenome": "VSCode",
+                                            "email": "vaassasa@gmail.com",
+                                            "cnpj": "123333159",
+                                            "telefone": "224456",
+                                            "dataNascimento": "1010-11-11T00:00:00.000Z",
+                                            "senha": "teste123",
+                                            "repetirSenha": "1",
+                                            "__v": 0}).then(console.log);
+
+console.log("putTeste:"); 
+let putTeste = api.put("/Cabeleireiros", {"_id": postTeste._id,
+                                        "nome": "Adicionado via VSCode Editando",
+                                        "sobrenome": "VSCode",
+                                        "email": "vscodses@gmail.com",
+                                        "cnpj": "101333356",
+                                        "telefone": "122356",
+                                        "dataNascimento": "1010-11-11T00:00:00.000Z",
+                                        "senha": "teste123",
+                                        "repetirSenha": "1",
+                                        "__v": 0}).then(console.log);  
+
+console.log("getAll:"); 
+getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);   
+
+console.log("getIdTeste");
+let getIdTeste = api.get("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log);  
+
+console.log("delTeste");
+let delTeste = api.delete("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log); */
