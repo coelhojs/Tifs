@@ -8,8 +8,6 @@ import { fetchClientes } from '../actions/cliente';
 import ServicoFormPage1 from "./servicoFormPage1";
 import ServicoFormPage2 from "./servicoFormPage2";
 
-let history = require("history").createBrowserHistory;
-
 function getDate() {
     var currentTime = new Date(),
         month = '' + (currentTime.getMonth() + 1),

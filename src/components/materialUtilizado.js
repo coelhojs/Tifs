@@ -2,8 +2,6 @@ import React from "react";
 import { Field } from 'redux-form';
 import inputField from '../components/inputField';
 
-
-
 const MaterialUtilizado = ({ fields }) => {
     return (
         <div>
