@@ -8,23 +8,6 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Campo obrigatório'
-const maxEmail = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxEmailTotal = maxEmail(60)
-const maxCPF= max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxCPFTotal = maxCPF(11)
-const maxLength = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxLengthTotal = maxLength(30)
-const minValue = min => value =>
-    value && value < min ? `O valor minímo é ${min}` : undefined
-const minValueTotal = minValue(1)
-const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
-const valorMaximo = value =>
-    value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
-
 class ClienteForm extends Component {
     onSubmit(props) {
         this.props.createCliente(props, () => {
@@ -37,13 +20,13 @@ class ClienteForm extends Component {
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-            <div className="text-center"><h1>Cadastro de Cliente</h1></div>
-            <hr/>
+                <div className="text-center"><h1>Cadastro de Cliente</h1></div>
+                <hr />
                 <div className="form-group row">
                     <label className="col-2">Nome</label>
                     <div className="col-10">
                         <Field name="nome" className="form-control" component={inputField} type="text"
-                            placeholder="Nome completo" validate={required}
+                            placeholder="Nome completo"
                         />
                     </div>
                 </div>
@@ -58,29 +41,27 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">CPF</label>
                     <div className="col-10">
-                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={inputField} type="text" placeholder=""
-                        validate={[required, number, maxCPFTotal]} />
+                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={inputField} type="text" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-4">Data de nascimento</label>
                     <div className="col-8">
                         <Field name="dataNascimento" className="form-control" component={inputField} type="date"
-                            placeholder="" validate={[required, number]}/>
+                            placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
                         <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component={inputField} type="tel"
-                            placeholder="" validate={[required, number]}/>
+                            placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">E-mail</label>
                     <div className="col-10">
-                        <Field name="email" className="form-control" component={inputField} type="email" placeholder=""
-                        validate={maxEmailTotal}/>
+                        <Field name="email" className="form-control" component={inputField} type="email" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group formCheck">

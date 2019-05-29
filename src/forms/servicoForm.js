@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { fetchClientes } from '../actions/cliente';
-import inputField from "../components/inputField";
 //import { fetchServicos } from '../actions/servico';
 //import ServicoOptions from "./servicoOptions";
 import ServicoFormPage1 from "./servicoFormPage1";

@@ -4,6 +4,7 @@
     "private": true,
     "homepage": ".",
     "dependencies": {
+        "3d-react-carousal": "^2.0.1",
         "@ramotion/react-native-circle-menu": "^1.0.0",
         "apisauce": "^1.0.2",
         "bootstrap": "^4.3.1",

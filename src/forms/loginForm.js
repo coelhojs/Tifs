@@ -7,8 +7,6 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Campo obrigatório'
-
 class CadastroForm extends Component {
     onSubmit(props) {
         this.props.fetchCabeleireiro(props, () => {
@@ -17,7 +15,7 @@ class CadastroForm extends Component {
     }
 
     render() {
-        const { handleSubmit, pristine, reset, submitting } = this.props;
+        const { handleSubmit, pristine, submitting } = this.props;
 
         return (
             <div className="container">

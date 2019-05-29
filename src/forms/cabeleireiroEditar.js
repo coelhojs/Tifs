@@ -7,20 +7,6 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Campo obrigatório'
-const maxEmail = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxEmailTotal = maxEmail(60)
-const maxLength = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxLength15 = maxLength(30)
-const minValue = min => value =>
-    value && value < min ? `Must be at least ${min}` : undefined
-const minValue18 = minValue(1)
-const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
-const tooOld = value =>
-    value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
-
 class CabeleireiroEditar extends Component {
     onSubmit(formValues) {
         this.props.onSubmit((formValues), () => {
@@ -38,21 +24,21 @@ class CabeleireiroEditar extends Component {
                 <div className="text-center"><h1>Editar perfil</h1></div>
                 <hr />
                 <Field name="nome" label="Nome" component={inputField}
-                    type="text" validate={required}/>
+                    type="text"/>
                 <Field name="sobrenome" label="Sobrenome" component={inputField}
-                    type="text" validate={required}/>
+                    type="text"/>
                 <Field name="cnpj" label="CNPJ" component={inputField}
-                    type="number" validate={[required, number]}/>
+                    type="number" />
                 <Field name="telefone" label="Telefone" component={inputField}
-                    type="tel" validate={[required, number]}/>
+                    type="tel" />
                 <Field name="email" label="E-mail" component={inputField}
-                    type="email" validate={[required, maxEmailTotal]}/>
+                    type="email"/>
                 <Field name="dataNascimento" label="Data de nascimento" component={inputField}
-                    type="date" validate={required}/>
+                    type="date"/>
                 <Field name="senha" label="Senha" component={inputField}
-                    type="password" validate={required}/>
+                    type="password"/>
                 <Field name="repetirSenha" label="Repita a Senha" component={inputField}
-                    type="password"validate={required} />
+                    type="password" />
                 <br />
                 <div className="button-group d-flex justify-content-around">
                     <button type="button" className="btn btn-success" data-toggle="modal" data-target="#meuModal" disabled={pristine || submitting}>
