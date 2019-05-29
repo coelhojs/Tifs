@@ -24,6 +24,8 @@ const defaultValues = {
     data: getDate()
 }
 
+let history = require("history").createBrowserHistory;
+
 class ServicoForm extends Component {
     constructor(props) {
         super(props)
