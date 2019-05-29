@@ -3,6 +3,22 @@ import { Field, reduxForm } from 'redux-form';
 import '../style/general.scss';
 import inputField from '../components/inputField';
 
+function getDate() {
+    var currentTime = new Date(),
+        month = '' + (currentTime.getMonth() + 1),
+        day = '' + currentTime.getDate(),
+        year = currentTime.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+const defaultValues = {
+    data: getDate()
+}
+
 const ServicoFormPage1 = (props) => {
     const { handleSubmit, clientes } = props
 

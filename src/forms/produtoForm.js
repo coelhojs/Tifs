@@ -93,8 +93,6 @@ class ProdutoForm extends Component {
     }
 }
 
-//reduxForm: 1st is form config
-//connect: first argument is mapStateToProps, 2nd is mapDispatchToProps
 export default reduxForm({
     form: 'produtoForm'
 })(

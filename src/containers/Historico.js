@@ -22,6 +22,7 @@ class Historico extends Component {
                         <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
                 </div>
+                <br/>
                 <Carousel slides={slides} />
                 {/* https://www.npmjs.com/package/react-spring-3d-carousel */}
                 {/* https://github.com/suhailsulu/react-carousel-3d */}

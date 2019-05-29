@@ -1,28 +1,11 @@
 import _ from "lodash";
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
+import { Field, formValueSelector, reduxForm } from 'redux-form';
 import { fetchClientes } from '../actions/cliente';
-//import { fetchServicos } from '../actions/servico';
-//import ServicoOptions from "./servicoOptions";
-import ServicoFormPage1 from "./servicoFormPage1";
-import ServicoFormPage2 from "./servicoFormPage2";
-
-function getDate() {
-    var currentTime = new Date(),
-        month = '' + (currentTime.getMonth() + 1),
-        day = '' + currentTime.getDate(),
-        year = currentTime.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
-}
-
-const defaultValues = {
-    data: getDate()
-}
+import { fetchServicos } from '../actions/servico';
+import ServicoFormPage1 from './servicoFormPage1'
+import ServicoFormPage2 from './servicoFormPage2'
 
 let history = require("history").createBrowserHistory;
 
@@ -47,7 +30,6 @@ class ServicoForm extends Component {
         this.props.fetchClientes();
         this.props.fetchServicos();
     }
-
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
             return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
@@ -59,7 +41,6 @@ class ServicoForm extends Component {
         return _.map(this.props.servicos, servicos => {
             return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
         })
-        //this.renderProdutos(servicos.nome));
     }
 
     renderMateriais() {
@@ -69,17 +50,7 @@ class ServicoForm extends Component {
             materiais.push(servicos.produtos)
             return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
         })
-        //this.renderProdutos(servicos.nome));
     }
-
-    // renderProdutos(nome) {
-    //     console.log(this.props.servicos);
-    //     console.log(nome);
-
-    //     return _.map(this.props.servicos.produtos, produtos => {
-    //         return <ServicoOptions key={produtos.id} produtos={produtos}></ServicoOptions>
-    //     });
-    // }
 
     onSubmit(props) {
         this.props.createServico(props, () => {
@@ -87,16 +58,40 @@ class ServicoForm extends Component {
         });
     }
 
+    // render() {
+    //     const { onSubmit } = this.props
+    //     const { page } = this.state
+    //     return (
+    //         <div>
+    //             {page === 1 && (
+    //                 <ServicoFormPage1 onSubmit={this.nextPage}
+    //                 />
+    //             )}
+    //             {page === 2 && (
+    //                 <ServicoFormPage2
+    //                     previousPage={this.previousPage}
+    //                     onSubmit={this.nextPage}
+    //                 />
+    //             )}
+    //         </div>
+    //     )
+    // }
+
     render() {
         const { handleSubmit } = this.props;
-        //const { renderClientes } = this.props;
+        // const { renderClientes } = this.props;
         const { page } = this.state
         return (
             <div>
-                {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
+                {page === 1 && (
+                    <ServicoFormPage1
+                        onSubmit={this.nextPage}
+                        clientes={this.renderClientes()}
+                    />
+                )}
                 {page === 2 && (
                     <ServicoFormPage2
-                        //produtos={this.renderProdutos()}
+                        // produtos={this.renderProdutos()}
                         servicos={this.renderServicos()}
                         previousPage={this.previousPage}
                         onSubmit={handleSubmit}
@@ -107,30 +102,33 @@ class ServicoForm extends Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     //const selector = formValueSelector('servicoForm')
     return {
-        initialValues: defaultValues,
+        //initialValues: defaultValues,
         clientes: state.clientes,
         servicos: state.servicos,
         produtos: state.produtos,
-        //selectedServico: selector(state, 'servico') 
+        //selectedServico: selector(state, 'servico')
     };
 }
 
-// Decorate with reduxForm(). It will read the initialValues prop provided by connect()
-ServicoForm = reduxForm({
-    form: 'servicoForm'  // a unique identifier for this form
-})(ServicoForm)
-
-// You have to connect() to any reducers that you wish to connect to yourself
-ServicoForm = connect(
+export default connect(
     mapStateToProps,
-    // state => ({
-    //     initialValues: defaultValues // pull initial values from account reducer
-    // }),
-    //{ fetchClientes, fetchServicos }
-    { fetchClientes }
-)(ServicoForm)
+    { fetchClientes, fetchServicos }
+)(ServicoForm);
 
-export default ServicoForm
+
+// ServicoForm = reduxForm({
+//     form: 'servicoForm'
+// })(ServicoForm)
+
+// ServicoForm = connect(
+//     mapStateToProps,
+//     state => ({
+//         initialValues: defaultValues
+//     }),
+//     { fetchClientes, fetchServicos }
+// )(ServicoForm)
+
+// export default ServicoForm

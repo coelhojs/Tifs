@@ -16,7 +16,9 @@ class UserMenu extends Component {
                 <div>
                     <img src="/img/icones/essential/svg/user-3.svg" alt="" width="70px" />
                 </div>
-                <span>Menu Principal</span>
+                <Link to="/Home">
+                    Menu Principal
+                </Link>
                 <hr />
                 <Link to="/Editar/5cdca3cf4846a141f0c72d19" className="menu-item">
                     <img src="/img/icones/essential/svg/edit.svg" alt="" width="20px" />
