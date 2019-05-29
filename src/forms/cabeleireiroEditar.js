@@ -41,7 +41,7 @@ class CabeleireiroEditar extends Component {
                     type="password" />
                 <br />
                 <div className="button-group d-flex justify-content-around">
-                    <button type="button" className="btn btn-success" data-toggle="modal" data-target="#meuModal" disabled={pristine || submitting}>
+                    <button type="button" className="btn btn-success"  disabled={pristine || submitting}>
                         Cadastrar
                         </button>
                     <button type="button" className="btn btn-danger" disabled={pristine || submitting}

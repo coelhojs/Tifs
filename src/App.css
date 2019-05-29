@@ -70,6 +70,11 @@ label {
 label {
   padding-top: .5rem; }
 
+form {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 1rem 8rem;
+  padding: 3rem 5rem; }
+
 html,
 body,
 #root,
@@ -80,8 +85,7 @@ body,
   min-height: 100%;
   background-color: rgba(100, 100, 100, 0.1);
   background-repeat: repeat;
-  background-image: url("/img/background.jpeg"); 
-}
+  background-image: url("/img/background.jpeg"); }
 
 header {
   padding-top: 3rem; }

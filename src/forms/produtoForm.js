@@ -7,17 +7,6 @@ import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
 
-const required = value => value ? undefined : 'Campo obrigatório'
-const maxLength = max => value =>
-    value && value.length > max ? `Este campo recebe no máximo ${max} caracteres` : undefined
-const maxLength15 = maxLength(30)
-const minValue = min => value =>
-    value && value < min ? `Must be at least ${min}` : undefined
-const minValue18 = minValue(1)
-const number = value => value && isNaN(Number(value)) ? 'Este campo permite somente números' : undefined
-const tooOld = value =>
-    value && value > 5000 ? 'O valor máximo permitido é 5000' : undefined
-
 class ProdutoForm extends Component {
     onSubmit(props) {
         this.props.createProduto(props, () => {
@@ -40,16 +29,16 @@ class ProdutoForm extends Component {
                         </Field>
                     </div>
                 </div> */}
-                <Field name="categoria" label="Categoria" component={inputField} validate={[required, maxLength15]} />
+                <Field name="categoria" label="Categoria" component={inputField}  />
                 <Field name="marca" label="Marca" component={inputField} type="text"
-                    placeholder="Ex.: Loreal" validate={[required, maxLength15]}
+                    placeholder="Ex.: Loreal" 
                 />
                 <Field name="linha" label="Linha" component={inputField} type="text"
-                    placeholder="Ex.: Kids" validate={[required, maxLength15]}
+                    placeholder="Ex.: Kids" 
                 />
-                <Field name="descricao" label="Descrição" component={inputField} type="text" validate={[required, maxLength15]} />
+                <Field name="descricao" label="Descrição" component={inputField} type="text"  />
                 <Field name="conteudo" label="Conteúdo" component={inputField} type="number"
-                    placeholder="500" validate={[required, number, minValue18]} warn={tooOld}
+                    placeholder="500"  
                 />
                 {/* <Field name="medida" component="select">
                             <option value="ml">ml</option>
@@ -58,27 +47,9 @@ class ProdutoForm extends Component {
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                         </Field> */}
-                <Field name="medida" label="Medida" component={inputField} validate={[required, maxLength15]} />
-                <br />
-                <div className="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="meuModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                            <h4 className="modal-title text-center" id="meuModalLabel">Confirmação de cadastro</h4>
-                                <button type="button" className="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span className="sr-only">Close</span></button>      
-                            </div>
-                            <div className="modal-body">
-                               Deseja finalizar o cadastro do produto: 
-                    </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Fechar</button>
-                                <button type="submit" className="btn btn-primary">Concluir cadastro</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Field name="medida" label="Medida" component={inputField}  />
                 <div className="button-group d-flex justify-content-around">
-                    <button type="button" className="btn btn-success" data-toggle="modal" data-target="#meuModal" disabled={pristine || submitting}
+                    <button type="button" className="btn btn-success"  disabled={pristine || submitting}
                         onSubmit={reset}>
                         Cadastrar
                         </button>
