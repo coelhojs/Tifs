@@ -9,24 +9,38 @@ const ServicoFormPage1 = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <InputField
-                name="data" type="date" label="Data"
-                labelClasses="col-2" inputClasses="col-6" formGroupClasses="form-row" />
-            <div className="form-row">
-                <label className="col-2">Cliente</label>
-                <div className="col-10">
-                    <Field name="cliente" className="form-control" component="select">
-                        <option key={0}>Selecione um(a) cliente</option>
-                        {clientes}
-                    </Field></div>
+            <div className="offset-md-2">
+                <div className="form-row">
+                    <label className="col-4">Data</label>
+                    <div className="col-6">
+                        <Field name="data" type="date" component="input" className="form-control" />
+                    </div>
+                </div>
             </div>
-            <div className="form-group col-12">
-                <label className="text-center">Observações sobre o cliente</label>
-                <Field name="anotacoes" className="form-control" component="textarea" />
+            <br />
+            <div className="offset-md-2">
+                <div className="form-row">
+                    <label className="col-4">Cliente</label>
+                    <div className="col-6">
+                        <Field name="cliente" className="form-control" component="select">
+                            <option key={0}>Selecione um(a) cliente</option>
+                            {clientes}
+                        </Field></div>
+                </div>
             </div>
-            <button type="submit" className="btn btn-success buttonService">
-                Próximo
+            <div className="offset-md-2">
+                <div className="form-group"></div>
+                <label className="col-10" style={{ padding: '0px' }}>Observações sobre o cliente</label>
+                <div className="col-10" style={{ padding: '0px' }}>
+                    <Field name="anotacoes" className="form-control" component="textarea" />
+                </div>
+            </div>
+            <br/>
+            <div className="form__footer text-center">
+                <button type="submit" className="btn btn-success buttonService">
+                    Próximo
                 </button>
+            </div>
         </form >
 
     )

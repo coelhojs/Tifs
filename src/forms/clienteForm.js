@@ -25,7 +25,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Nome</label>
                     <div className="col-10">
-                        <Field name="nome" className="form-control" component={InputField} type="text"
+                        <Field name="nome" className="form-control" component="input" type="text"
                             placeholder="Nome completo"
                         />
                     </div>
@@ -41,27 +41,27 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">CPF</label>
                     <div className="col-10">
-                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={InputField} type="text" placeholder="" />
+                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component="input" type="text" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-4">Data de nascimento</label>
                     <div className="col-8">
-                        <Field name="dataNascimento" className="form-control" component={InputField} type="date"
+                        <Field name="dataNascimento" className="form-control" component="input" type="date"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
-                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component={InputField} type="tel"
+                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component="input" type="tel"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">E-mail</label>
                     <div className="col-10">
-                        <Field name="email" className="form-control" component={InputField} type="email" placeholder="" />
+                        <Field name="email" className="form-control" component="input" type="email" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group formCheck">
@@ -107,8 +107,6 @@ class ClienteForm extends Component {
     }
 }
 
-// reduxForm: 1st is form config
-// connect: first argument is mapStateToProps, 2nd is mapDispatchToProps
 export default reduxForm({
     form: 'clienteForm'
 })(

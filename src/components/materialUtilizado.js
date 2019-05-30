@@ -6,12 +6,12 @@ const MaterialUtilizado = ({ fields }) => {
     return (
         <div>
             <div className="row">
-                <br/>
+                <br />
                 <div className="col-8">
                     Materiais utilizados
                 </div>
                 <div className="col-4">
-                    <img style={{width:'2rem'}} src="/img/icon/add.png" onClick={() => fields.push()} alt="" />
+                    <img style={{ width: '2rem' }} src="/img/icon/add.png" onClick={() => fields.push()} alt="" />
                 </div>
             </div>
             <br />
@@ -32,8 +32,7 @@ const MaterialUtilizado = ({ fields }) => {
                                 component="input"
                                 value={produto}
                             />
-                            <span className="col-1" style={{ paddingLeft: '0px', paddingRight: '0px' }}></span>
-                            <Field name={`materiais[${index}].medida`} component="select" className="form-control col-4">
+                            <Field name={`materiais[${index}].medida`} component="select" className="form-control col-5">
                                 <option value="" defaultValue></option>
                                 <option value="ml">ml</option>
                                 <option value="L">L</option>

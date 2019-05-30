@@ -23,21 +23,21 @@ class CabeleireiroEditar extends Component {
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Editar perfil</h1></div>
                 <hr />
-                <Field name="nome" label="Nome" component={InputField}
+                <Field name="nome" label="Nome" component="input"
                     type="text"/>
-                <Field name="sobrenome" label="Sobrenome" component={InputField}
+                <Field name="sobrenome" label="Sobrenome" component="input"
                     type="text"/>
-                <Field name="cnpj" label="CNPJ" component={InputField}
+                <Field name="cnpj" label="CNPJ" component="input"
                     type="number" />
-                <Field name="telefone" label="Telefone" component={InputField}
+                <Field name="telefone" label="Telefone" component="input"
                     type="tel" />
-                <Field name="email" label="E-mail" component={InputField}
+                <Field name="email" label="E-mail" component="input"
                     type="email"/>
-                <Field name="dataNascimento" label="Data de nascimento" component={InputField}
+                <Field name="dataNascimento" label="Data de nascimento" component="input"
                     type="date"/>
-                <Field name="senha" label="Senha" component={InputField}
+                <Field name="senha" label="Senha" component="input"
                     type="password"/>
-                <Field name="repetirSenha" label="Repita a Senha" component={InputField}
+                <Field name="repetirSenha" label="Repita a Senha" component="input"
                     type="password" />
                 <br />
                 <div className="button-group d-flex justify-content-around">

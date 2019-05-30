@@ -48,7 +48,7 @@ class ServicoForm extends Component {
 
     renderClientes() {
         return _.map(this.props.clientes, clientes => {
-            return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>;
+            return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>;
         });
     }
 
@@ -73,7 +73,6 @@ class ServicoForm extends Component {
             <div className="container">
                 <div className="text-center">
                     <h1>Cadastro de Serviço</h1>
-                    <Divider />
                 </div>
                 {page === 1 && <ServicoFormPage1 onSubmit={this.nextPage} clientes={this.renderClientes()} />}
                 {page === 2 &&

@@ -29,15 +29,15 @@ class ProdutoForm extends Component {
                         </Field>
                     </div>
                 </div> */}
-                <Field name="categoria" label="Categoria" component={InputField}  />
-                <Field name="marca" label="Marca" component={InputField} type="text"
+                <Field name="categoria" label="Categoria" component="input"  />
+                <Field name="marca" label="Marca" component="input" type="text"
                     placeholder="Ex.: Loreal" 
                 />
-                <Field name="linha" label="Linha" component={InputField} type="text"
+                <Field name="linha" label="Linha" component="input" type="text"
                     placeholder="Ex.: Kids" 
                 />
-                <Field name="descricao" label="Descrição" component={InputField} type="text"  />
-                <Field name="conteudo" label="Conteúdo" component={InputField} type="number"
+                <Field name="descricao" label="Descrição" component="input" type="text"  />
+                <Field name="conteudo" label="Conteúdo" component="input" type="number"
                     placeholder="500"  
                 />
                 {/* <Field name="medida" component="select">
@@ -47,7 +47,7 @@ class ProdutoForm extends Component {
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                         </Field> */}
-                <Field name="medida" label="Medida" component={InputField}  />
+                <Field name="medida" label="Medida" component="input"  />
                 <div className="button-group d-flex justify-content-around">
                     <button type="button" className="btn btn-success"  disabled={pristine || submitting}
                         onSubmit={reset}>

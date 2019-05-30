@@ -5,10 +5,10 @@ const ItemCliente = ({ clientes }) => {
     //const key = (clientes.id).slice(-4);
     //const key = clientes.id;
     const nome = clientes.nome;
-    const telefone = clientes.Telefone;
+    const telefone = clientes.telefone;
     //const cpf = clientes.CPF;
     //const dataNasc = moment(clientes.DataNascimento).format('DD/MM/YYYY');
-    const email = clientes.Email;
+    const email = clientes.email;
 
     return (
         <div className="list-group-item list-group-item-action flex-column align-items-start">
