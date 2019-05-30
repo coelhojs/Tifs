@@ -24,6 +24,16 @@ const defaultValues = {
     data: getDate()
 }
 
+// const material = ({
+//     id: 0,
+//     material: {
+//         nome: "",
+//         quantidade: "",
+//         medida: ""
+//     },
+//     name: "material1"
+// });
+
 class ServicoForm extends Component {
     constructor(props) {
         super(props)
@@ -57,23 +67,13 @@ class ServicoForm extends Component {
         return _.map(this.props.servicos, servicos => {
             return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
         })
-        //this.renderProdutos(servicos.nome));
     }
-
-    // renderProdutos(nome) {
-    //     console.log(this.props.servicos);
-    //     console.log(nome);
-
-    //     return _.map(this.props.servicos.produtos, produtos => {
-    //         return <ServicoOptions key={produtos.id} produtos={produtos}></ServicoOptions>
-    //     });
-    // }
 
     onSubmit(props) {
         this.props.createServico(props, () => {
             console.log(props);
         });
-       }
+    }
 
     render() {
         const { handleSubmit } = this.props;
@@ -90,7 +90,7 @@ class ServicoForm extends Component {
                     <ServicoFormPage2
                         servicos={this.renderServicos()}
                         previousPage={this.previousPage}
-                    onSubmit={handleSubmit(this.onSubmit.bind(this))}
+                        onSubmit={handleSubmit(this.onSubmit.bind(this))}
                     />
                 }
             </div>
