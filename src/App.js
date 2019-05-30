@@ -12,6 +12,7 @@ import Login from "./containers/Login";
 import Produtos from "./containers/Produtos";
 //import Relatorios from "./containers/Relatorios";
 import Servico from "./containers/Servico";
+import { withRouter } from 'react-router'
 
 class App extends Component {
 
