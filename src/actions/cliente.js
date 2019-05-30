@@ -5,7 +5,7 @@ import { CREATE_CLIENTE, DELETE_CLIENTE, EDIT_CLIENTE, FETCH_ALL_CLIENTES, FETCH
 export const createCliente = formValues => async (dispatch, getState) => {
     const response = await api.post('/Clientes', { ...formValues });
     dispatch({ type: CREATE_CLIENTE, payload: response });
-    history.push('/Clientes');
+    history.push('/Home');
 };
 
 export const fetchClientes = () => async dispatch => {
@@ -14,28 +14,24 @@ export const fetchClientes = () => async dispatch => {
 };
 
 export const fetchCliente = id => async dispatch => {
-    let _id = id;
-    const response = await api.get(`/Clientes/${_id}`);
+    const response = await api.get(`/Clientes/${id}`);
     console.log(response);
-    dispatch({ type: FETCH_CLIENTE, payload: response.data });
+    dispatch({ type: FETCH_CLIENTE, payload: response });
 };
 
 export const editCliente = (id, formValues) => async dispatch => {
-    let _id = id;
-    const response = await api.put(`/Clientes/${_id}`, formValues);
-    console.log(response);
+    const response = await api.put(`/Clientes/${id}`, formValues);
+    console.log(response.data);
     dispatch({ type: EDIT_CLIENTE, payload: response.data });
 };
 
 export const getClienteName = id => async dispatch => {
-    let _id = id;
-    const response = await api.get(`/Clientes/${_id}`);
+    const response = await api.get(`/Clientes/${id}`);
     dispatch({ type: FETCH_CLIENTE_NAME, payload: response.data });
 };
 
 export const deleteCliente = id => async dispatch => {
-    let _id = id;
-    const response = await api.delete(`/Clientes/${_id}`);
+    const response = await api.delete(`/Clientes/${id}`);
     dispatch({ type: DELETE_CLIENTE, payload: response.data });
 };
 
@@ -52,7 +48,7 @@ let postTeste = api.post("/Clientes", {"nome": "Morgana",
                                         "__v": 0}).then(console.log);
 
 console.log("putTeste:"); 
-let putTeste = api.put("/Clientes", {"_id": postTeste._id,
+let putTeste = api.put("/Clientes", {"id": postTeste.id,
                                         "nome": "Morgana",
                                         "cpf": "95559158033",
                                         "telefone": "812850298",
@@ -65,7 +61,7 @@ console.log("getAll:");
 getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);   
 
 console.log("getIdTeste");
-let getIdTeste = api.get("/Clientes/"+postTeste._id).then(response => response.data).then(console.log);  
+let getIdTeste = api.get("/Clientes/"+postTeste.id).then(response => response.data).then(console.log);  
 
 console.log("delTeste");
-let delTeste = api.delete("/Clientes/"+postTeste._id).then(response => response.data).then(console.log);*/
+let delTeste = api.delete("/Clientes/"+postTeste.id).then(response => response.data).then(console.log);*/

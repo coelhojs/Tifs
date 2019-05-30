@@ -18,8 +18,8 @@ export const fetchProduto = id => async dispatch => {
 };
 
 export const editProduto = (id, formValues) => async dispatch => {
-    let _id = id;
-    const response = await api.put(`/Produtos/${_id}`, formValues);
+    
+    const response = await api.put(`/Produtos/${id}`, formValues);
     console.log(response);
     dispatch({ type: EDIT_PRODUTO, payload: response.data });
 };
@@ -30,8 +30,8 @@ export const editProduto = (id, formValues) => async dispatch => {
 // };
 
 export const getProdutoName = id => async dispatch => {
-    let _id = id;
-    const response = await api.get(`/Produtos/${_id}`);
+    
+    const response = await api.get(`/Produtos/${id}`);
     dispatch({ type: FETCH_PRODUTO_NAME, payload: response.data });
 };
 
@@ -56,7 +56,7 @@ let postTeste = api.post("/Produtos", {"categoria": "Testando Inclusao 3",
                                         "__v": 0}).then(console.log);
 
 console.log("putTeste:"); 
-let putTeste = api.put("/Produtos", {"_id": postTeste._id,
+let putTeste = api.put("/Produtos", {"": postTeste.,
                                     "categoria": "Testando Inclusao 3",
                                     "marca": "Teste",
                                     "linha": "bureal",
@@ -69,7 +69,7 @@ console.log("getAll:");
 getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);   
 
 console.log("getIdTeste");
-let getIdTeste = api.get("/Produtos/"+postTeste._id).then(response => response.data).then(console.log);  
+let getIdTeste = api.get("/Produtos/"+postTeste.).then(response => response.data).then(console.log);  
 
 console.log("delTeste");
-let delTeste = api.delete("/Produtos/"+postTeste._id).then(response => response.data).then(console.log);*/
+let delTeste = api.delete("/Produtos/"+postTeste.).then(response => response.data).then(console.log);*/

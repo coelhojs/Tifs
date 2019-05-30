@@ -20,24 +20,20 @@ class ProdutoForm extends Component {
             <form className="container formMobileProd" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="text-center"><h1>Cadastro de Produto</h1></div>
                 <hr />
-                {/* <div className="form-group row">
-                    <label className="col-2">Categoria</label>
-                    <div className="col-10">
-                        <Field name="categoria" component="select">
-                            <option value="shampoo" defaultValue>shampoo</option>
-                            <option value="coloração">coloração</option>
-                        </Field>
-                    </div>
-                </div> */}
-                <Field name="categoria" label="Categoria" component="input"  />
-                <Field name="marca" label="Marca" component="input" type="text"
+<label htmlFor="">Categoria</label>
+                <Field name="categoria" component="input" className="form-control"   />
+                <label htmlFor="">Marca</label>
+                <Field name="marca" component="input" className="form-control"  type="text"
                     placeholder="Ex.: Loreal" 
                 />
-                <Field name="linha" label="Linha" component="input" type="text"
+                <label htmlFor="">Linha</label>
+                <Field name="linha" label="Linha" component="input" className="form-control"  type="text"
                     placeholder="Ex.: Kids" 
                 />
-                <Field name="descricao" label="Descrição" component="input" type="text"  />
-                <Field name="conteudo" label="Conteúdo" component="input" type="number"
+                <label htmlFor="">Descrição</label>
+                <Field name="descricao" label="Descrição" component="input" className="form-control"  type="text"  />
+                <label htmlFor="">Conteúdo</label>
+                <Field name="conteudo" label="Conteúdo" component="input" className="form-control "  type="number"
                     placeholder="500"  
                 />
                 {/* <Field name="medida" component="select">
@@ -47,7 +43,7 @@ class ProdutoForm extends Component {
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                         </Field> */}
-                <Field name="medida" label="Medida" component="input"  />
+                {/* <Field name="medida" label="Medida" component="input" className="form-control"   /> */}
                 <div className="button-group d-flex justify-content-around">
                     <button type="button" className="btn btn-success"  disabled={pristine || submitting}
                         onSubmit={reset}>

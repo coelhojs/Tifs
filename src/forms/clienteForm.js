@@ -20,6 +20,9 @@ class ClienteForm extends Component {
         const { handleSubmit, pristine, reset, submitting } = this.props;
         return (
             <form className="container" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <span style={{ display: 'none' }}>
+                    <Field name="id" value="0" component="input" type="text" />
+                </span>
                 <div className="text-center"><h1>Cadastro de Cliente</h1></div>
                 <hr />
                 <div className="form-group row">

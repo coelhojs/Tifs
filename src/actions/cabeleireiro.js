@@ -9,9 +9,9 @@ import {
 } from './types';
 
 export const createCabeleireiro = formValues => async (dispatch, getState) => {
-    const response = await api.post('/cabeleireiros', { ...formValues });
+    const response = await api.post('/Cabeleireiros', { ...formValues });
     dispatch({ type: CREATE_CABELEIREIRO, payload: response.data });
-    history.push('/');
+    history.push('/Home');
 };
 
 export const fetchAllCabeleireiros = () => async dispatch => {
@@ -21,14 +21,14 @@ export const fetchAllCabeleireiros = () => async dispatch => {
 };
 
 export const fetchCabeleireiro = id => async dispatch => {
-    let _id = id;
-    const response = await api.get(`/Cabeleireiros/${_id}`);
+
+    const response = await api.get(`/Cabeleireiros/${id}`);
     dispatch({ type: FETCH_CABELEIREIRO, payload: response.data });
 };
 
 export const editCabeleireiro = (id, formValues) => async dispatch => {
-    let _id = id;
-    const response = await api.put(`/Cabeleireiros/${_id}`, formValues);
+
+    const response = await api.put(`/Cabeleireiros/${id}`, formValues);
     dispatch({ type: EDIT_CABELEIREIRO, payload: response.data });
 };
 
@@ -38,9 +38,9 @@ export const deleteCabeleireiro = id => async dispatch => {
 };
 
 /*console.log("Testes endpoint /Cabeleireiros");
-console.log("getAll:"); 
+console.log("getAll:");
 let getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
+console.log("postTeste:");
 let postTeste = api.post("/Cabeleireiros", {"nome": "Adicionado via VSCode",
                                             "sobrenome": "VSCode",
                                             "email": "vaassasa@gmail.com",
@@ -51,8 +51,8 @@ let postTeste = api.post("/Cabeleireiros", {"nome": "Adicionado via VSCode",
                                             "repetirSenha": "1",
                                             "__v": 0}).then(console.log);
 
-console.log("putTeste:"); 
-let putTeste = api.put("/Cabeleireiros", {"_id": postTeste._id,
+console.log("putTeste:");
+let putTeste = api.put("/Cabeleireiros", {"": postTeste.,
                                         "nome": "Adicionado via VSCode Editando",
                                         "sobrenome": "VSCode",
                                         "email": "vscodses@gmail.com",
@@ -61,13 +61,13 @@ let putTeste = api.put("/Cabeleireiros", {"_id": postTeste._id,
                                         "dataNascimento": "1010-11-11T00:00:00.000Z",
                                         "senha": "teste123",
                                         "repetirSenha": "1",
-                                        "__v": 0}).then(console.log);  
+                                        "__v": 0}).then(console.log);
 
-console.log("getAll:"); 
-getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);   
+console.log("getAll:");
+getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);
 
 console.log("getIdTeste");
-let getIdTeste = api.get("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log);  
+let getIdTeste = api.get("/Cabeleireiros/"+postTeste.).then(response => response.data).then(console.log);
 
 console.log("delTeste");
-let delTeste = api.delete("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log); */
+let delTeste = api.delete("/Cabeleireiros/"+postTeste.).then(response => response.data).then(console.log); */

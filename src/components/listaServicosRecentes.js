@@ -1,4 +1,4 @@
-import _ from "lodash";
+import * as lodash from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { fetchServicos } from '../actions/servico';
@@ -10,11 +10,11 @@ class ListaServicosRecentes extends Component {
     }
 
     renderServicos() {
-        let servicosArray = _.map(this.props.servicos, servicos => {
-            return <CardServico key={servicos._id} servicos={servicos} />
+        let servicosArray = lodash.map(this.props.servicos, servicos => {
+            return <CardServico key={servicos.id} servicos={servicos} />
         });
         // return _.take(servicosArray, 3);
-        return _.map(servicosArray);
+        return lodash.map(servicosArray);
     }
 
     render() {

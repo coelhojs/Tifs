@@ -22,12 +22,12 @@ class Home extends Component {
                         Histórico de serviços
                     </Link>
                 </div>
-                <div className="d-flex justify-content-around">
+                {/* <div className="d-flex justify-content-around">
                     <Link to="/Relatorios" className="btn-lg m-2 btn-dark col-3">
                         <img src="./img/icones/essential/svg/notebook-1.svg" className="home__btn" alt="" />
                         Relatórios
                     </Link>
-                </div>
+                </div> */}
                 <div className="d-flex justify-content-around">
                     <Link to="/Produtos" className="btn-lg m-2 btn-dark col-3">
                         <img src="./img/icones/essential/svg/produtos.svg" className="home__btn" alt="" />

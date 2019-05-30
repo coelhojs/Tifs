@@ -6,7 +6,7 @@ import HelpButton from '../components/helpButton';
 const Header = () => {
     return (
         <header>
-            <HelpButton />
+            {/* <HelpButton /> */}
             <div className="logo">
                 <Link to="/Home">
                     <img src="/img/logo-tifs.png" alt="Logo do salão Tifs" />

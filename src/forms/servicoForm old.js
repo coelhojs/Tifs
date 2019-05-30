@@ -1,4 +1,4 @@
-// import _ from "lodash";
+// import * as lodash from "lodash";
 // import React, { Component } from 'react'
 // import { connect } from 'react-redux';
 // import { formValueSelector, reduxForm } from 'redux-form';
@@ -47,14 +47,14 @@
 //         this.props.fetchServicos();
 //     }
 //     renderClientes() {
-//         return _.map(this.props.clientes, clientes => {
-//             return <option key={clientes._id} value={clientes.nome}>{clientes.nome}</option>
+//         return lodash.map(this.props.clientes, clientes => {
+//             return <option key={clientes.id} value={clientes.nome}>{clientes.nome}</option>
 //         });
 //     }
 
 //     renderServicos() {
 //         let id = 0;
-//         return _.map(this.props.servicos, servicos => {
+//         return lodash.map(this.props.servicos, servicos => {
 //             return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
 //         })
 //     }
@@ -62,7 +62,7 @@
 //     renderMateriais() {
 //         let id = 0;
 //         let materiais = [];
-//         return _.map(this.props.servicos, servicos => {
+//         return lodash.map(this.props.servicos, servicos => {
 //             materiais.push(servicos.produtos)
 //             return <option key={id++} value={servicos.nome}>{servicos.nome}</option>;
 //         })

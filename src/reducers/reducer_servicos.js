@@ -1,4 +1,4 @@
-import _ from "lodash";
+import * as lodash from "lodash";
 import { FETCH_ALL_SERVICOS, FETCH_SERVICO, CREATE_SERVICO, DELETE_SERVICO } from "../actions/types";
 
 export default function (state = {}, action) {
@@ -10,7 +10,7 @@ export default function (state = {}, action) {
         case CREATE_SERVICO:
             return { ...state, [action.payload.data.id]: action.payload.data };
         case DELETE_SERVICO:
-            return _.omit(state, action.payload.data.id);
+            return lodash.omit(state, action.payload.data.id);
         default:
             return state;
     }

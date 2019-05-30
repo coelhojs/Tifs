@@ -19,8 +19,8 @@ export const fetchServico = id => async dispatch => {
 };
 
 export const editServico = (id, formValues) => async dispatch => {
-    let _id = id;
-    const response = await api.put(`/Servicos/${_id}`, formValues);
+    
+    const response = await api.put(`/Servicos/${id}`, formValues);
     console.log(response);
     dispatch({ type: EDIT_SERVICO, payload: response.data });
 };
@@ -31,8 +31,8 @@ export const editServico = (id, formValues) => async dispatch => {
 // };
 
 export const getServicoName = id => async dispatch => {
-    let _id = id;
-    const response = await api.get(`/Servicos/${_id}`);
+    
+    const response = await api.get(`/Servicos/${id}`);
     dispatch({ type: FETCH_SERVICO_NAME, payload: response.data });
 };
 
@@ -59,7 +59,7 @@ export const deleteServicos = id => async dispatch => {
 
 // console.log("putTeste:");
 // let putTeste = api.put("/Servicos", {
-//     "_id": postTeste,
+//     "": postTeste,
 //     "cliente": "Testando Lucio 2 Alteracao",
 //     "nome": "teste",
 //     "__v": 0

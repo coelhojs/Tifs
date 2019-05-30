@@ -1,4 +1,4 @@
-import _ from "lodash";
+import * as lodash from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchClientes } from "../actions/cliente";
@@ -10,8 +10,8 @@ class ListaClientes extends Component {
     }
 
     renderClientes() {
-        return _.map(this.props.clientes, clientes => {
-            return <ItemCliente key={clientes._id} clientes={clientes} />;
+        return lodash.map(this.props.clientes, clientes => {
+            return <ItemCliente key={clientes.id} clientes={clientes} />;
         });
     }
 

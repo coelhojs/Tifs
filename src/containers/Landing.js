@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import LoginForm from './Login';
-import Header from "./Header";
-//import { Router, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
     render() {
         return (
             <div className="container">
-                <Header />
                 <div className="rounded">
                     <div className="row">
                         <div className="offset-md-4 col-md">
@@ -15,7 +13,9 @@ class Landing extends Component {
                         </div>
                         <div className="col-md-5 text-left">
                             <button className="btn btn-link">
-                                <h5>Cadastre-se</h5>
+                                <Link to='/Cadastro'>
+                                    <h5>Cadastre-se</h5>
+                                </Link>
                             </button>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ class LoginForm extends Component {
                     <br />
                     <div className="button-group">
                         <button className="btn btn-link">Esqueceu a senha?</button>
-                        <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
+                        <button type="button" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
                             Entrar
                             </button>
                     </div>
