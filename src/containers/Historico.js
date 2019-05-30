@@ -1,36 +1,11 @@
-import _ from "lodash";
 import React, { Component } from 'react';
-import cardServico from "../components/cardServico";
-import { fetchServicos } from '../actions/servico';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { fetchServicos } from '../actions/servico';
+import ListaServicosRecentes from "../components/listaServicosRecentes";
 import SearchInput from "../components/searchInput";
-import { Carousel } from '3d-react-carousal';
 
 class Historico extends Component {
-    componentWillMount() {
-        this.props.fetchServicos();
-    }
-
-    renderServicosRecentes() {
-        let slides = [];
-        return _.map(this.props.servicos, servico => {
-            slides.push(<cardServico props={servico} />);
-            return slides;
-        });
-    }
-
-    renderServicos() {
-        let slides = [];
-        return _.map(this.props.servicos, servico => {
-            slides.push(<cardServico props={servico} />);
-            return slides;
-        });
-    }
-
     render() {
-        //const slides = this.renderServicos();
-
         return (
             <div className="container-fluid">
                 <div className="text-center">
@@ -43,10 +18,7 @@ class Historico extends Component {
                     </div>
                 </div>
                 <br />
-                
-                {/* <Carousel slides={this.renderServicos()} /> */}
-                {/* https://www.npmjs.com/package/react-spring-3d-carousel */}
-                {/* https://github.com/suhailsulu/react-carousel-3d */}
+                <ListaServicosRecentes />
             </div>
         );
     }
@@ -60,3 +32,8 @@ export default connect(
     mapStateToProps,
     { fetchServicos }
 )(Historico);
+
+
+{/* <Carousel slides={this.renderServicos()} /> */ }
+{/* https://www.npmjs.com/package/react-spring-3d-carousel */ }
+{/* https://github.com/suhailsulu/react-carousel-3d */ }

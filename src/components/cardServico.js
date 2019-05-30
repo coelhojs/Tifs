@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const cardServico = servico => {
+const CardServico = ({ servicos }) => {
     return (
-        <div key={servico.id}>
-            <div className="card__header">{servico.nome}</div>
+        <div key={servicos.id}>
+            <div className="card__header">{servicos.nome}</div>
             <div className="card__body">
-                <h2>{servico.cliente}</h2>
-                <h4>{servico.data}</h4>
-                <p>{servico.anotacoes}</p>
+                <h2>{servicos.cliente}</h2>
+                <h4>{servicos.data}</h4>
+                <p>{servicos.anotacoes}</p>
             </div>
             <div className="card__footer">
-                <Link to={`/Servico/${servico.id}`} />
+                <Link to={`/Servico/${servicos.id}`} />
             </div>
         </div>
     );
 };
 
-export default cardServico;
+export default CardServico;
