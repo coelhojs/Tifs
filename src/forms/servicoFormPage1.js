@@ -24,7 +24,7 @@ const ServicoFormPage1 = (props) => {
             </div>
             <div className="form-group col-12">
                 <label className="text-center">Observações sobre o cliente</label>
-                <Field name="anotacoes" class="form-control" component="textarea" />
+                <Field name="anotacoes" className="form-control" component="textarea" />
             </div>
             <button type="submit" className="btn btn-success buttonService">
                 Próximo

@@ -142,6 +142,62 @@
       "nome": "teste",
       "__v": 0,
       "id": 9
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "j",
+      "id": 10
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "k",
+      "id": 11
+    },
+    {
+      "data": "2019-05-29",
+      "id": 12
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "a",
+      "materiais": [
+        null
+      ],
+      "produto0": "w",
+      "quantidade0": "w",
+      "medida0": "ml",
+      "id": 13
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "klll",
+      "materiais": [
+        null,
+        null
+      ],
+      "produto0": "o",
+      "quantidade0": "o",
+      "medida0": "L",
+      "produto1": "jjjjjnn",
+      "quantidade1": "nnnnn",
+      "medida1": "g",
+      "id": 14
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "j",
+      "id": 15
+    },
+    {
+      "data": "2019-05-29",
+      "anotacoes": "jj",
+      "materiais": [
+        null
+      ],
+      "produto0": "j",
+      "quantidade0": "j",
+      "medida0": "ml",
+      "id": 16
     }
   ],
   "Cabeleireiros": [
