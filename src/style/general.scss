@@ -22,10 +22,15 @@ header {
     }
 }
 
-.home {
-}
-
 .home__btn {
     width: 40px;
     margin-right: 30px;
+}
+
+.card__body {
+    img {
+        height: 2rem;
+        margin-bottom: .5rem;
+        margin-right: .5rem;
+    }
 }

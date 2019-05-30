@@ -10,16 +10,18 @@ class ListaServicosRecentes extends Component {
     }
 
     renderServicos() {
-        return _.map(this.props.servicos, servicos => {
-            console.log(servicos.cliente);
+        let servicosArray = _.map(this.props.servicos, servicos => {
             return <CardServico key={servicos.id} servicos={servicos} />
         });
+        return _.take(servicosArray, 3);
     }
 
     render() {
         return (
-            <div className="list-group">
-                {this.renderServicos()}
+            <div className="container">
+                <div className="row justify-content-around">
+                    {this.renderServicos()}
+                </div>
             </div>
         );
     }

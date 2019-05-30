@@ -12,6 +12,7 @@ import Login from "./containers/Login";
 import Produtos from "./containers/Produtos";
 //import Relatorios from "./containers/Relatorios";
 import Servico from "./containers/Servico";
+import VisualizarHistorico from "./components/visualizarHistorico";
 import { withRouter } from 'react-router'
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
                     <Route exact path="/Home" component={Home} />
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Historico" component={Historico} />
+                    <Route path="/Historico/:id" component={VisualizarHistorico} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
                     <Route path="/Editar/:id" component={Editar} />
