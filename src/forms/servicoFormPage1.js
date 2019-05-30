@@ -11,7 +11,7 @@ const ServicoFormPage1 = (props) => {
         <form onSubmit={handleSubmit}>
             <InputField
                 name="data" type="date" label="Data"
-                labelClasses="col-2" inputClasses="col-10" formGroupClasses="form-row" />
+                labelClasses="col-2" inputClasses="col-6" formGroupClasses="form-row" />
             <div className="form-row">
                 <label className="col-2">Cliente</label>
                 <div className="col-10">

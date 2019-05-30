@@ -84,8 +84,7 @@ body,
 #root {
   min-height: 100%;
   background-color: rgba(100, 100, 100, 0.1);
-  background-repeat: repeat;
-  background-image: url("/img/background.jpeg"); }
+  background-repeat: repeat; }
 
 header {
   padding-top: 3rem; }
@@ -99,13 +98,17 @@ header {
   width: 40px;
   margin-right: 30px; }
 
+.card {
+  margin-bottom: 1rem;
+  min-height: 18rem; }
+
 .card__body img {
   height: 2rem;
   margin-bottom: .5rem;
   margin-right: .5rem; }
 
 footer {
-  background-color: purple;
+  background-color: black;
   width: 100%;
   position: fixed;
   bottom: 0; }

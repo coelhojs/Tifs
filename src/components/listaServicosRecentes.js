@@ -13,13 +13,14 @@ class ListaServicosRecentes extends Component {
         let servicosArray = _.map(this.props.servicos, servicos => {
             return <CardServico key={servicos.id} servicos={servicos} />
         });
-        return _.take(servicosArray, 3);
+        // return _.take(servicosArray, 3);
+        return _.map(servicosArray);
     }
 
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-around">
+                <div className="row justify-content-between">
                     {this.renderServicos()}
                 </div>
             </div>

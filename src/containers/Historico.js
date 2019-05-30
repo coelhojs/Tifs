@@ -8,7 +8,8 @@ class Historico extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="text-center">
+                <div className="page-title"><h1>Histórico de serviços</h1></div>
+                {/* <div className="text-center">
                     <div className="offset-md-5">
                         <SearchInput />
                     </div>
@@ -16,7 +17,7 @@ class Historico extends Component {
                         <button type="button" className="btn btn-secondary">Recentes</button>
                         <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
-                </div>
+                </div> */}
                 <br />
                 <ListaServicosRecentes />
             </div>

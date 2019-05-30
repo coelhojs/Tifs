@@ -6,6 +6,7 @@ import Clientes from "./containers/Clientes";
 import Editar from "./containers/EditarCadastro";
 import Footer from "./containers/Footer";
 import Historico from "./containers/Historico";
+import Header from "./containers/Header";
 import Home from "./containers/Home";
 import Landing from "./containers/Landing";
 import Login from "./containers/Login";
@@ -20,13 +21,13 @@ class App extends Component {
     render() {
         return (
             <div id="page-wrap">
-                {/* <Header /> */}
+                <Header />
                 <Switch>
                     <Route exact path="/" component={Landing} />
                     <Route exact path="/Home" component={Home} />
                     <Route path="/Clientes" component={Clientes} />
                     <Route path="/Historico" component={Historico} />
-                    <Route path="/Historico/:id" component={VisualizarHistorico} />
+                    <Route exact path="/Historico/:id" component={VisualizarHistorico} />
                     <Route path="/Produtos" component={Produtos} />
                     <Route path="/Servico" component={Servico} />
                     <Route path="/Editar/:id" component={Editar} />

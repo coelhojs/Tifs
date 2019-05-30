@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
-import Divider from '../components/divider';
-import HelpButton from '../components/helpButton';
 import LoginForm from './Login';
+import Header from "./Header";
 //import { Router, Route, Switch } from "react-router-dom";
 
 class Landing extends Component {
     render() {
         return (
             <div className="container">
-                <header>
-                    <HelpButton />
-                    <div className="logo">
-                        <img src="/img/logo-tifs.png" alt="Logo do salão Tifs" />
-                    </div>
-                    <Divider />
-                </header>
-                <div className="bg-white rounded">
+                <Header />
+                <div className="rounded">
                     <div className="row">
                         <div className="offset-md-4 col-md">
                             <h2>Bem-vindo(a)!</h2>
