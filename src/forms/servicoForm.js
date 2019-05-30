@@ -1,5 +1,5 @@
-import _ from "lodash";
 import React, { Component } from 'react';
+import _ from "lodash";
 import { connect } from 'react-redux';
 import { formValueSelector, reduxForm } from 'redux-form';
 import { fetchClientes } from '../actions/cliente';
@@ -23,16 +23,6 @@ function getDate() {
 const defaultValues = {
     data: getDate()
 }
-
-// const material = ({
-//     id: 0,
-//     material: {
-//         nome: "",
-//         quantidade: "",
-//         medida: ""
-//     },
-//     name: "material1"
-// });
 
 class ServicoForm extends Component {
     constructor(props) {

@@ -1,16 +1,36 @@
+import _ from "lodash";
 import React, { Component } from 'react';
+import cardServico from "../components/cardServico";
+import { fetchServicos } from '../actions/servico';
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import SearchInput from "../components/searchInput";
 import { Carousel } from '3d-react-carousal';
 
 class Historico extends Component {
+    componentWillMount() {
+        this.props.fetchServicos();
+    }
+
+    renderServicosRecentes() {
+        let slides = [];
+        return _.map(this.props.servicos, servico => {
+            slides.push(<cardServico props={servico} />);
+            return slides;
+        });
+    }
+
+    renderServicos() {
+        let slides = [];
+        return _.map(this.props.servicos, servico => {
+            slides.push(<cardServico props={servico} />);
+            return slides;
+        });
+    }
 
     render() {
-        let slides = [
-            <img src="https://picsum.photos/800/300/?random" alt="1" />,
-            <img src="https://picsum.photos/800/301/?random" alt="2" />,
-            <img src="https://picsum.photos/800/302/?random" alt="3" />,
-            <img src="https://picsum.photos/800/303/?random" alt="4" />,
-            <img src="https://picsum.photos/800/304/?random" alt="5" />];
+        //const slides = this.renderServicos();
+
         return (
             <div className="container-fluid">
                 <div className="text-center">
@@ -22,8 +42,9 @@ class Historico extends Component {
                         <button type="button" className="btn btn-secondary">Todos</button>
                     </div>
                 </div>
-                <br/>
-                <Carousel slides={slides} />
+                <br />
+                
+                {/* <Carousel slides={this.renderServicos()} /> */}
                 {/* https://www.npmjs.com/package/react-spring-3d-carousel */}
                 {/* https://github.com/suhailsulu/react-carousel-3d */}
             </div>
@@ -31,4 +52,11 @@ class Historico extends Component {
     }
 }
 
-export default Historico;
+function mapStateToProps(state) {
+    return { servicos: state.servicos };
+}
+
+export default connect(
+    mapStateToProps,
+    { fetchServicos }
+)(Historico);

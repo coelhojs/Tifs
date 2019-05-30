@@ -1,13 +1,11 @@
 import React from 'react';
+import { Field } from 'redux-form';
 
-const inputField = ({ input, textarea, select, label, type, meta: { touched, error, warning } }) => (
-    <div>
-        <label className="align-middle text-right">{label}</label>
-        <div>
-            <input className="form-control" {...input} placeholder={label} type={type} />
-            {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-        </div>
+const InputField = ({ name, type, label, formGroupClasses, labelClasses, inputClasses, placeholder, value }) => (
+    <div className={`form-group ${formGroupClasses}`}>
+        <label className="{labelClasses}" style={{ marginRight: '1rem' }}>{label}</label>
+        <Field name={name} className={`${inputClasses} form-control`} placeholder={placeholder} component="input" type={type} value={value} />
     </div>
 );
 
-export default inputField;
+export default InputField;

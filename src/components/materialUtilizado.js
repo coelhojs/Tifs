@@ -1,6 +1,6 @@
 import React from "react";
 import { Field } from 'redux-form';
-import inputField from '../components/inputField';
+import InputField from './inputField';
 
 const MaterialUtilizado = ({ fields }) => {
     return (
@@ -17,16 +17,10 @@ const MaterialUtilizado = ({ fields }) => {
 
             {fields.map((produto, index) => (
                 <div className="row" key={index}>
-                    <div className="form-group col-4 text-center">
-                        <label>Produto</label>
-                        <Field
-                            name={`materiais[${index}].nome`}
-                            type="text"
-                            className="form-control"
-                            component={inputField}
-                            value={produto}
-                        />
-                    </div>
+                    <InputField
+                        name={`materiais[${index}].nome`} type="text"
+                        label="Produto" inputClasses="form-control"
+                        formGroupClasses="col-4 text-center" value={produto} />
                     <div className="form-group col-4 text-center">
                         <label>Medida</label>
                         <div className="row">
@@ -80,7 +74,7 @@ export default MaterialUtilizado;
 //                             name={materiais.nome}
 //                             type="text"
 //                             className="form-control"
-//                             component={inputField}
+//                             component={InputField}
 //                         />
 //                     </div>
 //                     <div className="form-group col-4 text-center">
@@ -90,7 +84,7 @@ export default MaterialUtilizado;
 //                                 name="materiais.quantidade"
 //                                 type="text"
 //                                 className="form-control col-7"
-//                                 component={inputField}
+//                                 component={InputField}
 //                             />
 //                             <span className="col-1" style={{ paddingLeft: '0px', paddingRight: '0px' }}></span>
 //                             <Field name="materiais.medida" component="select" className="form-control col-4">

@@ -78,287 +78,67 @@
   ],
   "Servicos": [
     {
-      "id": 1,
-      "nome": "Coloração",
-      "produtos": [
-        "Tinta",
-        "Oxidante"
-      ]
-    },
-    {
-      "id": 2,
-      "nome": "Mechas",
-      "produtos": [
-        "Tinta",
-        "Oxidante"
-      ]
-    },
-    {
-      "id": 3,
-      "nome": "Corte",
-      "produtos": [
-        "Shampoo",
-        "Tesoura"
-      ]
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 4
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 5
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 6
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 7
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 8
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 9
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "j",
-      "id": 10
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "k",
-      "id": 11
-    },
-    {
-      "data": "2019-05-29",
-      "id": 12
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "a",
-      "materiais": [
-        null
-      ],
-      "produto0": "w",
-      "quantidade0": "w",
-      "medida0": "ml",
-      "id": 13
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "klll",
-      "materiais": [
-        null,
-        null
-      ],
-      "produto0": "o",
-      "quantidade0": "o",
-      "medida0": "L",
-      "produto1": "jjjjjnn",
-      "quantidade1": "nnnnn",
-      "medida1": "g",
-      "id": 14
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "j",
-      "id": 15
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "jj",
-      "materiais": [
-        null
-      ],
-      "produto0": "j",
-      "quantidade0": "j",
-      "medida0": "ml",
-      "id": 16
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "adf",
-      "materiais": [
-        "a",
-        "b",
-        "c"
-      ],
-      "quantidade0": "1",
-      "medida0": "ml",
-      "quantidade1": "2",
-      "medida1": "L",
-      "quantidade2": "3",
-      "medida2": "mg",
-      "id": 17
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "f",
-      "materiais": [
-        null
-      ],
-      "": "ml",
-      "id": 18
-    },
-    {
-      "data": "2019-05-29",
-      "anotacoes": "aa",
-      "materiais": [
-        null
-      ],
-      "": "ml",
-      "id": 19
-    },
-    {
-      "materiais": [
-        ""
-      ],
-      "anotacoes": "a",
-      "": "ml",
-      "id": 20
-    },
-    {
+      "data": "2019-05-30",
+      "nome": "Selagem",
+      "cliente": "Maria do Nascimento",
+      "anotacoes": "Cabelo ressecado",
       "materiais": [
         {
-          "nome": "",
-          "quantidade": "",
-          "medida": ""
-        }
-      ],
-      "anotacoes": "l",
-      "": "ml",
-      "id": 21
-    },
-    {
-      "materiais": [
-        {
-          "nome": "",
-          "quantidade": "",
-          "medida": ""
-        }
-      ],
-      "anotacoes": "a",
-      "undefined": "mg",
-      "id": 22
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "this": {
-        "props": {
-          "materiais": {
-            "index": {
-              "nome": "asdfasdf"
-            }
-          }
-        }
-      },
-      "id": 23
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "this": {
-        "props": {
-          "materiais": {
-            "nome": "ASDFASDF"
-          }
-        }
-      },
-      "id": 24
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "undefined": "ASDFASD",
-      "id": 25
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "undefined": "a",
-      "id": 26
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "undefined": "k",
-      "id": 27
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        null
-      ],
-      "produto0": "asdf",
-      "quantidade0": "a",
-      "medida0": "L",
-      "id": 28
-    },
-    {
-      "data": "2019-05-30",
-      "materiais": [
-        {
-          "nome": "asdf"
-        }
-      ],
-      "id": 29
-    },
-    {
-      "data": "2019-05-30",
-      "anotacoes": "aaaaaaaaaaaa",
-      "materiais": [
-        {
-          "nome": "asdf",
+          "material": "Tinta",
           "quantidade": "asdf",
+          "medida": "ml"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Angela Erica",
+      "materiais": [
+        {
+          "quantidade": "a",
+          "nome": "po",
+          "medida": "L"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Lorraine Campos",
+      "materiais": [
+        {
+          "nome": "1",
+          "quantidade": "1",
           "medida": "ml"
         },
         {
-          "nome": "vvv",
-          "quantidade": "vvv",
+          "nome": "2",
+          "quantidade": "2",
           "medida": "L"
         },
         {
-          "nome": "lllllll",
-          "quantidade": "lllllllll",
+          "nome": "3",
+          "quantidade": "3",
+          "medida": "mg"
+        }
+      ],
+      "anotacoes": "Ok",
+      "id": 3
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Henrique G. Castro",
+      "anotacoes": "v",
+      "nome": "Coloração",
+      "materiais": [
+        {
+          "nome": "abbb",
+          "quantidade": "bbba",
           "medida": "g"
         }
       ],
-      "id": 30
+      "id": 4
     }
   ],
   "Cabeleireiros": [

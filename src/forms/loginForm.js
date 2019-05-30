@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import inputField from "../components/inputField";
+import InputField from "../components/inputField";
 import { fetchCabeleireiro } from '../actions/cabeleireiro';
 import '../style/general.scss';
 
@@ -19,21 +19,20 @@ class CadastroForm extends Component {
 
         return (
             <div className="container">
-                <div className="offset-md-5 col-md-4">
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <InputField
+                        name="email" type="email"
+                        label="E-mail" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
+                    <InputField name="senha" type="password"
+                        label="Senha" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
                     <br />
-                    <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                        <Field name="email" label="E-mail" component={inputField} type="email" />
-                        <Field name="senha" label="Senha" component={inputField} type="password" />
-                        <br />
-                        <div className="button-group">
-                            <button className="btn btn-link">Esqueceu a senha?</button>
-                            <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
-                                Entrar
+                    <div className="button-group">
+                        <button className="btn btn-link">Esqueceu a senha?</button>
+                        <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
+                            Entrar
                             </button>
-                        </div>
-                        <br />
-                    </form >
-                </div>
+                    </div>
+                </form >
             </div>
         );
     }

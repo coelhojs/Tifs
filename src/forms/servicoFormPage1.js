@@ -1,24 +1,22 @@
 import React from 'react';
+import { createServico, fetchServicos } from '../actions/servico';
 import { Field, reduxForm } from 'redux-form';
 import '../style/general.scss';
-import inputField from '../components/inputField';
+import InputField from '../components/inputField';
 
 const ServicoFormPage1 = (props) => {
     const { handleSubmit, clientes } = props
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="form-row">
-                <label className="col-2">Data</label>
-                <div className="col-10">
-                    <Field name="data" className="form-control" component={inputField} type="date" placeholder="" />
-                </div>
-            </div>
-
+            <InputField
+                name="data" type="date" label="Data"
+                labelClasses="col-2" inputClasses="col-10" formGroupClasses="form-row" />
             <div className="form-row">
                 <label className="col-2">Cliente</label>
                 <div className="col-10">
                     <Field name="cliente" className="form-control" component="select">
+                        <option key={0}>Selecione um(a) cliente</option>
                         {clientes}
                     </Field></div>
             </div>

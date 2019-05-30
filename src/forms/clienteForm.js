@@ -3,7 +3,7 @@ import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
-import inputField from "../components/inputField";
+import InputField from "../components/inputField";
 import '../style/general.scss';
 
 let history = require("history").createBrowserHistory;
@@ -25,7 +25,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Nome</label>
                     <div className="col-10">
-                        <Field name="nome" className="form-control" component={inputField} type="text"
+                        <Field name="nome" className="form-control" component={InputField} type="text"
                             placeholder="Nome completo"
                         />
                     </div>
@@ -41,27 +41,27 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">CPF</label>
                     <div className="col-10">
-                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={inputField} type="text" placeholder="" />
+                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component={InputField} type="text" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-4">Data de nascimento</label>
                     <div className="col-8">
-                        <Field name="dataNascimento" className="form-control" component={inputField} type="date"
+                        <Field name="dataNascimento" className="form-control" component={InputField} type="date"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
-                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component={inputField} type="tel"
+                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component={InputField} type="tel"
                             placeholder="" />
                     </div>
                 </div>
                 <div className="form-group row">
                     <label className="col-2">E-mail</label>
                     <div className="col-10">
-                        <Field name="email" className="form-control" component={inputField} type="email" placeholder="" />
+                        <Field name="email" className="form-control" component={InputField} type="email" placeholder="" />
                     </div>
                 </div>
                 <div className="form-group formCheck">
