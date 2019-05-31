@@ -24,7 +24,6 @@ const CardServico = ({ servicos }) => {
         return [day, month, year].join('/');
     }
 
-
     return (
         <div className="col-md-3">
             <div key={servicos.id} className="card">
