@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InputMask from 'react-input-mask';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { createCliente } from '../actions/cliente';
@@ -44,7 +43,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">CPF</label>
                     <div className="col-10">
-                        <InputMask mask="999.999.999-99" name="cpf" className="form-control" component="input" type="text" placeholder="" />
+                        {/* <InputMask mask="999.999.999-99" name="cpf" className="form-control" component="input" type="text" placeholder="" /> */}
                     </div>
                 </div>
                 <div className="form-group row">
@@ -57,7 +56,7 @@ class ClienteForm extends Component {
                 <div className="form-group row">
                     <label className="col-2">Telefone</label>
                     <div className="col-10">
-                        <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component="input" type="tel"
+                        {/* <InputMask id="telefone" mask="(99) 9999-9999" name="telefone" className="form-control" component="input" type="tel" */}
                             placeholder="" />
                     </div>
                 </div>

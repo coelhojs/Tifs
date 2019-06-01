@@ -4,8 +4,6 @@
     "private": true,
     "homepage": ".",
     "dependencies": {
-        "3d-react-carousal": "^2.0.1",
-        "@ramotion/react-native-circle-menu": "^1.0.0",
         "apisauce": "^1.0.2",
         "bootstrap": "^4.3.1",
         "jquery": "^3.3.1",
@@ -17,7 +15,6 @@
         "react": "^16.8.4",
         "react-burger-menu": "^2.6.10",
         "react-dom": "^16.8.4",
-        "react-input-mask": "^2.0.4",
         "react-redux": "^6.0.1",
         "react-router-dom": "^5.0.0",
         "react-scripts": "2.1.8",
