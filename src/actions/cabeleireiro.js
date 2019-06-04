@@ -37,37 +37,56 @@ export const deleteCabeleireiro = id => async dispatch => {
     dispatch({ type: DELETE_CABELEIREIRO, payload: response.data });
 };
 
-/*console.log("Testes endpoint /Cabeleireiros");
-console.log("getAll:"); 
-let getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
-let postTeste = api.post("/Cabeleireiros", {"nome": "Adicionado via VSCode",
-                                            "sobrenome": "VSCode",
-                                            "email": "vaassasa@gmail.com",
-                                            "cnpj": "123333159",
-                                            "telefone": "224456",
-                                            "dataNascimento": "1010-11-11T00:00:00.000Z",
-                                            "senha": "teste123",
-                                            "repetirSenha": "1",
-                                            "__v": 0}).then(console.log);
+var cabeleireiro = {
+                    "nome": "Inserindo Cabeleireiro",
+                    "sobrenome": "Teste",
+                    "email": "testecabeleireiro@gmail.com",
+                    "cnpj": "123333181",
+                    "telefone": "224463",
+                    "dataNascimento": "1010-11-11T00:00:00.000Z",
+                    "senha": "teste123",
+                    "repetirSenha": "1"
+}
 
-console.log("putTeste:"); 
-let putTeste = api.put("/Cabeleireiros", {"_id": postTeste._id,
-                                        "nome": "Adicionado via VSCode Editando",
-                                        "sobrenome": "VSCode",
-                                        "email": "vscodses@gmail.com",
-                                        "cnpj": "101333356",
-                                        "telefone": "122356",
-                                        "dataNascimento": "1010-11-11T00:00:00.000Z",
-                                        "senha": "teste123",
-                                        "repetirSenha": "1",
-                                        "__v": 0}).then(console.log);  
+api.get("/cabeleireiros").then(function(cabeleireiros){
+    console.log("Listando todos os cabeleireiros:");
+    console.log(cabeleireiros);
 
-console.log("getAll:"); 
-getAllTest = api.get("/Cabeleireiros").then(response => response.data).then(console.log);   
+    console.log("Inserindo cabeleireiro: Inserindo cabeleireiro");
+    return api.post("/cabeleireiros", cabeleireiro);
+})
+.then(function(cabeleireiroInserido){
+    console.log("Cabeleireiro inserido");
+    cabeleireiro._id = cabeleireiroInserido.data._id;
 
-console.log("getIdTeste");
-let getIdTeste = api.get("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log);  
+    console.log("Listando todos os cabeleireiro:");
+    return api.get("/cabeleireiros");
+})
+.then(function(cabeleireiros){
+    console.log(cabeleireiros);
 
-console.log("delTeste");
-let delTeste = api.delete("/Cabeleireiros/"+postTeste._id).then(response => response.data).then(console.log); */
+    console.log("Alterando cabeleireiro");
+    cabeleireiro.nome = "Editando Cabeleireiro";
+    return api.put("/cabeleireiros", cabeleireiro);
+})
+.then(function(){
+    console.log("Cabeleiriero alterado");
+
+    console.log("Obtendo cabeleireiro alterado");
+    return api.get("/cabeleireiros/" + cabeleireiro._id)
+})
+.then(function(cabeleireiroRetornado){
+    console.log(cabeleireiroRetornado);
+
+    console.log("Excluindo cabeleireiro");
+    return api.delete("/cabeleireiros/",{"_id": cabeleireiro._id});
+})
+.then(function(){
+    console.log("Cabeleireiro excluído");
+
+    console.log("Listando todos os cabeleireiros:");
+    return api.get("/Cabeleireiros");
+})
+.then(function(cabeleireiros){
+    console.log(cabeleireiros);
+});

@@ -24,11 +24,6 @@ export const editProduto = (id, formValues) => async dispatch => {
     dispatch({ type: EDIT_PRODUTO, payload: response.data });
 };
 
-// export const editProduto = id => async dispatch => {
-//     const response = await api.put('/Produtos/', { ...formValues });
-//     dispatch({ type: FETCH_PRODUTO, payload: response });
-// };
-
 export const getProdutoName = id => async dispatch => {
     let _id = id;
     const response = await api.get(`/Produtos/${_id}`);
@@ -43,33 +38,54 @@ export const deleteProdutos = id => async dispatch => {
     history.push('/Produtos');
 };
 
-/*console.log("Testes endpoint /Produtos");
-console.log("getAll:"); 
-let getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
-let postTeste = api.post("/Produtos", {"categoria": "Testando Inclusao 3",
-                                        "marca": "Teste",
-                                        "linha": "bureal",
-                                        "descricao": "testando",
-                                        "conteudo": "10ml",
-                                        "medida": "10",
-                                        "__v": 0}).then(console.log);
+var produto = {
+    "categoria": "Inserindo Produto",
+    "marca": "Teste",
+    "linha": "bureal",
+    "descricao": "testando",
+    "conteudo": "10ml",
+    "medida": "10"
+}
 
-console.log("putTeste:"); 
-let putTeste = api.put("/Produtos", {"_id": postTeste._id,
-                                    "categoria": "Testando Inclusao 3",
-                                    "marca": "Teste",
-                                    "linha": "bureal",
-                                    "descricao": "testando",
-                                    "conteudo": "10ml",
-                                    "medida": "10",
-                                    "__v": 0}).then(console.log);  
+api.get("/Produtos").then(function(produtos){
+console.log("Listando todos os produtos:");
+console.log(produtos);
 
-console.log("getAll:"); 
-getAllTest = api.get("/Produtos").then(response => response.data).then(console.log);   
+console.log("Inserindo produto: Inserindo Produto");
+return api.post("/Produtos", produto);
+})
+.then(function(produtoInserido){
+console.log("Produto inserido");
+produto._id = produtoInserido.data._id;
 
-console.log("getIdTeste");
-let getIdTeste = api.get("/Produtos/"+postTeste._id).then(response => response.data).then(console.log);  
+console.log("Listando todos os produtos:");
+return api.get("/Produtos");
+})
+.then(function(produtos){
+console.log(produtos);
 
-console.log("delTeste");
-let delTeste = api.delete("/Produtos/"+postTeste._id).then(response => response.data).then(console.log);*/
+console.log("Alterando produto");
+produto.nome = "Editando Produto";
+return api.put("/Produtos", produto);
+})
+.then(function(){
+console.log("Produto alterado");
+
+console.log("Obtendo produto alterado");
+return api.get("/Produtos/" + produto._id)
+})
+.then(function(produtoRetornado){
+console.log(produtoRetornado);
+
+console.log("Excluindo produto");
+return api.delete("/Produtos/ "+ produto._id);
+})
+.then(function(){
+console.log("Produto excluído");
+
+console.log("Listando todos os produtos:");
+return api.get("/Produtos");
+})
+.then(function(produtos){
+console.log(produtos);
+});

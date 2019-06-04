@@ -29,11 +29,6 @@ export const editServico = (id, formValues) => async dispatch => {
     dispatch({ type: EDIT_SERVICO, payload: response.data });
 };
 
-// export const editServico = id => async dispatch => {
-//     const response = await api.put('/Servicos/', { ...formValues });
-//     dispatch({ type: FETCH_SERVICO, payload: response });
-// };
-
 export const getServicoName = id => async dispatch => {
     let _id = id;
     const response = await api.get(`/Servicos/${_id}`);
@@ -48,30 +43,51 @@ export const deleteServicos = id => async dispatch => {
     history.push('/Servicos');
 };
 
-// console.log("Testes endpoint /Servicos");
-// console.log("getAll:");
-// let getAllTest = api.get("/Servicos").then(response => response.data).then(console.log);
-// console.log("postTeste:");
-// let postTeste = api.post("/Servicos", {
-//     "data": "2019-05-26T00:00:00.000Z",
-//     "cliente": "Testando Lucio 2 inclusao segundo teste",
-//     "nome": "teste",
-//     "__v": 0
-// }).then(console.log);
+var servico = {
+    "data": "2019-05-26T00:00:00.000Z",
+    "cliente": "Inserindo Servico",
+    "nome": "teste"
+}
 
-// console.log("getAll:");
-// getAllTest = api.get("/Servicos").then(response => response.data).then(console.log);
+api.get("/Servicos").then(function(servicos){
+console.log("Listando todos os servicos:");
+console.log(servicos);
 
-// console.log("putTeste:");
-// let putTeste = api.put("/Servicos", {
-//     "_id": postTeste,
-//     "cliente": "Testando Lucio 2 Alteracao",
-//     "nome": "teste",
-//     "__v": 0
-// }).then(console.log);
+console.log("Inserindo servico: Inserindo Servico");
+return api.post("/Servicos", servico);
+})
+.then(function(servicoInserido){
+console.log("Servico inserido");
+servico._id = servicoInserido.data._id;
 
-// console.log("getIdTeste");
-// let getIdTeste = api.get("/Servicos/" + postTeste).then(response => response.data).then(console.log);
+console.log("Listando todos os servicos:");
+return api.get("/Servicos");
+})
+.then(function(produtos){
+console.log(produtos);
 
-// console.log("delTeste");
-// let delTeste = api.delete("/Servicos/" + postTeste).then(response => response.data).then(console.log);
+console.log("Alterando servico");
+servico.nome = "Editando servico";
+return api.put("/Servicos", servico);
+})
+.then(function(){
+console.log("Servico alterado");
+
+console.log("Obtendo servico alterado");
+return api.get("/Servicos/" + servico._id)
+})
+.then(function(servicoRetornado){
+console.log(servicoRetornado);
+
+console.log("Excluindo servico");
+return api.delete("/Servicos/",{"_id": servico._id});
+})
+.then(function(){
+console.log("Servico excluído");
+
+console.log("Listando todos os servicos:");
+return api.get("/Servicos");
+})
+.then(function(servicos){
+console.log(servicos);
+});

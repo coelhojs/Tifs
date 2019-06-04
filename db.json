@@ -54,6 +54,26 @@
       "Email": "brunamiorini@uol.com.br",
       "Alergias": false,
       "Gestante": false
+    },
+    {
+      "nome": "Morgana",
+      "cpf": "95559158033",
+      "telefone": "812850298",
+      "nascimento": "1985-10-13T00:36:36.002Z",
+      "alergias": false,
+      "sexo": "feminino",
+      "__v": 0,
+      "id": 6
+    },
+    {
+      "nome": "Morgana",
+      "cpf": "95559158033",
+      "telefone": "812850298",
+      "nascimento": "1985-10-13T00:36:36.002Z",
+      "alergias": false,
+      "sexo": "feminino",
+      "__v": 0,
+      "id": 7
     }
   ],
   "Produtos": [

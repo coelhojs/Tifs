@@ -39,33 +39,53 @@ export const deleteCliente = id => async dispatch => {
     dispatch({ type: DELETE_CLIENTE, payload: response.data });
 };
 
-/*console.log("Testes endpoint /Cliente");
-console.log("getAll:"); 
-let getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);
-console.log("postTeste:"); 
-let postTeste = api.post("/Clientes", {"nome": "Morgana",
-                                        "cpf": "95559158033",
-                                        "telefone": "812850298",
-                                        "nascimento": "1985-10-13T00:36:36.002Z",
-                                        "alergias": false,
-                                        "sexo": "feminino",
-                                        "__v": 0}).then(console.log);
+var cliente = {
+    "nome": "Inserindo Cliente",
+    "cpf": "10723571600",
+    "telefone": "994020508",
+    "nascimento": "1985-10-13T00:36:36.002Z",
+    "alergias": false,
+    "sexo": "feminino",
+}
+api.get("/Clientes").then(function(clientes){
+    console.log("Listando todos os clientes:");
+    console.log(clientes);
 
-console.log("putTeste:"); 
-let putTeste = api.put("/Clientes", {"_id": postTeste._id,
-                                        "nome": "Morgana",
-                                        "cpf": "95559158033",
-                                        "telefone": "812850298",
-                                        "nascimento": "1985-10-13T00:36:36.002Z",
-                                        "alergias": false,
-                                        "sexo": "feminino",
-                                        "__v": 0}).then(console.log);  
+    console.log("Inserindo cliente: Inserindo Cliente");
+    return api.post("/Clientes", cliente);
+})
+.then(function(clienteInserido){
+    console.log("Cliente inserido");
+    cliente._id = clienteInserido.data._id;
 
-console.log("getAll:"); 
-getAllTest = api.get("/Clientes").then(response => response.data).then(console.log);   
+    console.log("Listando todos os clientes:");
+    return api.get("/Clientes");
+})
+.then(function(clientes){
+    console.log(clientes);
 
-console.log("getIdTeste");
-let getIdTeste = api.get("/Clientes/"+postTeste._id).then(response => response.data).then(console.log);  
+    console.log("Alterando cliente");
+    cliente.nome = "Editando Cliente";
+    return api.put("/Clientes", cliente);
+})
+.then(function(){
+    console.log("Cliente alterado");
 
-console.log("delTeste");
-let delTeste = api.delete("/Clientes/"+postTeste._id).then(response => response.data).then(console.log);*/
+    console.log("Obtendo cliente alterado");
+    return api.get("/Clientes/" + cliente._id)
+})
+.then(function(clienteRetornado){
+    console.log(clienteRetornado);
+
+    console.log("Excluindo cliente");
+    return api.delete("/Clientes/",{"_id": cliente._id});
+})
+.then(function(){
+    console.log("Cliente excluído");
+
+    console.log("Listando todos os clientes:");
+    return api.get("/Clientes");
+})
+.then(function(clientes){
+    console.log(clientes);
+});
