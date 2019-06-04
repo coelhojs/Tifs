@@ -1,16 +1,12 @@
+import history from '../history';
 import { api } from "./index";
 import { CREATE_SERVICO, DELETE_SERVICO, EDIT_SERVICO, FETCH_ALL_SERVICOS, FETCH_SERVICO, FETCH_SERVICO_NAME } from './types';
 
-let history = require("history").createBrowserHistory;
-
-// export const fetchServicos = () => async dispatch => {
-//     const response = await api.get('/Servicos/');   
-//     dispatch({ type: FETCH_ALL_SERVICOS, payload: response.data });
-// };
-
-export const createServico = () => async dispatch => {
-    const response = await api.post('/Cabeleireiros/1/Servicos/');
+export const createServico = formValues => async (dispatch, getState) => {
+    const response = await api.post('/Servicos', { ...formValues });
     dispatch({ type: CREATE_SERVICO, payload: response });
+    console.log(response);
+    history.push('/Home');
 };
 
 export const fetchServicos = () => async dispatch => {
@@ -39,7 +35,6 @@ export const deleteServicos = id => async dispatch => {
     const response = await api.delete(`/Servicos/${id}`);
     dispatch({ type: DELETE_SERVICO, payload: id });
     console.log(response);
-
     history.push('/Servicos');
 };
 

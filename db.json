@@ -98,70 +98,80 @@
   ],
   "Servicos": [
     {
-      "id": 1,
+      "data": "2019-05-30",
+      "nome": "Selagem",
+      "cliente": "Maria do Nascimento",
+      "anotacoes": "Cabelo ressecado",
+      "materiais": [
+        {
+          "material": "Tinta",
+          "quantidade": "asdf",
+          "medida": "ml"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Angela Erica",
+      "materiais": [
+        {
+          "quantidade": "a",
+          "nome": "po",
+          "medida": "L"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Lorraine Campos",
+      "materiais": [
+        {
+          "nome": "1",
+          "quantidade": "1",
+          "medida": "ml"
+        },
+        {
+          "nome": "2",
+          "quantidade": "2",
+          "medida": "L"
+        },
+        {
+          "nome": "3",
+          "quantidade": "3",
+          "medida": "mg"
+        }
+      ],
+      "anotacoes": "Ok",
+      "id": 3
+    },
+    {
+      "data": "2019-05-30",
+      "cliente": "Henrique G. Castro",
+      "anotacoes": "v",
       "nome": "Coloração",
-      "produtos": [
-        "Tinta",
-        "Oxidante"
-      ]
-    },
-    {
-      "id": 2,
-      "nome": "Mechas",
-      "produtos": [
-        "Tinta",
-        "Oxidante"
-      ]
-    },
-    {
-      "id": 3,
-      "nome": "Corte",
-      "produtos": [
-        "Shampoo",
-        "Tesoura"
-      ]
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
+      "materiais": [
+        {
+          "nome": "abbb",
+          "quantidade": "bbba",
+          "medida": "g"
+        }
+      ],
       "id": 4
     },
     {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
+      "data": "2020-10-10",
+      "cliente": "Isabela do Carmo",
+      "nome": "Coloração",
+      "materiais": [
+        {
+          "nome": "Tinta Biocolor",
+          "quantidade": "10",
+          "medida": "ml"
+        }
+      ],
       "id": 5
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 6
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 7
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 8
-    },
-    {
-      "data": "2019-05-26T00:00:00.000Z",
-      "cliente": "Testando Lucio 2 inclusao segundo teste",
-      "nome": "teste",
-      "__v": 0,
-      "id": 9
     }
   ],
   "Cabeleireiros": [
