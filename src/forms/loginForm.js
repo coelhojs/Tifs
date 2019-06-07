@@ -14,7 +14,7 @@ class LoginForm extends Component {
         super(props)
         this.state = {
             email : '',
-            senha: ''
+            password: ''
         };
     }
 
@@ -24,7 +24,6 @@ class LoginForm extends Component {
             [name]: value
         });
     }
-
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -37,7 +36,7 @@ class LoginForm extends Component {
         })
             .then(res => {
                 if (res.status === 200) {
-                    this.props.history.push('/Home');
+                    window.location.href = "/Home"
                 } else {
                     const error = new Error(res.error);
                     throw error;
@@ -45,33 +44,41 @@ class LoginForm extends Component {
             })
             .catch(err => {
                 console.error(err);
-                alert('Erro ao autenticar. Por favor tente novamente.');
+                alert('Erro com o login. Tente novamente!');
             });
     }
 
     render() {
-        const { pristine, submitting } = this.props;
-
         return (
-            <div className="container">
-                <form onSubmit={this.onSubmit}>
-                    <InputField
-                        name="email" type="email" value={this.state.email}  onChange={this.handleInputChange}
-                        label="E-mail" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
-                    <InputField name="senha" type="password" value={this.state.senha} onChange={this.handleInputChange}
-                        label="Senha" labelClasses="col-4" inputClasses="col-8" formGroupClasses="form-row" />
-                    <br />
-                    <div className="button-group">
-                        <button className="btn btn-link">Esqueceu a senha?</button>
-                        <button type="submit" className="btn btn-success shadow border-dark" disabled={pristine || submitting}>
-                            Entrar
-                            </button>
-                    </div>
-                </form >
-            </div>
+            <form onSubmit={this.onSubmit}>
+                <h1>Realize o login!</h1>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Entre com email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    required
+                />
+                <br/>
+                <br/>
+
+                <input
+                    type="password"
+                    name="senha"
+                    placeholder="Entre com a Senha"
+                    value={this.state.senha}
+                    onChange={this.handleInputChange}
+                    required
+                />
+                <br/>
+                <br/>
+                <input type="submit" value="Submit"/>
+            </form>
         );
     }
 }
+
 
 export default reduxForm({
     form: 'loginForm'
